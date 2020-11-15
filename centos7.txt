@@ -1,60 +1,60 @@
-ÇåÆÁÃüÁî
+æ¸…å±å‘½ä»¤
 $ clear
 
-Çå¿ÕÀúÊ·ÃüÁî
+æ¸…ç©ºå†å²å‘½ä»¤
 $ echo > .bash_history
 
-#Çå¿Õµ±Ç°»º´æÖĞµÄÃüÁî
+#æ¸…ç©ºå½“å‰ç¼“å­˜ä¸­çš„å‘½ä»¤
 $ history -c
 
 ----------------------------------------------------------------------
 
-ÓÀ¾Ã¹Ø±ÕSELinux
+æ°¸ä¹…å…³é—­SELinux
 
 vi /etc/selinux/config
-#SELINUX=enforcing     #×¢ÊÍµô
-#SELINUXTYPE=targeted  #×¢ÊÍµô
-SELINUX=disabled  #Ôö¼Ó
-:wq  #±£´æ£¬¹Ø±Õ¡£
-shutdown -r now   #ÖØÆôÏµÍ³
+#SELINUX=enforcing     #æ³¨é‡Šæ‰
+#SELINUXTYPE=targeted  #æ³¨é‡Šæ‰
+SELINUX=disabled  #å¢åŠ 
+:wq  #ä¿å­˜ï¼Œå…³é—­ã€‚
+shutdown -r now   #é‡å¯ç³»ç»Ÿ
 
 ----------------------------------------------------------------------
 
-Èç¹ûÎÒÃÇ´òËãÈÃ·şÎñ¿ÉÒÔËæ»úÆô¶¯£¬ÄÇÃ´ÈçÏÂÔËĞĞ£º
+å¦‚æœæˆ‘ä»¬æ‰“ç®—è®©æœåŠ¡å¯ä»¥éšæœºå¯åŠ¨ï¼Œé‚£ä¹ˆå¦‚ä¸‹è¿è¡Œï¼š
 systemctl enable httpd.service
 
-ÓÃ chkconfig ÃüÁî¼ì²âÒ»ÏÂ·şÎñÊÇ·ñÔËĞĞ³É¹¦
+ç”¨ chkconfig å‘½ä»¤æ£€æµ‹ä¸€ä¸‹æœåŠ¡æ˜¯å¦è¿è¡ŒæˆåŠŸ
 chkconfig --list |grep httpd
 httpd              0:off    1:off    2:on    3:on    4:on    5:on    6:off
-¿É¼û·şÎñÒÑ¾­ÔÚ µÚ2 µ½ µÚ5 ÔËĞĞµÈ¼¶´ò¿ª¡£
+å¯è§æœåŠ¡å·²ç»åœ¨ ç¬¬2 åˆ° ç¬¬5 è¿è¡Œç­‰çº§æ‰“å¼€ã€‚
 
-Í¬Àí½ûÖ¹·şÎñËæ»úÆô¶¯¿ÉÒÔÈçÏÂÔËĞĞ£º
+åŒç†ç¦æ­¢æœåŠ¡éšæœºå¯åŠ¨å¯ä»¥å¦‚ä¸‹è¿è¡Œï¼š
 [root@beyes   command]# systemctl disable httpd.service
 
-ÓÃ chkconfig ¼ì²âÒ»ÏÂ£º
+ç”¨ chkconfig æ£€æµ‹ä¸€ä¸‹ï¼š
 [root@beyes   command]# chkconfig --list |grep httpd
 
 httpd              0:off    1:off    2:off    3:off    4:off    5:off    6:off
 
-ÒÑ¾­¹Ø±Õ³É¹¦¡£
+å·²ç»å…³é—­æˆåŠŸã€‚
 
 ----------------------------------------------------------------------
 
-Í³¼ÆÈí¼şÊıÁ¿
+ç»Ÿè®¡è½¯ä»¶æ•°é‡
 rpm -qa | wc -l
 
-È«²¿Èí¼şÃû³Æ
+å…¨éƒ¨è½¯ä»¶åç§°
 rpm -qa | sort
 
-²é¿´ÊÇ·ñ»¹ÓĞmysqlÈí¼ş£º
+æŸ¥çœ‹æ˜¯å¦è¿˜æœ‰mysqlè½¯ä»¶ï¼š
 rpm -qa|grep mysql
-ÓĞµÄ»°¼ÌĞøÉ¾³ı
+æœ‰çš„è¯ç»§ç»­åˆ é™¤
 
 rpm -e httpd --nodeps
 
 ----------------------------------------------------------------------
 
-linuxÖĞ¿ìËÙÇå¿ÕÎÄ¼şÄÚÈİµÄ¼¸ÖÖ·½·¨
+linuxä¸­å¿«é€Ÿæ¸…ç©ºæ–‡ä»¶å†…å®¹çš„å‡ ç§æ–¹æ³•
 
 $ : > filename 
 $ > filename 
@@ -64,124 +64,124 @@ $ cat /dev/null > filename
 
 ----------------------------------------------------------------------
 
-ÎÄ¼şÃû²éÕÒ·¨£º
+æ–‡ä»¶åæŸ¥æ‰¾æ³•ï¼š
 find / -name httpd.conf
 find /etc -name '*srm*'
 find /etc -name 'srm*'
 
 ----------------------------------------------------------------------
 
-ÓÃchattrÃüÁî·ÀÖ¹ÏµÍ³ÖĞÄ³¸ö¹Ø¼üÎÄ¼ş±»ĞŞ¸Ä£º
+ç”¨chattrå‘½ä»¤é˜²æ­¢ç³»ç»Ÿä¸­æŸä¸ªå…³é”®æ–‡ä»¶è¢«ä¿®æ”¹ï¼š
 chattr +i /home/wwwroot/default/.user.ini
 
 chattr -i /home/wwwroot/default/.user.ini
 
 ----------------------------------------------------------------------
 
-Crontab Ê¾Àı
+Crontab ç¤ºä¾‹
 
-1¡¢ÔÚ Áè³¿00:01ÔËĞĞ
+1ã€åœ¨ å‡Œæ™¨00:01è¿è¡Œ
 
 1 0 * * * /home/linrui/XXXX.sh
 
-2¡¢Ã¿¸ö¹¤×÷ÈÕ23:59¶¼½øĞĞ±¸·İ×÷Òµ¡£
+2ã€æ¯ä¸ªå·¥ä½œæ—¥23:59éƒ½è¿›è¡Œå¤‡ä»½ä½œä¸šã€‚
 
 59 11 * * 1,2,3,4,5 /home/linrui/XXXX.sh   
 
-»òÕßÈçÏÂĞ´·¨£º
+æˆ–è€…å¦‚ä¸‹å†™æ³•ï¼š
 
 59 11 * * 1-5 /home/linrui/XXXX.sh
 
-3¡¢Ã¿·ÖÖÓÔËĞĞÒ»´ÎÃüÁî
+3ã€æ¯åˆ†é’Ÿè¿è¡Œä¸€æ¬¡å‘½ä»¤
 
 */1 * * * * /home/linrui/XXXX.sh
 
-4¡¢Ã¿¸öÔÂµÄ1ºÅ 14:10 ÔËĞĞ
+4ã€æ¯ä¸ªæœˆçš„1å· 14:10 è¿è¡Œ
 
 10 14 1 * * /home/linrui/XXXX.sh
 
-crontab -e : ĞŞ¸Ä crontab ÎÄ¼ş. Èç¹ûÎÄ¼ş²»´æÔÚ»á×Ô¶¯´´½¨¡£ 
-crontab -l : ÏÔÊ¾ crontab ÎÄ¼ş¡£ 
-crontab -r : É¾³ı crontab ÎÄ¼ş¡£
-crontab -ir : É¾³ı crontab ÎÄ¼şÇ°ÌáĞÑÓÃ»§
+crontab -e : ä¿®æ”¹ crontab æ–‡ä»¶. å¦‚æœæ–‡ä»¶ä¸å­˜åœ¨ä¼šè‡ªåŠ¨åˆ›å»ºã€‚ 
+crontab -l : æ˜¾ç¤º crontab æ–‡ä»¶ã€‚ 
+crontab -r : åˆ é™¤ crontab æ–‡ä»¶ã€‚
+crontab -ir : åˆ é™¤ crontab æ–‡ä»¶å‰æé†’ç”¨æˆ·
 
 * * * * * command
-·Ö Ê± ÈÕ ÔÂ ÖÜ ÃüÁî
+åˆ† æ—¶ æ—¥ æœˆ å‘¨ å‘½ä»¤
 
-µÚ1ÁĞ±íÊ¾·ÖÖÓ1¡«59 Ã¿·ÖÖÓÓÃ*»òÕß */1±íÊ¾
-µÚ2ÁĞ±íÊ¾Ğ¡Ê±1¡«23£¨0±íÊ¾0µã£©
-µÚ3ÁĞ±íÊ¾ÈÕÆÚ1¡«31
-µÚ4ÁĞ±íÊ¾ÔÂ·İ1¡«12
-µÚ5ÁĞ±êÊ¶ºÅĞÇÆÚ0¡«6£¨0±íÊ¾ĞÇÆÚÌì£©
-µÚ6ÁĞÒªÔËĞĞµÄÃüÁî
-
-----------------------------------------------------------------------
-
-# screen [-AmRvx -ls -wipe][-d <×÷ÒµÃû³Æ>][-h <ĞĞÊı>][-r <×÷ÒµÃû³Æ>][-s ][-S <×÷ÒµÃû³Æ>]
-
-²ÎÊıËµÃ÷
-
--A ¡¡½«ËùÓĞµÄÊÓ´°¶¼µ÷ÕûÎªÄ¿Ç°ÖÕ¶Ë»úµÄ´óĞ¡¡£
--d <×÷ÒµÃû³Æ> ¡¡½«Ö¸¶¨µÄscreen×÷ÒµÀëÏß¡£
--h <ĞĞÊı> ¡¡Ö¸¶¨ÊÓ´°µÄ»º³åÇøĞĞÊı¡£
--m ¡¡¼´Ê¹Ä¿Ç°ÒÑÔÚ×÷ÒµÖĞµÄscreen×÷Òµ£¬ÈÔÇ¿ÖÆ½¨Á¢ĞÂµÄscreen×÷Òµ¡£
--r <×÷ÒµÃû³Æ> ¡¡»Ö¸´ÀëÏßµÄscreen×÷Òµ¡£
--R ¡¡ÏÈÊÔÍ¼»Ö¸´ÀëÏßµÄ×÷Òµ¡£ÈôÕÒ²»µ½ÀëÏßµÄ×÷Òµ£¬¼´½¨Á¢ĞÂµÄscreen×÷Òµ¡£
--s ¡¡Ö¸¶¨½¨Á¢ĞÂÊÓ´°Ê±£¬ËùÒªÖ´ĞĞµÄshell¡£
--S <×÷ÒµÃû³Æ> ¡¡Ö¸¶¨screen×÷ÒµµÄÃû³Æ¡£
--v ¡¡ÏÔÊ¾°æ±¾ĞÅÏ¢¡£
--x ¡¡»Ö¸´Ö®Ç°ÀëÏßµÄscreen×÷Òµ¡£
--ls»ò--list ¡¡ÏÔÊ¾Ä¿Ç°ËùÓĞµÄscreen×÷Òµ¡£
--wipe ¡¡¼ì²éÄ¿Ç°ËùÓĞµÄscreen×÷Òµ£¬²¢É¾³ıÒÑ¾­ÎŞ·¨Ê¹ÓÃµÄscreen×÷Òµ¡£
-
-screen -S yourname -> ĞÂ½¨Ò»¸ö½ĞyournameµÄsession
-screen -ls -> ÁĞ³öµ±Ç°ËùÓĞµÄsession
-screen -r yourname -> »Øµ½yournameÕâ¸ösession
-screen -d yourname -> Ô¶³ÌdetachÄ³¸ösession
-screen -d -r yourname -> ½áÊøµ±Ç°session²¢»Øµ½yournameÕâ¸ösession
+ç¬¬1åˆ—è¡¨ç¤ºåˆ†é’Ÿ1ï½59 æ¯åˆ†é’Ÿç”¨*æˆ–è€… */1è¡¨ç¤º
+ç¬¬2åˆ—è¡¨ç¤ºå°æ—¶1ï½23ï¼ˆ0è¡¨ç¤º0ç‚¹ï¼‰
+ç¬¬3åˆ—è¡¨ç¤ºæ—¥æœŸ1ï½31
+ç¬¬4åˆ—è¡¨ç¤ºæœˆä»½1ï½12
+ç¬¬5åˆ—æ ‡è¯†å·æ˜ŸæœŸ0ï½6ï¼ˆ0è¡¨ç¤ºæ˜ŸæœŸå¤©ï¼‰
+ç¬¬6åˆ—è¦è¿è¡Œçš„å‘½ä»¤
 
 ----------------------------------------------------------------------
 
-¸üĞÂÎªÏã¸ÛÊ±Çø
+# screen [-AmRvx -ls -wipe][-d <ä½œä¸šåç§°>][-h <è¡Œæ•°>][-r <ä½œä¸šåç§°>][-s ][-S <ä½œä¸šåç§°>]
+
+å‚æ•°è¯´æ˜
+
+-A ã€€å°†æ‰€æœ‰çš„è§†çª—éƒ½è°ƒæ•´ä¸ºç›®å‰ç»ˆç«¯æœºçš„å¤§å°ã€‚
+-d <ä½œä¸šåç§°> ã€€å°†æŒ‡å®šçš„screenä½œä¸šç¦»çº¿ã€‚
+-h <è¡Œæ•°> ã€€æŒ‡å®šè§†çª—çš„ç¼“å†²åŒºè¡Œæ•°ã€‚
+-m ã€€å³ä½¿ç›®å‰å·²åœ¨ä½œä¸šä¸­çš„screenä½œä¸šï¼Œä»å¼ºåˆ¶å»ºç«‹æ–°çš„screenä½œä¸šã€‚
+-r <ä½œä¸šåç§°> ã€€æ¢å¤ç¦»çº¿çš„screenä½œä¸šã€‚
+-R ã€€å…ˆè¯•å›¾æ¢å¤ç¦»çº¿çš„ä½œä¸šã€‚è‹¥æ‰¾ä¸åˆ°ç¦»çº¿çš„ä½œä¸šï¼Œå³å»ºç«‹æ–°çš„screenä½œä¸šã€‚
+-s ã€€æŒ‡å®šå»ºç«‹æ–°è§†çª—æ—¶ï¼Œæ‰€è¦æ‰§è¡Œçš„shellã€‚
+-S <ä½œä¸šåç§°> ã€€æŒ‡å®šscreenä½œä¸šçš„åç§°ã€‚
+-v ã€€æ˜¾ç¤ºç‰ˆæœ¬ä¿¡æ¯ã€‚
+-x ã€€æ¢å¤ä¹‹å‰ç¦»çº¿çš„screenä½œä¸šã€‚
+-lsæˆ–--list ã€€æ˜¾ç¤ºç›®å‰æ‰€æœ‰çš„screenä½œä¸šã€‚
+-wipe ã€€æ£€æŸ¥ç›®å‰æ‰€æœ‰çš„screenä½œä¸šï¼Œå¹¶åˆ é™¤å·²ç»æ— æ³•ä½¿ç”¨çš„screenä½œä¸šã€‚
+
+screen -S yourname -> æ–°å»ºä¸€ä¸ªå«yournameçš„session
+screen -ls -> åˆ—å‡ºå½“å‰æ‰€æœ‰çš„session
+screen -r yourname -> å›åˆ°yournameè¿™ä¸ªsession
+screen -d yourname -> è¿œç¨‹detachæŸä¸ªsession
+screen -d -r yourname -> ç»“æŸå½“å‰sessionå¹¶å›åˆ°yournameè¿™ä¸ªsession
+
+----------------------------------------------------------------------
+
+æ›´æ–°ä¸ºé¦™æ¸¯æ—¶åŒº
 timedatectl set-timezone Asia/Shanghai
 
 ----------------------------------------------------------------------
 
-ĞŞ¸ÄhistoryÃüÁî¼ÇÂ¼
+ä¿®æ”¹historyå‘½ä»¤è®°å½•
 cp /etc/profile   /etc/profilebak
 vi /etc/profile
-ÕÒµ½ HISTSIZE=1000 ¸ÄÎª HISTSIZE=50
+æ‰¾åˆ° HISTSIZE=1000 æ”¹ä¸º HISTSIZE=50
 
 ----------------------------------------------------------------------
 
-½ûÖ¹¿ÕÃÜÂëµÇÂ¼
+ç¦æ­¢ç©ºå¯†ç ç™»å½•
 
 vi /etc/ssh/sshd_config
 
-Port 22                                     # ssh¶Ë¿Ú
-ListenAddress 192.168.0.1       # ¶ÔÓÚÔÚ·şÎñÆ÷ÉÏ°²×°ÁË¶à¸öÍø¿¨»òÅäÖÃ¶à¸öIPµØÖ·µÄÇé¿ö£¬Éè¶¨sshdÖ»ÔÚÆäÖĞÒ»¸öÖ¸¶¨µÄ½Ó¿ÚµØÖ·¼àÌı
-AllowUsers  *@10.138.*.*         # ½öÔÊĞí 10.138.0.0/16 Íø¶ÎËùÓĞÓÃ»§Í¨¹ıssh·ÃÎÊ
-AllowUsers  normal                 # Ö»ÔÊĞíÕâ¸öÓÃ»§Ô¶³ÌµÇÂ¼
-AllowTcpForwarding no           # ½ûÖ¹¿ÕÃÜÂëµÇÂ¼
-X11Forwarding no                   # ¹Ø±ÕX11Forwarding£¬·ÀÖ¹»á»°±»½Ù³Ö
-PermitEmptyPasswords no       # ÔÊĞíÊ¹ÓÃ¿ÕÃÜÂë
-Protocol 2                                # ½ûÖ¹Ê¹ÓÃ°æ±¾1Ğ­Òé
-MaxStartups 5                         # Ôö¼ÓSSHÖÕ¶ËÁ¬½ÓÊı×î´óÎª1000¸ö
-LoginGraceTime 20                 # ÔÚ20ÃëÄÚ²»ÄÜÍê³ÉµÇÂ¼£¬Ôò¶Ï¿ªÁ¬½Ó
-UseDNS no                            #¹Ø±ÕDNS²éÑ¯,ÊÇ·ñÊ¹ÓÃdns·´Ïò½âÎö
-MaxAuthTries 3                     #Õâ½öÊÇ³¬¹ı3´ÎÑéÖ¤´íÎó¶Ï¿ªÁ¬½Ó
-ClientAliveInterval  600         #½«ClientAliveInterval ÉèÖÃÎª300µ½900£¬¼´5-15·ÖÖÓ
-ClientAliveCountMax  2        #½«ClientAliveCountMaxÉèÖÃÎª0-3Ö®¼ä
+Port 22                                     # sshç«¯å£
+ListenAddress 192.168.0.1       # å¯¹äºåœ¨æœåŠ¡å™¨ä¸Šå®‰è£…äº†å¤šä¸ªç½‘å¡æˆ–é…ç½®å¤šä¸ªIPåœ°å€çš„æƒ…å†µï¼Œè®¾å®šsshdåªåœ¨å…¶ä¸­ä¸€ä¸ªæŒ‡å®šçš„æ¥å£åœ°å€ç›‘å¬
+AllowUsers  *@10.138.*.*         # ä»…å…è®¸ 10.138.0.0/16 ç½‘æ®µæ‰€æœ‰ç”¨æˆ·é€šè¿‡sshè®¿é—®
+AllowUsers  normal                 # åªå…è®¸è¿™ä¸ªç”¨æˆ·è¿œç¨‹ç™»å½•
+AllowTcpForwarding no           # ç¦æ­¢ç©ºå¯†ç ç™»å½•
+X11Forwarding no                   # å…³é—­X11Forwardingï¼Œé˜²æ­¢ä¼šè¯è¢«åŠ«æŒ
+PermitEmptyPasswords no       # å…è®¸ä½¿ç”¨ç©ºå¯†ç 
+Protocol 2                                # ç¦æ­¢ä½¿ç”¨ç‰ˆæœ¬1åè®®
+MaxStartups 5                         # å¢åŠ SSHç»ˆç«¯è¿æ¥æ•°æœ€å¤§ä¸º1000ä¸ª
+LoginGraceTime 20                 # åœ¨20ç§’å†…ä¸èƒ½å®Œæˆç™»å½•ï¼Œåˆ™æ–­å¼€è¿æ¥
+UseDNS no                            #å…³é—­DNSæŸ¥è¯¢,æ˜¯å¦ä½¿ç”¨dnsåå‘è§£æ
+MaxAuthTries 3                     #è¿™ä»…æ˜¯è¶…è¿‡3æ¬¡éªŒè¯é”™è¯¯æ–­å¼€è¿æ¥
+ClientAliveInterval  600         #å°†ClientAliveInterval è®¾ç½®ä¸º300åˆ°900ï¼Œå³5-15åˆ†é’Ÿ
+ClientAliveCountMax  2        #å°†ClientAliveCountMaxè®¾ç½®ä¸º0-3ä¹‹é—´
 
 systemctl status sshd.service
 systemctl restart sshd.service
 
-sshd_configÎÄ¼şÈçºÎÁ¢¼´ÉúĞ§
-/etc/init.d/sshd restart   »òÕß£º/etc/rc.d/init.d/sshd restart
+sshd_configæ–‡ä»¶å¦‚ä½•ç«‹å³ç”Ÿæ•ˆ
+/etc/init.d/sshd restart   æˆ–è€…ï¼š/etc/rc.d/init.d/sshd restart
 
 ----------------------------------------------------------------------
 
-ĞŞ¸ÄÃÜÂë³¤¶È
+ä¿®æ”¹å¯†ç é•¿åº¦
 
 vi /etc/login.defs
 
@@ -189,22 +189,22 @@ PASS_MIN_LEN 18
 
 ----------------------------------------------------------------------
 
-Éı¼¶centosÏµÍ³
-yum update #¸üĞÂÏµÍ³
-yum clean all #ÇåÀíÈ«²¿»º´æÎÄ¼ş
+å‡çº§centosç³»ç»Ÿ
+yum update #æ›´æ–°ç³»ç»Ÿ
+yum clean all #æ¸…ç†å…¨éƒ¨ç¼“å­˜æ–‡ä»¶
 
-3.Çå¿Õyum »º´æ£¬²¢ÖØ½¨yum»º´æ£¬Ö´ĞĞÒÔÏÂÃüÁî£º
+3.æ¸…ç©ºyum ç¼“å­˜ï¼Œå¹¶é‡å»ºyumç¼“å­˜ï¼Œæ‰§è¡Œä»¥ä¸‹å‘½ä»¤ï¼š
 yum clean all && yum clean metadata && yum clean dbcache && yum makecache && yum update -y
 
 ----------------------------------------------------------------------
 
 uname -a
  
-2.²éÑ¯ÏµÍ³ÖĞÈ«²¿µÄÄÚºË:
+2.æŸ¥è¯¢ç³»ç»Ÿä¸­å…¨éƒ¨çš„å†…æ ¸:
  
 # rpm -qa | grep kernel
  
-3.½«ÄãÏëÉ¾³ıµÄÄÚºËÉ¾³ıµô:(ÀıÈç,ÔÚÎÒµÄÏµÍ³ÖĞ,ÎÒÒªÉ¾µôkernel-3.10.0-22.13.1.el7.x86_64µÄÄÚºË,ĞèÒª°ÑËùÓĞº¬ÓĞkernel-3.10.0-22.13.1.el7.x86_64×ÖÑùµÄÈ«²¿É¾µô)
+3.å°†ä½ æƒ³åˆ é™¤çš„å†…æ ¸åˆ é™¤æ‰:(ä¾‹å¦‚,åœ¨æˆ‘çš„ç³»ç»Ÿä¸­,æˆ‘è¦åˆ æ‰kernel-3.10.0-22.13.1.el7.x86_64çš„å†…æ ¸,éœ€è¦æŠŠæ‰€æœ‰å«æœ‰kernel-3.10.0-22.13.1.el7.x86_64å­—æ ·çš„å…¨éƒ¨åˆ æ‰)
  
 #yum remove kernel-3.10.0-229.el7.x86_64
 
@@ -212,64 +212,64 @@ uname -a
 
 ----------------------------------------------------------------------
 
-Ê×ÏÈ²é¿´»úÆ÷ÉÏÓĞ¶àÉÙ¿éÓ²ÅÌ£º
+é¦–å…ˆæŸ¥çœ‹æœºå™¨ä¸Šæœ‰å¤šå°‘å—ç¡¬ç›˜ï¼š
 fdisk -l
 
-Ó²ÅÌ·ÖÇø
+ç¡¬ç›˜åˆ†åŒº
 fdisk /dev/sdb
 
-¸ñÊ½»¯´ÅÅÌ²¢Ğ´ÈëÎÄ¼şÏµÍ³
+æ ¼å¼åŒ–ç£ç›˜å¹¶å†™å…¥æ–‡ä»¶ç³»ç»Ÿ
 mkfs.xfs -f /dev/sdb1
 
-¹ÒÔØĞÂÓ²ÅÌµ½²Ù×÷ÏµÍ³µÄÄ³¸ö½ÚµãÉÏ
+æŒ‚è½½æ–°ç¡¬ç›˜åˆ°æ“ä½œç³»ç»Ÿçš„æŸä¸ªèŠ‚ç‚¹ä¸Š
 mount -t xfs /dev/sdb1 /home
 
-Ö´ĞĞdfÃüÁî²é¿´´ÅÅÌĞÅÏ¢£¬È·ÈÏ¹ÒÔØĞÂÓ²ÅÌ³É¹¦
+æ‰§è¡Œdfå‘½ä»¤æŸ¥çœ‹ç£ç›˜ä¿¡æ¯ï¼Œç¡®è®¤æŒ‚è½½æ–°ç¡¬ç›˜æˆåŠŸ
 df -kh
 
-×Ô¶¯¹ÒÔØ·ÖÇø
-±à¼­/etc/fstabÀï¼ÓÈë£ºÊäÈëºìÉ«ÄÚÈİ
+è‡ªåŠ¨æŒ‚è½½åˆ†åŒº
+ç¼–è¾‘/etc/fstabé‡ŒåŠ å…¥ï¼šè¾“å…¥çº¢è‰²å†…å®¹
 /dev/sdb1               /home                   xfs     defaults        0 0
 
 ----------------------------------------------------------------------
 
-ĞŞ¸ÄÖ÷»úÃû
+ä¿®æ”¹ä¸»æœºå
 
-µÚÒ»ÖÖ£ºhostname Ö÷»úÃû
+ç¬¬ä¸€ç§ï¼šhostname ä¸»æœºå
 
-01.hostname Ö÷»úÃû³Æ 
+01.hostname ä¸»æœºåç§° 
 
-ÕâÖÖ·½Ê½£¬Ö»ÄÜĞŞ¸ÄÁÙÊ±µÄÖ÷»úÃû£¬µ±ÖØÆô»úÆ÷ºó£¬Ö÷»úÃû³ÆÓÖ±ä»ØÀ´ÁË¡£
+è¿™ç§æ–¹å¼ï¼Œåªèƒ½ä¿®æ”¹ä¸´æ—¶çš„ä¸»æœºåï¼Œå½“é‡å¯æœºå™¨åï¼Œä¸»æœºåç§°åˆå˜å›æ¥äº†ã€‚
 
-µÚ¶şÖÖ£ºhostnamectl set-hostname <hostname>
+ç¬¬äºŒç§ï¼šhostnamectl set-hostname <hostname>
 
-ÃüÁîĞĞÖĞÊäÈë
+å‘½ä»¤è¡Œä¸­è¾“å…¥
 
-01.hostnamectl set-hostname <Ö÷»úÃû> 
+01.hostnamectl set-hostname <ä¸»æœºå> 
 
-Ê¹ÓÃÕâÖÖ·½Ê½ĞŞ¸Ä£¬¿ÉÒÔÓÀ¾ÃĞÔµÄĞŞ¸ÄÖ÷»úÃû³Æ£¡
+ä½¿ç”¨è¿™ç§æ–¹å¼ä¿®æ”¹ï¼Œå¯ä»¥æ°¸ä¹…æ€§çš„ä¿®æ”¹ä¸»æœºåç§°ï¼
 
 #################################################
 
-ĞŞ¸Ä/etc/hostnameÖ÷»úÃûºóÒ»¶¨ÒªÊÖ¶¯¸üĞÂ/etc/hosts
+ä¿®æ”¹/etc/hostnameä¸»æœºååä¸€å®šè¦æ‰‹åŠ¨æ›´æ–°/etc/hosts
 
 #################################################
 
 ----------------------------------------------------------------------
 
-firewall¸ÄÎªiptables·À»ğÇ½¡£
+firewallæ”¹ä¸ºiptablesé˜²ç«å¢™ã€‚
 
-1¡¢¹Ø±Õfirewall£º
+1ã€å…³é—­firewallï¼š
 
-systemctl stop firewalld.service #Í£Ö¹firewall
+systemctl stop firewalld.service #åœæ­¢firewall
 
-systemctl disable firewalld.service #½ûÖ¹firewall¿ª»úÆô¶¯
+systemctl disable firewalld.service #ç¦æ­¢firewallå¼€æœºå¯åŠ¨
 
-2¡¢°²×°iptables·À»ğÇ½
+2ã€å®‰è£…iptablesé˜²ç«å¢™
 
-yum install iptables-services #°²×°
+yum install iptables-services #å®‰è£…
 
-vi /etc/sysconfig/iptables #±à¼­·À»ğÇ½ÅäÖÃÎÄ¼ş
+vi /etc/sysconfig/iptables #ç¼–è¾‘é˜²ç«å¢™é…ç½®æ–‡ä»¶
 
 # Firewall configuration written by system-config-firewall
 # Manual customization of this file is not recommended.
@@ -302,63 +302,63 @@ COMMIT
 # Completed on Wed Oct 21 22:38:48 2020
 
 
-:wq! #±£´æÍË³ö
+:wq! #ä¿å­˜é€€å‡º
 
-systemctl restart iptables.service #×îºóÖØÆô·À»ğÇ½Ê¹ÅäÖÃÉúĞ§
+systemctl restart iptables.service #æœ€åé‡å¯é˜²ç«å¢™ä½¿é…ç½®ç”Ÿæ•ˆ
 
-systemctl enable iptables.service #ÉèÖÃ·À»ğÇ½¿ª»úÆô¶¯
+systemctl enable iptables.service #è®¾ç½®é˜²ç«å¢™å¼€æœºå¯åŠ¨
 
 ----------------------------------------------------------------------
 
-firewall-cmd --list-ports                                     # ²é¿´¿ª·ÅµÄ¶Ë¿Ú
-firewall-cmd --list-services                                  # ²é¿´¿ª·ÅµÄ·ş
+firewall-cmd --list-ports                                     # æŸ¥çœ‹å¼€æ”¾çš„ç«¯å£
+firewall-cmd --list-services                                  # æŸ¥çœ‹å¼€æ”¾çš„æœ
 
 
-1¡¢firewalldµÄ»ù±¾Ê¹ÓÃ
-Æô¶¯£º systemctl start firewalld
-²é¿´×´Ì¬£º systemctl status firewalld 
-Í£Ö¹£º systemctl disable firewalld
-½ûÓÃ£º systemctl stop firewalld
+1ã€firewalldçš„åŸºæœ¬ä½¿ç”¨
+å¯åŠ¨ï¼š systemctl start firewalld
+æŸ¥çœ‹çŠ¶æ€ï¼š systemctl status firewalld 
+åœæ­¢ï¼š systemctl disable firewalld
+ç¦ç”¨ï¼š systemctl stop firewalld
  
-2.systemctlÊÇCentOS7µÄ·şÎñ¹ÜÀí¹¤¾ßÖĞÖ÷ÒªµÄ¹¤¾ß£¬ËüÈÚºÏÖ®Ç°serviceºÍchkconfigµÄ¹¦ÄÜÓÚÒ»Ìå¡£
-Æô¶¯Ò»¸ö·şÎñ£ºsystemctl start firewalld.service
-¹Ø±ÕÒ»¸ö·şÎñ£ºsystemctl stop firewalld.service
-ÖØÆôÒ»¸ö·şÎñ£ºsystemctl restart firewalld.service
-ÏÔÊ¾Ò»¸ö·şÎñµÄ×´Ì¬£ºsystemctl status firewalld.service
-ÔÚ¿ª»úÊ±ÆôÓÃÒ»¸ö·şÎñ£ºsystemctl enable firewalld.service
-ÔÚ¿ª»úÊ±½ûÓÃÒ»¸ö·şÎñ£ºsystemctl disable firewalld.service
-²é¿´·şÎñÊÇ·ñ¿ª»úÆô¶¯£ºsystemctl is-enabled firewalld.service
-²é¿´ÒÑÆô¶¯µÄ·şÎñÁĞ±í£ºsystemctl list-unit-files|grep enabled
-²é¿´Æô¶¯Ê§°ÜµÄ·şÎñÁĞ±í£ºsystemctl --failed
+2.systemctlæ˜¯CentOS7çš„æœåŠ¡ç®¡ç†å·¥å…·ä¸­ä¸»è¦çš„å·¥å…·ï¼Œå®ƒèåˆä¹‹å‰serviceå’Œchkconfigçš„åŠŸèƒ½äºä¸€ä½“ã€‚
+å¯åŠ¨ä¸€ä¸ªæœåŠ¡ï¼šsystemctl start firewalld.service
+å…³é—­ä¸€ä¸ªæœåŠ¡ï¼šsystemctl stop firewalld.service
+é‡å¯ä¸€ä¸ªæœåŠ¡ï¼šsystemctl restart firewalld.service
+æ˜¾ç¤ºä¸€ä¸ªæœåŠ¡çš„çŠ¶æ€ï¼šsystemctl status firewalld.service
+åœ¨å¼€æœºæ—¶å¯ç”¨ä¸€ä¸ªæœåŠ¡ï¼šsystemctl enable firewalld.service
+åœ¨å¼€æœºæ—¶ç¦ç”¨ä¸€ä¸ªæœåŠ¡ï¼šsystemctl disable firewalld.service
+æŸ¥çœ‹æœåŠ¡æ˜¯å¦å¼€æœºå¯åŠ¨ï¼šsystemctl is-enabled firewalld.service
+æŸ¥çœ‹å·²å¯åŠ¨çš„æœåŠ¡åˆ—è¡¨ï¼šsystemctl list-unit-files|grep enabled
+æŸ¥çœ‹å¯åŠ¨å¤±è´¥çš„æœåŠ¡åˆ—è¡¨ï¼šsystemctl --failed
 
-3.ÅäÖÃfirewalld-cmd
+3.é…ç½®firewalld-cmd
 
-²é¿´°æ±¾£º firewall-cmd --version
-²é¿´°ïÖú£º firewall-cmd --help
-ÏÔÊ¾×´Ì¬£º firewall-cmd --state
-²é¿´ËùÓĞ´ò¿ªµÄ¶Ë¿Ú£º firewall-cmd --zone=public --list-ports
-¸üĞÂ·À»ğÇ½¹æÔò£º firewall-cmd --reload
-²é¿´ÇøÓòĞÅÏ¢:  firewall-cmd --get-active-zones
-²é¿´Ö¸¶¨½Ó¿ÚËùÊôÇøÓò£º firewall-cmd --get-zone-of-interface=eth0
-¾Ü¾øËùÓĞ°ü£ºfirewall-cmd --panic-on
-È¡Ïû¾Ü¾ø×´Ì¬£º firewall-cmd --panic-off
-²é¿´ÊÇ·ñ¾Ü¾ø£º firewall-cmd --query-panic
+æŸ¥çœ‹ç‰ˆæœ¬ï¼š firewall-cmd --version
+æŸ¥çœ‹å¸®åŠ©ï¼š firewall-cmd --help
+æ˜¾ç¤ºçŠ¶æ€ï¼š firewall-cmd --state
+æŸ¥çœ‹æ‰€æœ‰æ‰“å¼€çš„ç«¯å£ï¼š firewall-cmd --zone=public --list-ports
+æ›´æ–°é˜²ç«å¢™è§„åˆ™ï¼š firewall-cmd --reload
+æŸ¥çœ‹åŒºåŸŸä¿¡æ¯:  firewall-cmd --get-active-zones
+æŸ¥çœ‹æŒ‡å®šæ¥å£æ‰€å±åŒºåŸŸï¼š firewall-cmd --get-zone-of-interface=eth0
+æ‹’ç»æ‰€æœ‰åŒ…ï¼šfirewall-cmd --panic-on
+å–æ¶ˆæ‹’ç»çŠ¶æ€ï¼š firewall-cmd --panic-off
+æŸ¥çœ‹æ˜¯å¦æ‹’ç»ï¼š firewall-cmd --query-panic
 
-ÄÇÔõÃ´¿ªÆôÒ»¸ö¶Ë¿ÚÄØ
-Ìí¼Ó
-firewall-cmd --zone=public --add-port=80/tcp --permanent    £¨--permanentÓÀ¾ÃÉúĞ§£¬Ã»ÓĞ´Ë²ÎÊıÖØÆôºóÊ§Ğ§£©
+é‚£æ€ä¹ˆå¼€å¯ä¸€ä¸ªç«¯å£å‘¢
+æ·»åŠ 
+firewall-cmd --zone=public --add-port=80/tcp --permanent    ï¼ˆ--permanentæ°¸ä¹…ç”Ÿæ•ˆï¼Œæ²¡æœ‰æ­¤å‚æ•°é‡å¯åå¤±æ•ˆï¼‰
 firewall-cmd --zone=public --add-service=http --permanent
-ÖØĞÂÔØÈë
+é‡æ–°è½½å…¥
 firewall-cmd --reload
-²é¿´
+æŸ¥çœ‹
 firewall-cmd --zone=public --query-port=80/tcp
-É¾³ı
+åˆ é™¤
 firewall-cmd --zone=public --remove-port=22/tcp --permanent
 firewall-cmd --zone=public --remove-service=http
 
 ----------------------------------------------------------------------
 
-×¢ÊÍµô²»ĞèÒªµÄÓÃ»§ºÍÓÃ»§×é
+æ³¨é‡Šæ‰ä¸éœ€è¦çš„ç”¨æˆ·å’Œç”¨æˆ·ç»„
 vi /etc/passwd
 userdel adm
 userdel lp
@@ -386,79 +386,79 @@ groupdel slipusers
 
 ----------------------------------------------------------------------
 
-ÕË»§°²È«
-1.1 Ëø¶¨ÏµÍ³ÖĞ¶àÓàµÄ×Ô½¨ÕÊºÅ
-¼ì²é·½·¨:
-Ö´ĞĞÃüÁî
+è´¦æˆ·å®‰å…¨
+1.1 é”å®šç³»ç»Ÿä¸­å¤šä½™çš„è‡ªå»ºå¸å·
+æ£€æŸ¥æ–¹æ³•:
+æ‰§è¡Œå‘½ä»¤
 #cat /etc/passwd
 #cat /etc/shadow
-²é¿´ÕË»§¡¢¿ÚÁîÎÄ¼ş£¬ÓëÏµÍ³¹ÜÀíÔ±È·ÈÏ²»±ØÒªµÄÕËºÅ¡£¶ÔÓÚÒ»Ğ©±£ÁôµÄÏµÍ³Î±ÕÊ»§Èç£ºbin, sys£¬adm£¬uucp£¬lp, nuucp£¬hpdb, www, daemonµÈ¿É¸ù¾İĞèÒªËø¶¨µÇÂ½¡£
-±¸·İ·½·¨£º
+æŸ¥çœ‹è´¦æˆ·ã€å£ä»¤æ–‡ä»¶ï¼Œä¸ç³»ç»Ÿç®¡ç†å‘˜ç¡®è®¤ä¸å¿…è¦çš„è´¦å·ã€‚å¯¹äºä¸€äº›ä¿ç•™çš„ç³»ç»Ÿä¼ªå¸æˆ·å¦‚ï¼šbin, sysï¼Œadmï¼Œuucpï¼Œlp, nuucpï¼Œhpdb, www, daemonç­‰å¯æ ¹æ®éœ€è¦é”å®šç™»é™†ã€‚
+å¤‡ä»½æ–¹æ³•ï¼š
 #cp -p /etc/passwd /etc/passwd_bak
 #cp -p /etc/shadow /etc/shadow_bak
-¼Ó¹Ì·½·¨:
-Ê¹ÓÃÃüÁîpasswd -l <ÓÃ»§Ãû>Ëø¶¨²»±ØÒªµÄÕËºÅ¡£
-Ê¹ÓÃÃüÁîpasswd -u <ÓÃ»§Ãû>½âËøĞèÒª»Ö¸´µÄÕËºÅ¡£
+åŠ å›ºæ–¹æ³•:
+ä½¿ç”¨å‘½ä»¤passwd -l <ç”¨æˆ·å>é”å®šä¸å¿…è¦çš„è´¦å·ã€‚
+ä½¿ç”¨å‘½ä»¤passwd -u <ç”¨æˆ·å>è§£é”éœ€è¦æ¢å¤çš„è´¦å·ã€‚
 
-¼ì²éshadowÖĞ¿Õ¿ÚÁîÕÊºÅ
-¼ì²é·½·¨£º
+æ£€æŸ¥shadowä¸­ç©ºå£ä»¤å¸å·
+æ£€æŸ¥æ–¹æ³•ï¼š
 #awk -F: '($2 == "") { print $1 }' /etc/shadow
-±¸·İ·½·¨£ºcp -p /etc/shadow /etc/shadow_bak
-¼Ó¹Ì·½·¨£º¶Ô¿Õ¿ÚÁîÕËºÅ½øĞĞËø¶¨£¬»òÒªÇóÔö¼ÓÃÜÂë
+å¤‡ä»½æ–¹æ³•ï¼šcp -p /etc/shadow /etc/shadow_bak
+åŠ å›ºæ–¹æ³•ï¼šå¯¹ç©ºå£ä»¤è´¦å·è¿›è¡Œé”å®šï¼Œæˆ–è¦æ±‚å¢åŠ å¯†ç 
 
-ÓÃ»§¼ø±ğÉèÖÃÕÊ»§Ëø¶¨µÇÂ¼Ê§°ÜËø¶¨´ÎÊı¡¢Ëø¶¨Ê±¼ä
-# cat /etc/pam.d/system-auth   ²é¿´ÓĞÎŞauth required pam_tally.soÌõÄ¿µÄÉèÖÃ
+ç”¨æˆ·é‰´åˆ«è®¾ç½®å¸æˆ·é”å®šç™»å½•å¤±è´¥é”å®šæ¬¡æ•°ã€é”å®šæ—¶é—´
+# cat /etc/pam.d/system-auth   æŸ¥çœ‹æœ‰æ— auth required pam_tally.soæ¡ç›®çš„è®¾ç½®
 # vi /etc/pam.d/system-auth
-auth required pam_tally.so onerr=fail deny=6 unlock_time=300  ÉèÖÃÎªÃÜÂëÁ¬Ğø´íÎó6´ÎËø¶¨£¬Ëø¶¨Ê±¼ä300Ãë
-½âËøÓÃ»§ faillog  -u  <ÓÃ»§Ãû>  -r
+auth required pam_tally.so onerr=fail deny=6 unlock_time=300  è®¾ç½®ä¸ºå¯†ç è¿ç»­é”™è¯¯6æ¬¡é”å®šï¼Œé”å®šæ—¶é—´300ç§’
+è§£é”ç”¨æˆ· faillog  -u  <ç”¨æˆ·å>  -r
 
-ĞŞ¸ÄÕÊ»§TMOUTÖµ£¬ÉèÖÃ×Ô¶¯×¢ÏúÊ±¼ä
-¼ì²é·½·¨£º
-# cat /etc/profile    # ²é¿´ÓĞÎŞTMOUTµÄÉèÖÃ
+ä¿®æ”¹å¸æˆ·TMOUTå€¼ï¼Œè®¾ç½®è‡ªåŠ¨æ³¨é”€æ—¶é—´
+æ£€æŸ¥æ–¹æ³•ï¼š
+# cat /etc/profile    # æŸ¥çœ‹æœ‰æ— TMOUTçš„è®¾ç½®
 # vi /etc/profile
-export TMOUT=600    # ÎŞ²Ù×÷600Ãëºó×Ô¶¯ÍË³ö
+export TMOUT=600    # æ— æ“ä½œ600ç§’åè‡ªåŠ¨é€€å‡º
 
 ----------------------------------------------------------------------
 
-¼ì²éÃÜÂëÖØÓÃÊÇ·ñÊÜÏŞÖÆ
+æ£€æŸ¥å¯†ç é‡ç”¨æ˜¯å¦å—é™åˆ¶
 
-ÔÚ /etc/pam.d/password-auth ºÍ /etc/pam.d/system-auth ÖĞ
-password sufficient pam_unix.so ÕâĞĞµÄÄ©Î²ÅäÖÃremember²ÎÊıÎª5-24Ö®¼ä£¬Ô­À´µÄÄÚÈİ²»ÓÃ¸ü¸Ä£¬Ö»ÔÚÄ©Î²¼ÓÁËremember=5¡£
+åœ¨ /etc/pam.d/password-auth å’Œ /etc/pam.d/system-auth ä¸­
+password sufficient pam_unix.so è¿™è¡Œçš„æœ«å°¾é…ç½®rememberå‚æ•°ä¸º5-24ä¹‹é—´ï¼ŒåŸæ¥çš„å†…å®¹ä¸ç”¨æ›´æ”¹ï¼Œåªåœ¨æœ«å°¾åŠ äº†remember=5ã€‚
 
 ----------------------------------------------------------------------
 
-ÃÜÂë¸´ÔÓ¶È¼ì²é
+å¯†ç å¤æ‚åº¦æ£€æŸ¥
 
-±à¼­/etc/security/pwquality.conf£¬°Ñminlen£¨ÃÜÂë×îĞ¡³¤¶È£©ÉèÖÃÎª8-32Î»£¬
-°Ñminclass£¨ÖÁÉÙ°üº¬Ğ¡Ğ´×ÖÄ¸¡¢´óĞ´×ÖÄ¸¡¢Êı×Ö¡¢ÌØÊâ×Ö·ûµÈ4Àà×Ö·ûÖĞµÈ3Àà»ò4Àà£©ÉèÖÃÎª3»ò4¡£Èç£º
+ç¼–è¾‘/etc/security/pwquality.confï¼ŒæŠŠminlenï¼ˆå¯†ç æœ€å°é•¿åº¦ï¼‰è®¾ç½®ä¸º8-32ä½ï¼Œ
+æŠŠminclassï¼ˆè‡³å°‘åŒ…å«å°å†™å­—æ¯ã€å¤§å†™å­—æ¯ã€æ•°å­—ã€ç‰¹æ®Šå­—ç¬¦ç­‰4ç±»å­—ç¬¦ä¸­ç­‰3ç±»æˆ–4ç±»ï¼‰è®¾ç½®ä¸º3æˆ–4ã€‚å¦‚ï¼š
 
 minlen=10
 minclass=3
 
 ----------------------------------------------------------------------
 
-½ûÖ¹±» ping ÓĞÔòĞŞ¸Ä£¬ÎŞÔòÌí¼Ó
+ç¦æ­¢è¢« ping æœ‰åˆ™ä¿®æ”¹ï¼Œæ— åˆ™æ·»åŠ 
 # vi /etc/sysctl.conf
 et.ipv4.icmp_echo_ignore_all=0
 
-·À»ğÇ½½ûÖ¹±»ping
+é˜²ç«å¢™ç¦æ­¢è¢«ping
 # firewall-cmd --permanent --add-rich-rule='rule protocol value=icmp drop'
 # firewall-cmd --reload
 
 ----------------------------------------------------------------------
 
-vi /etc/host.conf ¸ÃÎÄ¼şÖ¸¶¨ÈçºÎ½âÎöÖ÷»úÃû¡£LinuxÍ¨¹ı½âÎöÆ÷¿âÀ´»ñµÃÖ÷»úÃû¶ÔÓ¦µÄIPµØÖ·¡£
+vi /etc/host.conf è¯¥æ–‡ä»¶æŒ‡å®šå¦‚ä½•è§£æä¸»æœºåã€‚Linuxé€šè¿‡è§£æå™¨åº“æ¥è·å¾—ä¸»æœºåå¯¹åº”çš„IPåœ°å€ã€‚
 order  bind,hosts
 multi  on
 nospoof  on
 
-order  bind,hosts Ö¸¶¨Ö÷»úÃû²éÑ¯Ë³Ğò£¬ÕâÀï¹æ¶¨ÏÈÊ¹ÓÃDNSÀ´½âÎöÓòÃû£¬È»ºóÔÙ²éÑ¯¡°/etc/hosts¡±ÎÄ¼ş(Ò²¿ÉÒÔÏà·´)¡£
-multi  on Ö¸¶¨ÊÇ·ñ¡°/etc/hosts¡±ÎÄ¼şÖĞÖ¸¶¨µÄÖ÷»ú¿ÉÒÔÓĞ¶à¸öµØÖ·£¬ÓµÓĞ¶à¸öIPµØÖ·µÄÖ÷»úÒ»°ã³ÆÎª¶àÑ¨Ö÷»ú¡£
-nospoof  on Ö¸²»ÔÊĞí¶Ô¸Ã·şÎñÆ÷½øĞĞIPµØÖ·ÆÛÆ­¡£IPÆÛÆ­ÊÇÒ»ÖÖ¹¥»÷ÏµÍ³°²È«µÄÊÖ¶Î£¬Í¨¹ı°ÑIPµØÖ·Î±×°³É±ğµÄ¼ÆËã»ú£¬À´È¡µÃÆäËü¼ÆËã»úµÄĞÅÈÎ¡£
+order  bind,hosts æŒ‡å®šä¸»æœºåæŸ¥è¯¢é¡ºåºï¼Œè¿™é‡Œè§„å®šå…ˆä½¿ç”¨DNSæ¥è§£æåŸŸåï¼Œç„¶åå†æŸ¥è¯¢â€œ/etc/hostsâ€æ–‡ä»¶(ä¹Ÿå¯ä»¥ç›¸å)ã€‚
+multi  on æŒ‡å®šæ˜¯å¦â€œ/etc/hostsâ€æ–‡ä»¶ä¸­æŒ‡å®šçš„ä¸»æœºå¯ä»¥æœ‰å¤šä¸ªåœ°å€ï¼Œæ‹¥æœ‰å¤šä¸ªIPåœ°å€çš„ä¸»æœºä¸€èˆ¬ç§°ä¸ºå¤šç©´ä¸»æœºã€‚
+nospoof  on æŒ‡ä¸å…è®¸å¯¹è¯¥æœåŠ¡å™¨è¿›è¡ŒIPåœ°å€æ¬ºéª—ã€‚IPæ¬ºéª—æ˜¯ä¸€ç§æ”»å‡»ç³»ç»Ÿå®‰å…¨çš„æ‰‹æ®µï¼Œé€šè¿‡æŠŠIPåœ°å€ä¼ªè£…æˆåˆ«çš„è®¡ç®—æœºï¼Œæ¥å–å¾—å…¶å®ƒè®¡ç®—æœºçš„ä¿¡ä»»ã€‚
 
 ----------------------------------------------------------------------
 
-È¥³ıÏµÍ³Ïà¹ØĞÅÏ¢
+å»é™¤ç³»ç»Ÿç›¸å…³ä¿¡æ¯
 
 echo "Welcome to Server" >/etc/issue
 
@@ -472,9 +472,9 @@ CentOS release 6.5 (Final)
 
 ----------------------------------------------------------------------
 
-vi /etc/php.ini   #±à¼­
+vi /etc/php.ini   #ç¼–è¾‘
 
-date.timezone= PRC     #ÔÚ946ĞĞ °ÑÇ°ÃæµÄ·ÖºÅÈ¥µô£¬¸ÄÎªdate.timezone = PRC
+date.timezone= PRC     #åœ¨946è¡Œ æŠŠå‰é¢çš„åˆ†å·å»æ‰ï¼Œæ”¹ä¸ºdate.timezone = PRC
 
 disable_functions = phpinfo,eval,passthru,exec,system,chroot,scandir,chgrp,
 
@@ -498,27 +498,27 @@ posix_times,posix_ttyname,posix_uname
 
 ----------------------------------------------------------------------
 
-php°æ±¾ºÅÒş²Ø
+phpç‰ˆæœ¬å·éšè—
 /usr/local/php/etc/php.ini
 
 expose_php = Off
 
-nginxµÄ°æ±¾ºÅÒş²Ø
+nginxçš„ç‰ˆæœ¬å·éšè—
 
 /usr/local/nginx/conf/nginx.conf
-ÔÚhttp×Ö¶ÎÉÏ£¬Ìí¼ÓÒÔÏÂÒ»ĞĞ´úÂë¼´¿ÉÊµÏÖÁË£º
+åœ¨httpå­—æ®µä¸Šï¼Œæ·»åŠ ä»¥ä¸‹ä¸€è¡Œä»£ç å³å¯å®ç°äº†ï¼š
 
 server_tokens off;
 
 /usr/local/nginx/conf/fastcgi.conf
-É¾³ı $nginx_version
+åˆ é™¤ $nginx_version
 fastcgi_param  SERVER_SOFTWARE    nginx/$nginx_version; 
 
 /usr/local/nginx/conf/fastcgi_params
-É¾³ı $nginx_version
+åˆ é™¤ $nginx_version
 fastcgi_param  SERVER_SOFTWARE    nginx/$nginx_version;
 
-apache°æ±¾ºÅÒş²Ø 
+apacheç‰ˆæœ¬å·éšè— 
 
 /usr/local/apache/conf/httpd.conf
 
@@ -527,42 +527,42 @@ ServerSignature Off
 
 ----------------------------------------------------------------------
 
-nginxµÄaccess_log¹Ø±Õ
+nginxçš„access_logå…³é—­
 
-ÓÃNginx×öWeb·şÎñÆ÷£¬Èç¹ûÃ»ÓĞ´¦ÀíºÃÈÕÖ¾£¬ÈÕÖ¾ÎÄ¼ş¿ÉÄÜ»áºÜ¿Ö²À~10G¡¢20G
+ç”¨NginxåšWebæœåŠ¡å™¨ï¼Œå¦‚æœæ²¡æœ‰å¤„ç†å¥½æ—¥å¿—ï¼Œæ—¥å¿—æ–‡ä»¶å¯èƒ½ä¼šå¾ˆææ€–~10Gã€20G
 
-¿ÉÒÔĞŞ¸Änginx.conf ÕÒµ½access_log£º
+å¯ä»¥ä¿®æ”¹nginx.conf æ‰¾åˆ°access_logï¼š
 
 access_log /dev/null;
 error_log /dev/null;
 
-¿ªÆôNginxµÄWEB·ÃÎÊÈÕÖ¾¼ÇÂ¼£º 
-1¡¢´ò¿ªconf/nginx.confÅäÖÃÎÄ¼ş£¬º¬Ö÷ÅäÖÃÎÄ¼şÖĞincludeÏî°üº¬µÄ×ÓÅäÖÃÎÄ¼ş£» 
-2¡¢ÔÚhttpÏÂÅäÖÃaccess_logÏî
+å¼€å¯Nginxçš„WEBè®¿é—®æ—¥å¿—è®°å½•ï¼š 
+1ã€æ‰“å¼€conf/nginx.confé…ç½®æ–‡ä»¶ï¼Œå«ä¸»é…ç½®æ–‡ä»¶ä¸­includeé¡¹åŒ…å«çš„å­é…ç½®æ–‡ä»¶ï¼› 
+2ã€åœ¨httpä¸‹é…ç½®access_logé¡¹
 access_log logs/host.access.log main; 
-3¡¢²¢ÔÚÖ÷ÅäÖÃÎÄ¼ş£¬¼°Ö÷ÅäÖÃÎÄ¼şÏÂµÄincludeÎÄ¼şÖĞ É¾³ıoffÏî»òÅäÖÃÎªÊÊµ±Öµ
+3ã€å¹¶åœ¨ä¸»é…ç½®æ–‡ä»¶ï¼ŒåŠä¸»é…ç½®æ–‡ä»¶ä¸‹çš„includeæ–‡ä»¶ä¸­ åˆ é™¤offé¡¹æˆ–é…ç½®ä¸ºé€‚å½“å€¼
 
 ----------------------------------------------------------------------
 
-Òş²ØNginxºó¶Ë·şÎñÖ¸¶¨HeaderµÄ×´Ì¬£º 
-1¡¢´ò¿ªconf/nginx.confÅäÖÃÎÄ¼ş£» 
-2¡¢ÔÚhttpÏÂÅäÖÃproxy_hide_headerÏî£» Ôö¼Ó»òĞŞ¸ÄÎª proxy_hide_header X-Powered-By; proxy_hide_header Server;
+éšè—Nginxåç«¯æœåŠ¡æŒ‡å®šHeaderçš„çŠ¶æ€ï¼š 
+1ã€æ‰“å¼€conf/nginx.confé…ç½®æ–‡ä»¶ï¼› 
+2ã€åœ¨httpä¸‹é…ç½®proxy_hide_headeré¡¹ï¼› å¢åŠ æˆ–ä¿®æ”¹ä¸º proxy_hide_header X-Powered-By; proxy_hide_header Server;
 
 ----------------------------------------------------------------------
 
-Nginx ½ûÖ¹IP·ÃÎÊ¼°Î´°ó¶¨µÄÓòÃûÌø×ª
+Nginx ç¦æ­¢IPè®¿é—®åŠæœªç»‘å®šçš„åŸŸåè·³è½¬
 listen 80 default;
-ºóÃæµÄdefault²ÎÊı±íÊ¾Õâ¸öÊÇÄ¬ÈÏĞéÄâÖ÷»ú¡£
+åé¢çš„defaultå‚æ•°è¡¨ç¤ºè¿™ä¸ªæ˜¯é»˜è®¤è™šæ‹Ÿä¸»æœºã€‚
 
-Õâ¸öÉèÖÃ·Ç³£ÓĞÓÃ¡£
-±ÈÈç±ğÈËÍ¨¹ıip»òÕßÎ´ÖªÓòÃû·ÃÎÊÄãµÄÍøÕ¾µÄÊ±ºò£¬ÄãÏ£Íû½ûÖ¹ÏÔÊ¾ÈÎºÎÓĞĞ§ÄÚÈİ£¬¿ÉÒÔ¸øËû·µ»Ø500.
-Ä¿Ç°¹úÄÚºÜ¶à»ú·¿¶¼ÒªÇóÍøÕ¾Ö÷¹Ø±Õ¿ÕÖ÷»úÍ·£¬·ÀÖ¹Î´±¸°¸µÄÓòÃûÖ¸Ïò¹ıÀ´Ôì³ÉÂé·³¡£¾Í¿ÉÒÔÕâÑùÉèÖÃ£º
+è¿™ä¸ªè®¾ç½®éå¸¸æœ‰ç”¨ã€‚
+æ¯”å¦‚åˆ«äººé€šè¿‡ipæˆ–è€…æœªçŸ¥åŸŸåè®¿é—®ä½ çš„ç½‘ç«™çš„æ—¶å€™ï¼Œä½ å¸Œæœ›ç¦æ­¢æ˜¾ç¤ºä»»ä½•æœ‰æ•ˆå†…å®¹ï¼Œå¯ä»¥ç»™ä»–è¿”å›500.
+ç›®å‰å›½å†…å¾ˆå¤šæœºæˆ¿éƒ½è¦æ±‚ç½‘ç«™ä¸»å…³é—­ç©ºä¸»æœºå¤´ï¼Œé˜²æ­¢æœªå¤‡æ¡ˆçš„åŸŸåæŒ‡å‘è¿‡æ¥é€ æˆéº»çƒ¦ã€‚å°±å¯ä»¥è¿™æ ·è®¾ç½®ï¼š
 server {
 listen 80 default;
 return 444;
 }
 
-Ò²¿ÉÒÔ°ÑÕâĞ©Á÷Á¿ÊÕ¼¯ÆğÀ´£¬µ¼Èëµ½×Ô¼ºµÄÍøÕ¾£¬Ö»Òª×öÒÔÏÂÌø×ªÉèÖÃ¾Í¿ÉÒÔ£º
+ä¹Ÿå¯ä»¥æŠŠè¿™äº›æµé‡æ”¶é›†èµ·æ¥ï¼Œå¯¼å…¥åˆ°è‡ªå·±çš„ç½‘ç«™ï¼Œåªè¦åšä»¥ä¸‹è·³è½¬è®¾ç½®å°±å¯ä»¥ï¼š
 server {
 listen 80 default;
 rewrite ^(.*) http://www.linuxidc.com permanent;
@@ -584,7 +584,7 @@ server
 
 ----------------------------------------------------------------------
 
-ÈçÏÂÊÇÔÚnginxµÄLB´úÀí²ãÊ¹ÓÃ¹ıµÄÒ»¸öÅäÖÃ£¨nginx.confÖĞÅäÖÃ£©£º
+å¦‚ä¸‹æ˜¯åœ¨nginxçš„LBä»£ç†å±‚ä½¿ç”¨è¿‡çš„ä¸€ä¸ªé…ç½®ï¼ˆnginx.confä¸­é…ç½®ï¼‰ï¼š
 
         log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
                           '"$http_host" - $status $body_bytes_sent "$http_referer" '
@@ -592,96 +592,96 @@ server
                           '"$request_time" - $ssl_protocol - $ssl_cipher';
 
 
-²ÎÊı                      ËµÃ÷                                         Ê¾Àı
+å‚æ•°                      è¯´æ˜                                         ç¤ºä¾‹
 
-$remote_addr, $http_x_forwarded_for             ¿Í»§¶ËµØÖ·             211.28.65.253
-$remote_user             ¿Í»§¶ËÓÃ»§Ãû³Æ                                --
-$time_local              ·ÃÎÊÊ±¼äºÍÊ±Çø                                18/Jul/2012:17:00:01 +0800
-$request                 ÇëÇóµÄURIºÍHTTPĞ­Òé                           "GET /article-10000.html HTTP/1.1"
-$http_host               ÇëÇóµØÖ·£¬¼´ä¯ÀÀÆ÷ÖĞÄãÊäÈëµÄµØÖ·£¨IP»òÓòÃû£©     www.k82.org 192.168.100.100
-$status                  HTTPÇëÇó×´Ì¬                                  200
-$body_bytes_sent         ·¢ËÍ¸ø¿Í»§¶ËµÄ×Ö½ÚÊı£¬²»°üÀ¨ÏìÓ¦Í·µÄ´óĞ¡£» ¸Ã±äÁ¿ÓëApacheÄ£¿émod_log_configÀïµÄ¡°%B¡±²ÎÊı¼æÈİ¡£
-$bytes_sent              ·¢ËÍ¸ø¿Í»§¶ËµÄ×Ü×Ö½ÚÊı¡£
-$connection              Á¬½ÓµÄĞòÁĞºÅ¡£
-$connection_requests     µ±Ç°Í¨¹ıÒ»¸öÁ¬½Ó»ñµÃµÄÇëÇóÊıÁ¿¡£
-$upstream_status         upstream×´Ì¬                                  200
-$body_bytes_sent         ·¢ËÍ¸ø¿Í»§¶ËÎÄ¼şÄÚÈİ´óĞ¡                        1547
-$http_referer            urlÌø×ªÀ´Ô´                                   https://www.baidu.com/
-$http_user_agent         ÓÃ»§ÖÕ¶Ëä¯ÀÀÆ÷µÈĞÅÏ¢                          "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1;....
-$ssl_protocol            SSLĞ­Òé°æ±¾                                   TLSv1
-$ssl_cipher              ½»»»Êı¾İÖĞµÄËã·¨                               RC4-SHA
-$upstream_addr           ºóÌ¨upstreamµÄµØÖ·£¬¼´ÕæÕıÌá¹©·şÎñµÄÖ÷»úµØÖ·     10.10.10.100:80
-$request_time            Õû¸öÇëÇóµÄ×ÜÊ±¼ä                               0.205
-$request_length          ÇëÇóµÄ³¤¶È£¨°üÀ¨ÇëÇóĞĞ£¬ÇëÇóÍ·ºÍÇëÇóÕıÎÄ£©¡£
-$upstream_response_time  ÇëÇó¹ı³ÌÖĞ£¬upstreamÏìÓ¦Ê±¼ä                    0.002
+$remote_addr, $http_x_forwarded_for             å®¢æˆ·ç«¯åœ°å€             211.28.65.253
+$remote_user             å®¢æˆ·ç«¯ç”¨æˆ·åç§°                                --
+$time_local              è®¿é—®æ—¶é—´å’Œæ—¶åŒº                                18/Jul/2012:17:00:01 +0800
+$request                 è¯·æ±‚çš„URIå’ŒHTTPåè®®                           "GET /article-10000.html HTTP/1.1"
+$http_host               è¯·æ±‚åœ°å€ï¼Œå³æµè§ˆå™¨ä¸­ä½ è¾“å…¥çš„åœ°å€ï¼ˆIPæˆ–åŸŸåï¼‰     www.k82.org 192.168.100.100
+$status                  HTTPè¯·æ±‚çŠ¶æ€                                  200
+$body_bytes_sent         å‘é€ç»™å®¢æˆ·ç«¯çš„å­—èŠ‚æ•°ï¼Œä¸åŒ…æ‹¬å“åº”å¤´çš„å¤§å°ï¼› è¯¥å˜é‡ä¸Apacheæ¨¡å—mod_log_configé‡Œçš„â€œ%Bâ€å‚æ•°å…¼å®¹ã€‚
+$bytes_sent              å‘é€ç»™å®¢æˆ·ç«¯çš„æ€»å­—èŠ‚æ•°ã€‚
+$connection              è¿æ¥çš„åºåˆ—å·ã€‚
+$connection_requests     å½“å‰é€šè¿‡ä¸€ä¸ªè¿æ¥è·å¾—çš„è¯·æ±‚æ•°é‡ã€‚
+$upstream_status         upstreamçŠ¶æ€                                  200
+$body_bytes_sent         å‘é€ç»™å®¢æˆ·ç«¯æ–‡ä»¶å†…å®¹å¤§å°                        1547
+$http_referer            urlè·³è½¬æ¥æº                                   https://www.baidu.com/
+$http_user_agent         ç”¨æˆ·ç»ˆç«¯æµè§ˆå™¨ç­‰ä¿¡æ¯                          "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1;....
+$ssl_protocol            SSLåè®®ç‰ˆæœ¬                                   TLSv1
+$ssl_cipher              äº¤æ¢æ•°æ®ä¸­çš„ç®—æ³•                               RC4-SHA
+$upstream_addr           åå°upstreamçš„åœ°å€ï¼Œå³çœŸæ­£æä¾›æœåŠ¡çš„ä¸»æœºåœ°å€     10.10.10.100:80
+$request_time            æ•´ä¸ªè¯·æ±‚çš„æ€»æ—¶é—´                               0.205
+$request_length          è¯·æ±‚çš„é•¿åº¦ï¼ˆåŒ…æ‹¬è¯·æ±‚è¡Œï¼Œè¯·æ±‚å¤´å’Œè¯·æ±‚æ­£æ–‡ï¼‰ã€‚
+$upstream_response_time  è¯·æ±‚è¿‡ç¨‹ä¸­ï¼Œupstreamå“åº”æ—¶é—´                    0.002
 
 ----------------------------------------------------------------------
 
-MySQLÈÕÖ¾
+MySQLæ—¥å¿—
 
 /etc/my.cnf
 
-ĞŞ¸ÄÄ¬ÈÏ3306¶Ë¿Ú
+ä¿®æ”¹é»˜è®¤3306ç«¯å£
 port=3506
 
-½ûÓÃlocal-infileÑ¡Ïî
-ÔÚmysqld ¶ÎÂäÖĞÅäÖÃlocal-infile²ÎÊıÎª0£¬²¢ÖØÆômysql·şÎñ
+ç¦ç”¨local-infileé€‰é¡¹
+åœ¨mysqld æ®µè½ä¸­é…ç½®local-infileå‚æ•°ä¸º0ï¼Œå¹¶é‡å¯mysqlæœåŠ¡
 local-infile=0
 
-½ûÓÃsymbolic-linksÑ¡Ïî
-ÔÚmysqld ¶ÎÂäÖĞÅäÖÃsymbolic-links=0£¬5.6¼°ÒÔÉÏ°æ±¾Ó¦¸ÃÅäÖÃÎªskip_symbolic_links=yes
+ç¦ç”¨symbolic-linksé€‰é¡¹
+åœ¨mysqld æ®µè½ä¸­é…ç½®symbolic-links=0ï¼Œ5.6åŠä»¥ä¸Šç‰ˆæœ¬åº”è¯¥é…ç½®ä¸ºskip_symbolic_links=yes
 
-È·±£ÅäÖÃÁËlog-errorÑ¡Ïî
-ÔÚmysqld_safe ¶ÎÂäÖĞÅäÖÃlog-error²ÎÊı£¬<log_path>´ú±í´æ·ÅÈÕÖ¾ÎÄ¼şÂ·¾¶£¬Èç£º/var/log/mysqld.log
+ç¡®ä¿é…ç½®äº†log-erroré€‰é¡¹
+åœ¨mysqld_safe æ®µè½ä¸­é…ç½®log-errorå‚æ•°ï¼Œ<log_path>ä»£è¡¨å­˜æ”¾æ—¥å¿—æ–‡ä»¶è·¯å¾„ï¼Œå¦‚ï¼š/var/log/mysqld.log
 
 [mysqld_safe]
 log-error=/var/log/mysqld.log
 
-×Ô¶¯ÇåÀíMySQL binlogÈÕÖ¾
+è‡ªåŠ¨æ¸…ç†MySQL binlogæ—¥å¿—
 expire_logs_days = 10
 
-¹Ø±ÕMySQLÈÕÖ¾
+å…³é—­MySQLæ—¥å¿—
 #log-bin=mysql-bin 
 #binlog_format=mixed
 
 ----------------------------------------------------------------------
 
-mariadbÄ¬ÈÏµÄÊı¾İÎÄµµ´æ´¢Ä¿Â¼Îª/var/lib/mysql£¬ÒªÏë½«Ä¬ÈÏ´´½¨Ä¿Â¼¸Ä³É/data£¬ĞèÒªÒ»ÏÂ²Ù×÷£º
-1¡¢´´½¨/dataÄ¿Â¼
+mariadbé»˜è®¤çš„æ•°æ®æ–‡æ¡£å­˜å‚¨ç›®å½•ä¸º/var/lib/mysqlï¼Œè¦æƒ³å°†é»˜è®¤åˆ›å»ºç›®å½•æ”¹æˆ/dataï¼Œéœ€è¦ä¸€ä¸‹æ“ä½œï¼š
+1ã€åˆ›å»º/dataç›®å½•
       mkdir /data
-      chmod  777 /data(Òª¸øÕâ¸öÄ¿Â¼ÖÁÉÙÒª¸½¼Ó¶ÁĞ´È¨ÏŞ)
+      chmod  777 /data(è¦ç»™è¿™ä¸ªç›®å½•è‡³å°‘è¦é™„åŠ è¯»å†™æƒé™)
 
-2¡¢°Ñmariadb·şÎñÍ£µô£º
-¡¡¡¡systemctl stop mariadb.service
+2ã€æŠŠmariadbæœåŠ¡åœæ‰ï¼š
+ã€€ã€€systemctl stop mariadb.service
 
-3¡¢°Ñ/var/lib/mysqlÕû¸öÄ¿Â¼¸´ÖÆµ½/data
-¡¡¡¡cp -rp /var/lib/mysql/*¡¡/data/
-¡¡¡¡ÕâÑù¾Í°ÑMySQLµÄÊı¾İÎÄµµ¸´ÖÆµ½ÁË/dataÏÂ
-¡¡¡¡-p »ò --preserve    ±£ÁôÔ´ÎÄ¼ş»òÄ¿Â¼µÄÊôĞÔ£¬°üÀ¨ËùÓĞÕß¡¢ËùÊô×é¡¢È¨ÏŞÓëÊ±¼ä
+3ã€æŠŠ/var/lib/mysqlæ•´ä¸ªç›®å½•å¤åˆ¶åˆ°/data
+ã€€ã€€cp -rp /var/lib/mysql/*ã€€/data/
+ã€€ã€€è¿™æ ·å°±æŠŠMySQLçš„æ•°æ®æ–‡æ¡£å¤åˆ¶åˆ°äº†/dataä¸‹
+ã€€ã€€-p æˆ– --preserve    ä¿ç•™æºæ–‡ä»¶æˆ–ç›®å½•çš„å±æ€§ï¼ŒåŒ…æ‹¬æ‰€æœ‰è€…ã€æ‰€å±ç»„ã€æƒé™ä¸æ—¶é—´
 
-4¡¢±à¼­mariadbµÄÅäÖÃÎÄµµ/etc/my.cnf
+4ã€ç¼–è¾‘mariadbçš„é…ç½®æ–‡æ¡£/etc/my.cnf
 
-    ÔÚ[client]ÏÂÌí¼Ó£º
-    °ÑÔ­À´µÄsocket=/var/lib/mysql/mysql.sock£¬Ç°±ß¼Ó#×¢ÊÍµô£¬Ìí¼Ósocket=/data/mysql.sock£¨ÒÔ·ÀÓĞÎÊÌâÔÙ¸Ä»ØÀ´£©¡£
-    ÔÚ[mysqld]ÏÂÌí¼Ó£º
- ¡¡°ÑÔ­À´µÄsocket=/var/lib/mysql/mysql.sock£¬Ç°±ß¼Ó#×¢ÊÍµô£¬Ìí¼Ósocket=/data/mysql.sock£¨ÒÔ·ÀÓĞÎÊÌâÔÙ¸Ä»ØÀ´£©¡£
+    åœ¨[client]ä¸‹æ·»åŠ ï¼š
+    æŠŠåŸæ¥çš„socket=/var/lib/mysql/mysql.sockï¼Œå‰è¾¹åŠ #æ³¨é‡Šæ‰ï¼Œæ·»åŠ socket=/data/mysql.sockï¼ˆä»¥é˜²æœ‰é—®é¢˜å†æ”¹å›æ¥ï¼‰ã€‚
+    åœ¨[mysqld]ä¸‹æ·»åŠ ï¼š
+ ã€€æŠŠåŸæ¥çš„socket=/var/lib/mysql/mysql.sockï¼Œå‰è¾¹åŠ #æ³¨é‡Šæ‰ï¼Œæ·»åŠ socket=/data/mysql.sockï¼ˆä»¥é˜²æœ‰é—®é¢˜å†æ”¹å›æ¥ï¼‰ã€‚
 
-¡¡datadir =/datal¡¡¡¡   (ÕâĞĞÃ»ÓĞ£¬ĞèÒª×Ô¼º¼ÓÉÏ)
+ã€€datadir =/datalã€€ã€€   (è¿™è¡Œæ²¡æœ‰ï¼Œéœ€è¦è‡ªå·±åŠ ä¸Š)
     
-    ±£´æºóÍË³ö¡£
+    ä¿å­˜åé€€å‡ºã€‚
  
-5¡¢ chown -R mariadb:mariadb /home/var/mariadb
+5ã€ chown -R mariadb:mariadb /home/var/mariadb
 
     chown -R www:www /home/var/mysql.sock
 
-6¡¢ÖØĞÂÆô¶¯mariadb·şÎñ
-¡¡¡¡systemctl start mariadb.service¡£ 
+6ã€é‡æ–°å¯åŠ¨mariadbæœåŠ¡
+ã€€ã€€systemctl start mariadb.serviceã€‚ 
 
 ----------------------------------------------------------------------
 
-Apache ¹Ø±Õ access_log ²¢ÓÅ»¯ error_log
+Apache å…³é—­ access_log å¹¶ä¼˜åŒ– error_log
 
-ÔÚ Apache ÅäÖÃÎÄ¼şÀïÃæ×¢ÊÍµôÏÂÃæ¼¸ĞĞ£º
+åœ¨ Apache é…ç½®æ–‡ä»¶é‡Œé¢æ³¨é‡Šæ‰ä¸‹é¢å‡ è¡Œï¼š
 
 #<IfModule log_config_module>
 # LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
@@ -694,20 +694,20 @@ Apache ¹Ø±Õ access_log ²¢ÓÅ»¯ error_log
 # CustomLog logs/access_log common
 #</IfModule>
 
-È»ºóÖØÆô Apache WEB ·şÎñÆ÷¾Í¿ÉÒÔÁË¡£
-ÁíÍâË³±ã°Ñ error_log Ò²ÓÅ»¯ÁË£º
+ç„¶åé‡å¯ Apache WEB æœåŠ¡å™¨å°±å¯ä»¥äº†ã€‚
+å¦å¤–é¡ºä¾¿æŠŠ error_log ä¹Ÿä¼˜åŒ–äº†ï¼š
 
 LogLevel warn
 
-¸Ä³É£º
+æ”¹æˆï¼š
 
 LogLevel crit
 
 ----------------------------------------------------------------------
 
-301ÖØ¶¨Ïò·½·¨
+301é‡å®šå‘æ–¹æ³•
 
-½øĞĞÁË301ÖØ¶¨Ïò£¬°Ñwww.129.coºÍ129.coºÏ²¢£¬²¢°ÑÖ®Ç°µÄÓòÃûÒ²Ò»²¢ºÏ²¢. ÓĞÁ½ÖÖÊµÏÖ·½·¨,µÚÒ»ÖÖ·½·¨ÊÇÅĞ¶ÏnginxºËĞÄ±äÁ¿host(ÀÏ°æ±¾ÊÇhttp_host)£º
+è¿›è¡Œäº†301é‡å®šå‘ï¼ŒæŠŠwww.129.coå’Œ129.coåˆå¹¶ï¼Œå¹¶æŠŠä¹‹å‰çš„åŸŸåä¹Ÿä¸€å¹¶åˆå¹¶. æœ‰ä¸¤ç§å®ç°æ–¹æ³•,ç¬¬ä¸€ç§æ–¹æ³•æ˜¯åˆ¤æ–­nginxæ ¸å¿ƒå˜é‡host(è€ç‰ˆæœ¬æ˜¯http_host)ï¼š
 server {
 server_name www.129.co 129.co ;
 if ($host != 'www.129.co' ) {
@@ -722,31 +722,31 @@ service nginx restart
 service php-fpm restart
 service mysqld restart
 
-chown nginx.nginx /home/wwwroot -R #ÉèÖÃÈ¨ÏŞ
+chown nginx.nginx /home/wwwroot -R #è®¾ç½®æƒé™
 
-chown nginx.nginx /var/lib/php/session  -R #ÉèÖÃÈ¨ÏŞ
+chown nginx.nginx /var/lib/php/session  -R #è®¾ç½®æƒé™
 
 ----------------------------------------------------------------------
 
-location = /uri	= ±íÊ¾¾«È·Æ¥Åä
-location ^~ /uri	^ ½øĞĞÇ°×ºÆ¥Åä£¬~ ±íÊ¾Çø·Ö´óĞ¡Ğ´
-location ~ pattern	~ Çø·Ö´óĞ¡Ğ´µÄÆ¥Åä
-location ~* pattern	~* ²»Çø·Ö´óĞ¡Ğ´µÄÆ¥Åä
-location /uri	²»´øÈÎºÎĞŞÊÎ·û£¬Ò²±íÊ¾Ç°×ºÆ¥Åä£¬µ«ÊÇÔÚÕıÔòÆ¥ÅäÖ®ºó
-location /	                Í¨ÓÃÆ¥Åä£¬ÈÎºÎÎ´Æ¥Åäµ½ÆäËü location µÄÇëÇó¶¼»áÆ¥Åäµ½£¬Ïàµ±ÓÚ switch ÖĞµÄ default
-location !~	Çø·Ö´óĞ¡Ğ´²»Æ¥Åä
-location !~*	²»Çø·Ö´óĞ¡Ğ´²»Æ¥Åä
+location = /uri	= è¡¨ç¤ºç²¾ç¡®åŒ¹é…
+location ^~ /uri	^ è¿›è¡Œå‰ç¼€åŒ¹é…ï¼Œ~ è¡¨ç¤ºåŒºåˆ†å¤§å°å†™
+location ~ pattern	~ åŒºåˆ†å¤§å°å†™çš„åŒ¹é…
+location ~* pattern	~* ä¸åŒºåˆ†å¤§å°å†™çš„åŒ¹é…
+location /uri	ä¸å¸¦ä»»ä½•ä¿®é¥°ç¬¦ï¼Œä¹Ÿè¡¨ç¤ºå‰ç¼€åŒ¹é…ï¼Œä½†æ˜¯åœ¨æ­£åˆ™åŒ¹é…ä¹‹å
+location /	                é€šç”¨åŒ¹é…ï¼Œä»»ä½•æœªåŒ¹é…åˆ°å…¶å®ƒ location çš„è¯·æ±‚éƒ½ä¼šåŒ¹é…åˆ°ï¼Œç›¸å½“äº switch ä¸­çš„ default
+location !~	åŒºåˆ†å¤§å°å†™ä¸åŒ¹é…
+location !~*	ä¸åŒºåˆ†å¤§å°å†™ä¸åŒ¹é…
 
-ÅäÖÃ½ûÖ¹·ÃÎÊÄ¿Â¼µÄÊ±ºò£¬¼ÓĞ±¸Ü( / )ºÍ²»¼ÓĞ±¸Ü( / )µÄÇø±ğ
-¼ÓĞ±¸Ü( / )½ûÖ¹·ÃÎÊÄ¿Â¼¡£²»¼ÓĞ±¸Ü( / )½ûÖ¹·ÃÎÊÄ¿Â¼ÏÂµÄÎÄ¼ş
+é…ç½®ç¦æ­¢è®¿é—®ç›®å½•çš„æ—¶å€™ï¼ŒåŠ æ–œæ ( / )å’Œä¸åŠ æ–œæ ( / )çš„åŒºåˆ«
+åŠ æ–œæ ( / )ç¦æ­¢è®¿é—®ç›®å½•ã€‚ä¸åŠ æ–œæ ( / )ç¦æ­¢è®¿é—®ç›®å½•ä¸‹çš„æ–‡ä»¶
 
-nginx½ûÖ¹·ÃÎÊÄ³¸öÎÄ¼şºÍÄ¿Â¼
+nginxç¦æ­¢è®¿é—®æŸä¸ªæ–‡ä»¶å’Œç›®å½•
 
         location ~* ^/(Lib|Public|Runtime|Tpl|Uploads)/.*\.(php|php5|php4)$ {
             return 404;
         }
 
-×¢Òâ£ºÒªÔÚ½âÎöphpÖ®Ç°¼ÓÈë£¬±ÈÈç£ºinclude enable-php-pathinfo.conf; ÉÏÃæ
+æ³¨æ„ï¼šè¦åœ¨è§£æphpä¹‹å‰åŠ å…¥ï¼Œæ¯”å¦‚ï¼šinclude enable-php-pathinfo.conf; ä¸Šé¢
 
         location ~ [^/]\.php(/|$)
         {
@@ -756,7 +756,7 @@ nginx½ûÖ¹·ÃÎÊÄ³¸öÎÄ¼şºÍÄ¿Â¼
             include fastcgi.conf;
         }
 
-nginxÔõÑù½ûÖ¹Ö±½Ó·ÃÎÊÄ³¸öÄ¿Â¼¼°ÀïÃæµÄÎÄ¼ş£¿
+nginxæ€æ ·ç¦æ­¢ç›´æ¥è®¿é—®æŸä¸ªç›®å½•åŠé‡Œé¢çš„æ–‡ä»¶ï¼Ÿ
 
 location ~ /var/www/school/application {
 deny all;
@@ -764,54 +764,54 @@ deny all;
 
 ----------------------------------------------------------------------
 
-¹Ø±ÕÖØÆôctl-alt-delete×éºÏ¼ü
+å…³é—­é‡å¯ctl-alt-deleteç»„åˆé”®
 [root@localhost ~]# vi /etc/init/control-alt-delete.conf
-#exec /sbin/shutdown -r now "Control-Alt-Deletepressed" #×¢ÊÍµô
+#exec /sbin/shutdown -r now "Control-Alt-Deletepressed" #æ³¨é‡Šæ‰
 
 ----------------------------------------------------------------------
 
-½ûÖ¹·ÇrootÓÃ»§Ö´ĞĞ/etc/rc.d/init.d/ÏÂµÄÏµÍ³ÃüÁî
+ç¦æ­¢érootç”¨æˆ·æ‰§è¡Œ/etc/rc.d/init.d/ä¸‹çš„ç³»ç»Ÿå‘½ä»¤
 chmod -R 700 /etc/rc.d/init.d/*
-chmod -R 777 /etc/rc.d/init.d/*    #»Ö¸´Ä¬ÈÏÉèÖÃ
+chmod -R 777 /etc/rc.d/init.d/*    #æ¢å¤é»˜è®¤è®¾ç½®
 
 ----------------------------------------------------------------------
 
-ÏŞÖÆ²»Í¬ÎÄ¼şµÄÈ¨ÏŞ
-chattr +a .bash_history           #±ÜÃâÉ¾³ı.bash_history»òÕßÖØ¶¨Ïòµ½/dev/null
+é™åˆ¶ä¸åŒæ–‡ä»¶çš„æƒé™
+chattr +a .bash_history           #é¿å…åˆ é™¤.bash_historyæˆ–è€…é‡å®šå‘åˆ°/dev/null
 chattr +i .bash_history
-chmod 700 /usr/bin                »Ö¸´  chmod 555 /usr/bin
-chmod 700 /usr/bin/vim         »Ö¸´  chmod 755 /usr/bin/vim
-chmod 700 /usr/bin/tail          »Ö¸´  chmod 755 /usr/bin/tail
-chmod 700 /usr/bin/less         »Ö¸´  chmod 755 /usr/bin/less
-chmod 700 /usr/bin/head       »Ö¸´  chmod 755 /usr/bin/head
-chmod 700 /bin/netstat          »Ö¸´  chmod 755 /bin/netstat
-chmod 700 /bin/ping              »Ö¸´  chmod 4755 /bin/ping
-chmod 700 /bin/cat                »Ö¸´  chmod 755 /bin/cat
-chmod 700 /bin/uname          »Ö¸´  chmod 755 /bin/uname
-chmod 500 /bin/ps                 »Ö¸´  chmod 755 /bin/ps
+chmod 700 /usr/bin                æ¢å¤  chmod 555 /usr/bin
+chmod 700 /usr/bin/vim         æ¢å¤  chmod 755 /usr/bin/vim
+chmod 700 /usr/bin/tail          æ¢å¤  chmod 755 /usr/bin/tail
+chmod 700 /usr/bin/less         æ¢å¤  chmod 755 /usr/bin/less
+chmod 700 /usr/bin/head       æ¢å¤  chmod 755 /usr/bin/head
+chmod 700 /bin/netstat          æ¢å¤  chmod 755 /bin/netstat
+chmod 700 /bin/ping              æ¢å¤  chmod 4755 /bin/ping
+chmod 700 /bin/cat                æ¢å¤  chmod 755 /bin/cat
+chmod 700 /bin/uname          æ¢å¤  chmod 755 /bin/uname
+chmod 500 /bin/ps                 æ¢å¤  chmod 755 /bin/ps
 
 ----------------------------------------------------------------------
 
-¸øÏÂÃæµÄÎÄ¼ş¼ÓÉÏ²»¿É¸ü¸ÄÊôĞÔ£¬´Ó¶ø·ÀÖ¹·ÇÊÚÈ¨ÓÃ»§»ñµÃÈ¨ÏŞ
+ç»™ä¸‹é¢çš„æ–‡ä»¶åŠ ä¸Šä¸å¯æ›´æ”¹å±æ€§ï¼Œä»è€Œé˜²æ­¢éæˆæƒç”¨æˆ·è·å¾—æƒé™
 chattr +i /etc/passwd
 chattr +i /etc/shadow
 chattr +i /etc/group
 chattr +i /etc/gshadow
-chattr +i /etc/services    #¸øÏµÍ³·şÎñ¶Ë¿ÚÁĞ±íÎÄ¼ş¼ÓËø,·ÀÖ¹Î´¾­Ğí¿ÉµÄÉ¾³ı»òÌí¼Ó·şÎñ
-lsattr  /etc/passwd   /etc/shadow  /etc/group  /etc/gshadow   /etc/services   #ÏÔÊ¾ÎÄ¼şµÄÊôĞÔ
-×¢Òâ£ºÖ´ĞĞÒÔÉÏÈ¨ÏŞĞŞ¸ÄÖ®ºó£¬¾ÍÎŞ·¨Ìí¼ÓÉ¾³ıÓÃ»§ÁË¡£
+chattr +i /etc/services    #ç»™ç³»ç»ŸæœåŠ¡ç«¯å£åˆ—è¡¨æ–‡ä»¶åŠ é”,é˜²æ­¢æœªç»è®¸å¯çš„åˆ é™¤æˆ–æ·»åŠ æœåŠ¡
+lsattr  /etc/passwd   /etc/shadow  /etc/group  /etc/gshadow   /etc/services   #æ˜¾ç¤ºæ–‡ä»¶çš„å±æ€§
+æ³¨æ„ï¼šæ‰§è¡Œä»¥ä¸Šæƒé™ä¿®æ”¹ä¹‹åï¼Œå°±æ— æ³•æ·»åŠ åˆ é™¤ç”¨æˆ·äº†ã€‚
 
 ----------------------------------------------------------------------
 
-ÔöÇ¿ÌØÊâÎÄ¼şÈ¨ÏŞ
+å¢å¼ºç‰¹æ®Šæ–‡ä»¶æƒé™
 
-¸øÏÂÃæµÄÎÄ¼ş¼ÓÉÏ²»¿É¸ü¸ÄÊôĞÔ£¬´Ó¶ø·ÀÖ¹·ÇÊÚÈ¨ÓÃ»§»ñµÃÈ¨ÏŞ
+ç»™ä¸‹é¢çš„æ–‡ä»¶åŠ ä¸Šä¸å¯æ›´æ”¹å±æ€§ï¼Œä»è€Œé˜²æ­¢éæˆæƒç”¨æˆ·è·å¾—æƒé™
 
 chattr +i /etc/passwd
 chattr +i /etc/shadow
 chattr +i /etc/group
 chattr +i /etc/gshadow
-chattr +i /etc/services     #¸øÏµÍ³·şÎñ¶Ë¿ÚÁĞ±íÎÄ¼ş¼ÓËø,·ÀÖ¹Î´¾­Ğí¿ÉµÄÉ¾³ı»òÌí¼Ó·şÎñ
+chattr +i /etc/services     #ç»™ç³»ç»ŸæœåŠ¡ç«¯å£åˆ—è¡¨æ–‡ä»¶åŠ é”,é˜²æ­¢æœªç»è®¸å¯çš„åˆ é™¤æˆ–æ·»åŠ æœåŠ¡
 chattr +i /etc/my.cnf
 chattr +i /etc/pam.d/su
 chattr +i /etc/ssh/sshd_config
@@ -820,132 +820,132 @@ chattr +i /usr/local/php/etc/php.ini
 
 ----------------------------------------------------------------------
 
-Çå³ıLinuxÃüÁîµÄÀúÊ·¼ÇÂ¼
+æ¸…é™¤Linuxå‘½ä»¤çš„å†å²è®°å½•
 history -c
 
 ----------------------------------------------------------------------
 
-CetnOS 7Ä¬ÈÏ·À»ğÇ½FirewallDµÄÊ¹ÓÃËµÃ÷
+CetnOS 7é»˜è®¤é˜²ç«å¢™FirewallDçš„ä½¿ç”¨è¯´æ˜
 
-1. firewalld¼ò½é
+1. firewalldç®€ä»‹
 
-CetnOS 7Ä¬ÈÏ·À»ğÇ½Ê¹ÓÃfirewalldÌæ´úÁËÖ®Ç°µÄiptables£¬Ö÷ÒªÌØµã£º¶¯Ì¬¹ÜÀí·À»ğÇ½£¬²»ĞèÒªÖØÆôÕû¸ö·À»ğÇ½±ã¿ÉÓ¦ÓÃ¸ü¸Ä£»Ê¹ÓÃ¡°ÇøÓò£¨zone£©¡±¸ÅÄî¡£
+CetnOS 7é»˜è®¤é˜²ç«å¢™ä½¿ç”¨firewalldæ›¿ä»£äº†ä¹‹å‰çš„iptablesï¼Œä¸»è¦ç‰¹ç‚¹ï¼šåŠ¨æ€ç®¡ç†é˜²ç«å¢™ï¼Œä¸éœ€è¦é‡å¯æ•´ä¸ªé˜²ç«å¢™ä¾¿å¯åº”ç”¨æ›´æ”¹ï¼›ä½¿ç”¨â€œåŒºåŸŸï¼ˆzoneï¼‰â€æ¦‚å¿µã€‚
 
-firewalldÖ§³Ö IPv4, IPv6 ·À»ğÇ½ÉèÖÃÒÔ¼°ÒÔÌ«ÍøÇÅ½Ó£¬²¢ÇÒÓµÓĞÔËĞĞÊ±ÅäÖÃºÍÓÀ¾ÃÅäÖÃÑ¡Ïî¡£firewalldÒ²Ö§³ÖÔÊĞí·şÎñ»òÕßÓ¦ÓÃ³ÌĞòÖ±½ÓÌí¼Ó·À»ğÇ½¹æÔòµÄ½Ó¿Ú¡£firewalldÎŞ·¨½âÎöÓÉ iptables ºÍ ebtables ÃüÁîĞĞ¹¤¾ßÌí¼ÓµÄ·À»ğÇ½¹æÔò¡£firewalldºÍiptables²»ÄÜÍ¬Ê±ÔËĞĞ£¬Ö»ÄÜÑ¡ÔñÆäÖĞÖ®Ò»¡£
+firewalldæ”¯æŒ IPv4, IPv6 é˜²ç«å¢™è®¾ç½®ä»¥åŠä»¥å¤ªç½‘æ¡¥æ¥ï¼Œå¹¶ä¸”æ‹¥æœ‰è¿è¡Œæ—¶é…ç½®å’Œæ°¸ä¹…é…ç½®é€‰é¡¹ã€‚firewalldä¹Ÿæ”¯æŒå…è®¸æœåŠ¡æˆ–è€…åº”ç”¨ç¨‹åºç›´æ¥æ·»åŠ é˜²ç«å¢™è§„åˆ™çš„æ¥å£ã€‚firewalldæ— æ³•è§£æç”± iptables å’Œ ebtables å‘½ä»¤è¡Œå·¥å…·æ·»åŠ çš„é˜²ç«å¢™è§„åˆ™ã€‚firewalldå’Œiptablesä¸èƒ½åŒæ—¶è¿è¡Œï¼Œåªèƒ½é€‰æ‹©å…¶ä¸­ä¹‹ä¸€ã€‚
 
 
-2. ¡°ÇøÓò£¨zone£©¡±½éÉÜ
+2. â€œåŒºåŸŸï¼ˆzoneï¼‰â€ä»‹ç»
 
-ÇøÓò¶¨ÒåÁËÍøÂçÁ¬½ÓµÄ¿ÉĞÅµÈ¼¶¡£ÕâÊÇÒ»¸öÒ»¶Ô¶àµÄ¹ØÏµ£¬ÕâÒâÎ¶×ÅÒ»´ÎÁ¬½Ó¿ÉÒÔ½ö½öÊÇÒ»¸öÇøÓòµÄÒ»²¿·Ö£¬¶øÒ»¸öÇøÓò¿ÉÒÔÓÃÓÚºÜ¶àÁ¬½Ó¡£ÇøÓò°´ÕÕ´Ó²»ĞÅÈÎµ½ĞÅÈÎµÄË³ĞòÅÅĞò£º
+åŒºåŸŸå®šä¹‰äº†ç½‘ç»œè¿æ¥çš„å¯ä¿¡ç­‰çº§ã€‚è¿™æ˜¯ä¸€ä¸ªä¸€å¯¹å¤šçš„å…³ç³»ï¼Œè¿™æ„å‘³ç€ä¸€æ¬¡è¿æ¥å¯ä»¥ä»…ä»…æ˜¯ä¸€ä¸ªåŒºåŸŸçš„ä¸€éƒ¨åˆ†ï¼Œè€Œä¸€ä¸ªåŒºåŸŸå¯ä»¥ç”¨äºå¾ˆå¤šè¿æ¥ã€‚åŒºåŸŸæŒ‰ç…§ä»ä¸ä¿¡ä»»åˆ°ä¿¡ä»»çš„é¡ºåºæ’åºï¼š
 
-¶ªÆú£¨drop£©£ºÈÎºÎÁ÷ÈëÍøÂçµÄ°ü¶¼±»¶ªÆú£¬²»×÷³öÈÎºÎÏìÓ¦¡£Ö»ÔÊĞíÁ÷³öµÄÍøÂçÁ¬½Ó¡£
-×èÈû£¨block£©£ºÈÎºÎ½øÈëµÄÍøÂçÁ¬½Ó¶¼±»¾Ü¾ø£¬²¢·µ»Ø IPv4 µÄ icmp-host-prohibited ±¨ÎÄ»òÕß IPv6 µÄ icmp6-adm-prohibited ±¨ÎÄ¡£Ö»ÔÊĞíÓÉ¸ÃÏµÍ³³õÊ¼»¯µÄÍøÂçÁ¬½Ó¡£
-¹«¿ª£¨public£©£ºÓÃÒÔ¿ÉÒÔ¹«¿ªµÄwangl£¬Ä¬ÈÏÇøÓò¡£Ö»ÔÊĞíÑ¡ÖĞµÄÁ¬½Ó½ÓÈë¡£
-Íâ²¿£¨external£©£ºÓÃÔÚÂ·ÓÉÆ÷µÈÆôÓÃÎ±×°µÄÍâ²¿ÍøÂç¡£Ö»ÔÊĞíÑ¡ÖĞµÄÁ¬½Ó½ÓÈë¡£
-¸ôÀëÇø£¨dmz£©£ºÓÃÒÔÔÊĞí¸ôÀëÇø£¨dmz£©ÖĞµÄµçÄÔÓĞÏŞµØ±»Íâ½çÍøÂç·ÃÎÊ¡£Ö»½ÓÊÜ±»Ñ¡ÖĞµÄÁ¬½Ó¡£
-¹¤×÷£¨work£©£ºÓÃÔÚ¹¤×÷ÍøÂç¡£Ö»½ÓÊÜ±»Ñ¡ÖĞµÄÁ¬½Ó¡£
-¼ÒÍ¥£¨home£©£ºÓÃÔÚ¼ÒÍ¥ÍøÂç¡£Ö»½ÓÊÜ±»Ñ¡ÖĞµÄÁ¬½Ó¡£
-ÄÚ²¿£¨internal£©£ºÓÃÔÚÄÚ²¿ÍøÂç¡£Ö»½ÓÊÜ±»Ñ¡ÖĞµÄÁ¬½Ó¡£
-ÊÜĞÅÈÎµÄ£¨trusted£©£ºÔÊĞíËùÓĞÍøÂçÁ¬½Ó¡£
-ÇøÓòÉèÖÃÒÔ ZONE= Ñ¡Ïî ´æ´¢ÔÚÍøÂçÁ¬½ÓµÄifcfgÎÄ¼şÖĞ¡£Èç¹ûÕâ¸öÑ¡ÏîÈ±Ê§»òÕßÎª¿Õ£¬firewalld ½«Ê¹ÓÃÅäÖÃµÄÄ¬ÈÏÇøÓò¡£ÔÚ/etc/firewalld/zonesÏÂÃæĞÂÔö»òĞŞ¸ÄÇøÓò¡£
+ä¸¢å¼ƒï¼ˆdropï¼‰ï¼šä»»ä½•æµå…¥ç½‘ç»œçš„åŒ…éƒ½è¢«ä¸¢å¼ƒï¼Œä¸ä½œå‡ºä»»ä½•å“åº”ã€‚åªå…è®¸æµå‡ºçš„ç½‘ç»œè¿æ¥ã€‚
+é˜»å¡ï¼ˆblockï¼‰ï¼šä»»ä½•è¿›å…¥çš„ç½‘ç»œè¿æ¥éƒ½è¢«æ‹’ç»ï¼Œå¹¶è¿”å› IPv4 çš„ icmp-host-prohibited æŠ¥æ–‡æˆ–è€… IPv6 çš„ icmp6-adm-prohibited æŠ¥æ–‡ã€‚åªå…è®¸ç”±è¯¥ç³»ç»Ÿåˆå§‹åŒ–çš„ç½‘ç»œè¿æ¥ã€‚
+å…¬å¼€ï¼ˆpublicï¼‰ï¼šç”¨ä»¥å¯ä»¥å…¬å¼€çš„wanglï¼Œé»˜è®¤åŒºåŸŸã€‚åªå…è®¸é€‰ä¸­çš„è¿æ¥æ¥å…¥ã€‚
+å¤–éƒ¨ï¼ˆexternalï¼‰ï¼šç”¨åœ¨è·¯ç”±å™¨ç­‰å¯ç”¨ä¼ªè£…çš„å¤–éƒ¨ç½‘ç»œã€‚åªå…è®¸é€‰ä¸­çš„è¿æ¥æ¥å…¥ã€‚
+éš”ç¦»åŒºï¼ˆdmzï¼‰ï¼šç”¨ä»¥å…è®¸éš”ç¦»åŒºï¼ˆdmzï¼‰ä¸­çš„ç”µè„‘æœ‰é™åœ°è¢«å¤–ç•Œç½‘ç»œè®¿é—®ã€‚åªæ¥å—è¢«é€‰ä¸­çš„è¿æ¥ã€‚
+å·¥ä½œï¼ˆworkï¼‰ï¼šç”¨åœ¨å·¥ä½œç½‘ç»œã€‚åªæ¥å—è¢«é€‰ä¸­çš„è¿æ¥ã€‚
+å®¶åº­ï¼ˆhomeï¼‰ï¼šç”¨åœ¨å®¶åº­ç½‘ç»œã€‚åªæ¥å—è¢«é€‰ä¸­çš„è¿æ¥ã€‚
+å†…éƒ¨ï¼ˆinternalï¼‰ï¼šç”¨åœ¨å†…éƒ¨ç½‘ç»œã€‚åªæ¥å—è¢«é€‰ä¸­çš„è¿æ¥ã€‚
+å—ä¿¡ä»»çš„ï¼ˆtrustedï¼‰ï¼šå…è®¸æ‰€æœ‰ç½‘ç»œè¿æ¥ã€‚
+åŒºåŸŸè®¾ç½®ä»¥ ZONE= é€‰é¡¹ å­˜å‚¨åœ¨ç½‘ç»œè¿æ¥çš„ifcfgæ–‡ä»¶ä¸­ã€‚å¦‚æœè¿™ä¸ªé€‰é¡¹ç¼ºå¤±æˆ–è€…ä¸ºç©ºï¼Œfirewalld å°†ä½¿ç”¨é…ç½®çš„é»˜è®¤åŒºåŸŸã€‚åœ¨/etc/firewalld/zonesä¸‹é¢æ–°å¢æˆ–ä¿®æ”¹åŒºåŸŸã€‚
 
-ÍøÂç½Ó¿Ú¿ÉÒÔÖ¸¶¨µ½Ä³¸öÇøÓò£¬Î´Ö¸¶¨ÇøÓòµÄÍøÂç½Ó¿ÚÒ»ÂÉÅäÖÃµ½Ä¬ÈÏÇøÓò¡£
+ç½‘ç»œæ¥å£å¯ä»¥æŒ‡å®šåˆ°æŸä¸ªåŒºåŸŸï¼ŒæœªæŒ‡å®šåŒºåŸŸçš„ç½‘ç»œæ¥å£ä¸€å¾‹é…ç½®åˆ°é»˜è®¤åŒºåŸŸã€‚
 
-3. firewalldÅäÖÃÎÄ¼ş
+3. firewalldé…ç½®æ–‡ä»¶
 
-/usr/lib/firewalld/ ´æ·ÅÄ¬ÈÏÅäÖÃÎÄ¼ş£¬²»ÄÜ±»ĞŞ¸Ä£¬¼´Ê¹ĞŞ¸ÄÒ²»áËæ×Å firewalld Èí¼ş°üµÄ¸üĞÂ±»ÖØÖÃ¡£
+/usr/lib/firewalld/ å­˜æ”¾é»˜è®¤é…ç½®æ–‡ä»¶ï¼Œä¸èƒ½è¢«ä¿®æ”¹ï¼Œå³ä½¿ä¿®æ”¹ä¹Ÿä¼šéšç€ firewalld è½¯ä»¶åŒ…çš„æ›´æ–°è¢«é‡ç½®ã€‚
 
-/etc/firewalld/ ÕâÀïµÄÅäÖÃÎÄ¼ş¿ÉÒÔÊÇÏµÍ³¹ÜÀíÔ±Í¨¹ıÅäÖÃ½Ó¿Ú¶¨ÖÆµÄ£¬Ò²¿ÉÒÔÊÇÊÖ¶¯¶¨ÖÆµÄ¡£ÕâĞ©ÎÄ¼ş½«Ìæ´úÄ¬ÈÏÅäÖÃÎÄ¼şÉúĞ§¡£
+/etc/firewalld/ è¿™é‡Œçš„é…ç½®æ–‡ä»¶å¯ä»¥æ˜¯ç³»ç»Ÿç®¡ç†å‘˜é€šè¿‡é…ç½®æ¥å£å®šåˆ¶çš„ï¼Œä¹Ÿå¯ä»¥æ˜¯æ‰‹åŠ¨å®šåˆ¶çš„ã€‚è¿™äº›æ–‡ä»¶å°†æ›¿ä»£é»˜è®¤é…ç½®æ–‡ä»¶ç”Ÿæ•ˆã€‚
 
-Í¨³£½«ÅäÖÃÎÄ¼ş´Ó/usr/lib/firewalld/¿½±´µ½/etc/firewalld/ ÏàÓ¦Ä¿Â¼£¬ÔÙ¸ù¾İĞèÇó½øĞĞĞŞ¸Ä¡£
+é€šå¸¸å°†é…ç½®æ–‡ä»¶ä»/usr/lib/firewalld/æ‹·è´åˆ°/etc/firewalld/ ç›¸åº”ç›®å½•ï¼Œå†æ ¹æ®éœ€æ±‚è¿›è¡Œä¿®æ”¹ã€‚
 
-4. firewalld·şÎñ³£ÓÃ²Ù×÷
+4. firewalldæœåŠ¡å¸¸ç”¨æ“ä½œ
 
-Æô¶¯firewalld²¢ÉèÎª¿ª»ú×ÔÆô
+å¯åŠ¨firewalldå¹¶è®¾ä¸ºå¼€æœºè‡ªå¯
 systemctl start firewalld.service
 systemctl enable firewalld.service
 
-ÖØÔØfirewalldÅäÖÃÎÄ¼ş£¬²»¸Ä±äµ±Ç°Á¬½Ó×´Ì¬
+é‡è½½firewalldé…ç½®æ–‡ä»¶ï¼Œä¸æ”¹å˜å½“å‰è¿æ¥çŠ¶æ€
 systemctl reload firewalld.service
 
-ÖØÆôfirewalld·şÎñ
+é‡å¯firewalldæœåŠ¡
 systemctl restart firewalld.service
 
-Í£Ö¹firewalld·şÎñ
+åœæ­¢firewalldæœåŠ¡
 systemctl stop firewalld.service
 
-½ûÓÃfirewalld·şÎñ
+ç¦ç”¨firewalldæœåŠ¡
 systemctl disable firewalld.service
 
-²é¿´firewalld·şÎñ×´Ì¬
+æŸ¥çœ‹firewalldæœåŠ¡çŠ¶æ€
 systemctl status firewalld.service
 
-5. firewall-cmd³£ÓÃÃüÁî
-firewalldÓĞÍ¼Ïñ½çÃæ¹¤¾ßfirewall-configºÍÃüÁîĞĞ¹¤¾ßfirewall-cmd£¬·şÎñÆ÷ÉÏÍ¨³£Ê¹ÓÃÃüÁîĞĞ¹¤¾ßfirewall-cmd¡£
+5. firewall-cmdå¸¸ç”¨å‘½ä»¤
+firewalldæœ‰å›¾åƒç•Œé¢å·¥å…·firewall-configå’Œå‘½ä»¤è¡Œå·¥å…·firewall-cmdï¼ŒæœåŠ¡å™¨ä¸Šé€šå¸¸ä½¿ç”¨å‘½ä»¤è¡Œå·¥å…·firewall-cmdã€‚
 
-firewall-cmdÃüÁîÄ¬ÈÏÍ¬Ê±¶ÔIPv4ºÍIPv6ÉúĞ§£»
-¼Ó²ÎÊı¨Czone=XXXÎªÖ¸¶¨ÃüÁî²Ù×÷ÇøÓò£¬²»¼Ó´Ë²ÎÊı¶ÔÄ¬ÈÏÇøÓò²Ù×÷£»
-¼Ó²ÎÊı¨CpermanentÎªÊ¹ÃüÁîÔÚfirewalldÖØÔØºóÓÀ¾ÃÉúĞ§£¬²»¼Ó´Ë²ÎÊıÃüÁîÁ¢¿ÌÉúĞ§µ«firewalldÖØÔØºóÊ§Ğ§¡£
+firewall-cmdå‘½ä»¤é»˜è®¤åŒæ—¶å¯¹IPv4å’ŒIPv6ç”Ÿæ•ˆï¼›
+åŠ å‚æ•°â€“zone=XXXä¸ºæŒ‡å®šå‘½ä»¤æ“ä½œåŒºåŸŸï¼Œä¸åŠ æ­¤å‚æ•°å¯¹é»˜è®¤åŒºåŸŸæ“ä½œï¼›
+åŠ å‚æ•°â€“permanentä¸ºä½¿å‘½ä»¤åœ¨firewalldé‡è½½åæ°¸ä¹…ç”Ÿæ•ˆï¼Œä¸åŠ æ­¤å‚æ•°å‘½ä»¤ç«‹åˆ»ç”Ÿæ•ˆä½†firewalldé‡è½½åå¤±æ•ˆã€‚
 
-²éÑ¯·À»ğÇ½ÔËĞĞ×´Ì¬
+æŸ¥è¯¢é˜²ç«å¢™è¿è¡ŒçŠ¶æ€
 firewall-cmd --state
 
-²éÑ¯·À»ğÇ½°æ±¾
+æŸ¥è¯¢é˜²ç«å¢™ç‰ˆæœ¬
 firewall-cmd --version
 
-²éÑ¯·À»ğÇ½Ä¬ÈÏÇøÓòÅäÖÃĞÅÏ¢
+æŸ¥è¯¢é˜²ç«å¢™é»˜è®¤åŒºåŸŸé…ç½®ä¿¡æ¯
 firewall-cmd --list-all
 
-²éÑ¯·À»ğÇ½ËùÓĞÇøÓòÅäÖÃĞÅÏ¢£¬ÇÒ·ÖÆÁÏÔÊ¾
+æŸ¥è¯¢é˜²ç«å¢™æ‰€æœ‰åŒºåŸŸé…ç½®ä¿¡æ¯ï¼Œä¸”åˆ†å±æ˜¾ç¤º
 firewall-cmd --list-all-zones | more
 
-ÉèÖÃÄ¬ÈÏÇøÓòÎªpublic£¬Á¢¿ÌÉúĞ§
-£¨Ò²¿ÉÒÔĞŞ¸Ä/etc/firewalld/firewalld.confÎÄ¼şÖĞDefaultZone=public£¬ÖØÔØºóÉúĞ§£©
+è®¾ç½®é»˜è®¤åŒºåŸŸä¸ºpublicï¼Œç«‹åˆ»ç”Ÿæ•ˆ
+ï¼ˆä¹Ÿå¯ä»¥ä¿®æ”¹/etc/firewalld/firewalld.confæ–‡ä»¶ä¸­DefaultZone=publicï¼Œé‡è½½åç”Ÿæ•ˆï¼‰
 firewall-cmd --set-default-zone=public
 
-Ä¬ÈÏÇøÓò¿ªÆôTCP 8080¶Ë¿Ú£¬ÖØÔØºóÓÀ¾ÃÉúĞ§£¬¿ÉÒÔÉè¶¨¶Ë¿ÚºÅ·¶Î§±ÈÈç6000-7000
+é»˜è®¤åŒºåŸŸå¼€å¯TCP 8080ç«¯å£ï¼Œé‡è½½åæ°¸ä¹…ç”Ÿæ•ˆï¼Œå¯ä»¥è®¾å®šç«¯å£å·èŒƒå›´æ¯”å¦‚6000-7000
 firewall-cmd --permanent --add-port=8080/tcp
 
-Ä¬ÈÏÇøÓò¹Ø±ÕTCP 8080¶Ë¿Ú£¬ÖØÔØºóÓÀ¾ÃÉúĞ§
+é»˜è®¤åŒºåŸŸå…³é—­TCP 8080ç«¯å£ï¼Œé‡è½½åæ°¸ä¹…ç”Ÿæ•ˆ
 firewall-cmd --permanent --remove-port=8080/tcp
 
-Ä¬ÈÏÇøÓò¿ªÆôHTTP·şÎñ£¨Ä¬ÈÏÅäÖÃÏÂµÈÓÚ¿ªÆôTCP 80¶Ë¿Ú£©£¬ÖØÔØºóÓÀ¾ÃÉúĞ§
+é»˜è®¤åŒºåŸŸå¼€å¯HTTPæœåŠ¡ï¼ˆé»˜è®¤é…ç½®ä¸‹ç­‰äºå¼€å¯TCP 80ç«¯å£ï¼‰ï¼Œé‡è½½åæ°¸ä¹…ç”Ÿæ•ˆ
 firewall-cmd --permanent --add-service=http
 
-Ä¬ÈÏÇøÓò¹Ø±ÕHTTP·şÎñ£¨Ä¬ÈÏÅäÖÃÏÂµÈÓÚ¹Ø±ÕTCP 80¶Ë¿Ú£©£¬ÖØÔØºóÓÀ¾ÃÉúĞ§
+é»˜è®¤åŒºåŸŸå…³é—­HTTPæœåŠ¡ï¼ˆé»˜è®¤é…ç½®ä¸‹ç­‰äºå…³é—­TCP 80ç«¯å£ï¼‰ï¼Œé‡è½½åæ°¸ä¹…ç”Ÿæ•ˆ
 firewall-cmd --permanent --remove-service=http
 
-Ä¬ÈÏÇøÓò½ûÖ¹ping£¬ÖØÔØºóÓÀ¾ÃÉúĞ§
+é»˜è®¤åŒºåŸŸç¦æ­¢pingï¼Œé‡è½½åæ°¸ä¹…ç”Ÿæ•ˆ
 firewall-cmd --permanent --add-icmp-block=echo-reply
 firewall-cmd --permanent --add-icmp-block=echo-request
 
-ÖØÔØ·À»ğÇ½ÅäÖÃ£¬Ê¹ÓÃ²ÎÊı¨Creload±£³Öµ±Ç°Á¬½Ó£¬Ê¹ÓÃ²ÎÊı¨Ccomplete-reloadÖØÖÃÁ¬½Ó
+é‡è½½é˜²ç«å¢™é…ç½®ï¼Œä½¿ç”¨å‚æ•°â€“reloadä¿æŒå½“å‰è¿æ¥ï¼Œä½¿ç”¨å‚æ•°â€“complete-reloadé‡ç½®è¿æ¥
 firewall-cmd --reload
 firewall-cmd --complete-reload
 
-6. Ê¹ÓÃ¡°Rich Language¡± ÅäÖÃ¸´ÔÓ·À»ğÇ½¹æÔò
+6. ä½¿ç”¨â€œRich Languageâ€ é…ç½®å¤æ‚é˜²ç«å¢™è§„åˆ™
 
-Ä¬ÈÏÇøÓòĞÂÔöRich Language¹æÔò£¬¹æÔòÄÚÈİÎª£ºÔÚIPv4¾Ü¾øÀ´×ÔIP 192.168.111.111µÄ·ÃÎÊ£¬ÖØÔØºóÓÀ¾ÃÉúĞ§¡£
+é»˜è®¤åŒºåŸŸæ–°å¢Rich Languageè§„åˆ™ï¼Œè§„åˆ™å†…å®¹ä¸ºï¼šåœ¨IPv4æ‹’ç»æ¥è‡ªIP 192.168.111.111çš„è®¿é—®ï¼Œé‡è½½åæ°¸ä¹…ç”Ÿæ•ˆã€‚
 firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.111.111" reject'
 
-Ä¬ÈÏÇøÓòÒÆ³ıÉÏÊöRich Language¹æÔò£¬ÖØÔØºóÓÀ¾ÃÉúĞ§¡£
+é»˜è®¤åŒºåŸŸç§»é™¤ä¸Šè¿°Rich Languageè§„åˆ™ï¼Œé‡è½½åæ°¸ä¹…ç”Ÿæ•ˆã€‚
 firewall-cmd --permanent --remove-rich-rule='rule family="ipv4" source address="192.168.111.111" reject'
 
-Ä¬ÈÏÇøÓò²éÑ¯ÉÏÊöRich Language¹æÔòÊÇ·ñ´æÔÚ
+é»˜è®¤åŒºåŸŸæŸ¥è¯¢ä¸Šè¿°Rich Languageè§„åˆ™æ˜¯å¦å­˜åœ¨
 firewall-cmd --query-rich-rule='rule family="ipv4" source address="192.168.111.111" reject'
 
-7. firewalldÖ±½Ó½Ó¿Ú£¨firewall-cmd ¨Cdirect ÃüÁî£©
+7. firewalldç›´æ¥æ¥å£ï¼ˆfirewall-cmd â€“direct å‘½ä»¤ï¼‰
 
-firewall-cmd ¨Cdirect ÃüÁîÖ÷ÒªÓÃÓÚÊ¹·şÎñºÍÓ¦ÓÃ³ÌĞòÄÜ¹»Ôö¼Ó¹æÔò£¬²»ÍÆ¼öÊÖ¶¯²Ù×÷£»ÃüÁîÁ¢¿ÌÉúĞ§£¬µ«ÖØÔØºóÊ§Ğ§¡£Èç¹û²»ÊìÏ¤ iptables £¬Ê¹ÓÃÖ±½Ó½Ó¿Ú·Ç³£Î£ÏÕ£¬¿ÉÄÜÎŞÒâ¼äµ¼ÖÂ·À»ğÇ½±»ÈëÇÖ¡£¾ßÌå²Ù×÷¾Í²»½éÉÜÁË¡£
+firewall-cmd â€“direct å‘½ä»¤ä¸»è¦ç”¨äºä½¿æœåŠ¡å’Œåº”ç”¨ç¨‹åºèƒ½å¤Ÿå¢åŠ è§„åˆ™ï¼Œä¸æ¨èæ‰‹åŠ¨æ“ä½œï¼›å‘½ä»¤ç«‹åˆ»ç”Ÿæ•ˆï¼Œä½†é‡è½½åå¤±æ•ˆã€‚å¦‚æœä¸ç†Ÿæ‚‰ iptables ï¼Œä½¿ç”¨ç›´æ¥æ¥å£éå¸¸å±é™©ï¼Œå¯èƒ½æ— æ„é—´å¯¼è‡´é˜²ç«å¢™è¢«å…¥ä¾µã€‚å…·ä½“æ“ä½œå°±ä¸ä»‹ç»äº†ã€‚
 
 
 ----------------------------------------------------------------------
 
 
-SSHÓÉ¿Í»§¶ËºÍ·şÎñ¶ËµÄÈí¼ş×é³É£¬ÔÚ¿Í»§¶Ë¿ÉÒÔÊ¹ÓÃµÄÈí¼şÓĞSecureCRT¡¢putty¡¢XshellµÈ£¬
-¶øÔÚ·şÎñÆ÷¶ËÔËĞĞµÄÊÇÒ»¸össhdµÄ·şÎñ£¬Í¨¹ıÊ¹ÓÃSSH£¬¿ÉÒÔ°ÑËùÓĞ´«ÊäµÄÊı¾İ½øĞĞ¼ÓÃÜ£¬¶øÇÒÒ²ÄÜ¹»
-·ÀÖ¹dnsºÍIPÆÛÆ­£¬´ËÍâ£¬SSH´«ÊäµÄÊı¾İÊÇ¾­¹ıÑ¹ËõµÄ£¬¿ÉÒÔ¼Ó¿ì´«ÊäËÙ¶È
-Æä·şÎñÆ÷¶ËµÄÅäÖÃÎÄ¼şÎª/etc/ssh/sshd_config
+SSHç”±å®¢æˆ·ç«¯å’ŒæœåŠ¡ç«¯çš„è½¯ä»¶ç»„æˆï¼Œåœ¨å®¢æˆ·ç«¯å¯ä»¥ä½¿ç”¨çš„è½¯ä»¶æœ‰SecureCRTã€puttyã€Xshellç­‰ï¼Œ
+è€Œåœ¨æœåŠ¡å™¨ç«¯è¿è¡Œçš„æ˜¯ä¸€ä¸ªsshdçš„æœåŠ¡ï¼Œé€šè¿‡ä½¿ç”¨SSHï¼Œå¯ä»¥æŠŠæ‰€æœ‰ä¼ è¾“çš„æ•°æ®è¿›è¡ŒåŠ å¯†ï¼Œè€Œä¸”ä¹Ÿèƒ½å¤Ÿ
+é˜²æ­¢dnså’ŒIPæ¬ºéª—ï¼Œæ­¤å¤–ï¼ŒSSHä¼ è¾“çš„æ•°æ®æ˜¯ç»è¿‡å‹ç¼©çš„ï¼Œå¯ä»¥åŠ å¿«ä¼ è¾“é€Ÿåº¦
+å…¶æœåŠ¡å™¨ç«¯çš„é…ç½®æ–‡ä»¶ä¸º/etc/ssh/sshd_config
 [root@test ~]# cat /etc/ssh/sshd_config
 #       $OpenBSD: sshd_config,v 1.73 2005/12/06 22:38:28 reyk Exp $
 # This is the sshd server system-wide configuration file.  See
@@ -956,120 +956,120 @@ SSHÓÉ¿Í»§¶ËºÍ·şÎñ¶ËµÄÈí¼ş×é³É£¬ÔÚ¿Í»§¶Ë¿ÉÒÔÊ¹ÓÃµÄÈí¼şÓĞSecureCRT¡¢putty¡¢Xshellµ
 # possible, but leave them commented.  Uncommented options change a
 # default value.
  
-#############1. ¹ØÓÚ SSH Server µÄÕûÌåÉè¶¨##############
+#############1. å…³äº SSH Server çš„æ•´ä½“è®¾å®š##############
 #Port 22    
-##portÓÃÀ´ÉèÖÃsshd¼àÌıµÄ¶Ë¿Ú£¬ÎªÁË°²È«Æğ¼û£¬½¨Òé¸ü¸ÄÄ¬ÈÏµÄ22¶Ë¿ÚÎª5Î»ÒÔÉÏÄ°Éú¶Ë¿Ú
+##portç”¨æ¥è®¾ç½®sshdç›‘å¬çš„ç«¯å£ï¼Œä¸ºäº†å®‰å…¨èµ·è§ï¼Œå»ºè®®æ›´æ”¹é»˜è®¤çš„22ç«¯å£ä¸º5ä½ä»¥ä¸Šé™Œç”Ÿç«¯å£
 #Protocol 2,1
 Protocol 2
-##ÉèÖÃĞ­Òé°æ±¾ÎªSSH1»òSSH2£¬SSH1´æÔÚÂ©¶´ÓëÈ±Ïİ£¬Ñ¡ÔñSSH2
+##è®¾ç½®åè®®ç‰ˆæœ¬ä¸ºSSH1æˆ–SSH2ï¼ŒSSH1å­˜åœ¨æ¼æ´ä¸ç¼ºé™·ï¼Œé€‰æ‹©SSH2
 #AddressFamily any
 #ListenAddress 0.0.0.0
-#ListenAddressÓÃÀ´ÉèÖÃsshd·şÎñÆ÷°ó¶¨µÄIPµØÖ·
-##¼àÌıµÄÖ÷»úÊÊÅä¿¨£¬¾Ù¸öÀı×ÓÀ´Ëµ£¬Èç¹ûÄúÓĞÁ½¸ö IP£¬ ·Ö±ğÊÇ 192.168.0.11 ¼° 192.168.2.20 £¬ÄÇÃ´Ö»ÏëÒª
-###¿ª·Å 192.168.0.11 Ê±£¬¾Í¿ÉÒÔÉèÖÃÎª£ºListenAddress 192.168.0.11
-####±íÊ¾Ö»¼àÌıÀ´×Ô 192.168.0.11 Õâ¸ö IP µÄSSHÁª»ú¡£Èç¹û²»Ê¹ÓÃÉè¶¨µÄ»°£¬ÔòÔ¤ÉèËùÓĞ½Ó¿Ú¾ù½ÓÊÜ SSH
-#############2. ËµÃ÷Ö÷»úµÄ Private Key ·ÅÖÃµÄµµ°¸##########¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+#ListenAddressç”¨æ¥è®¾ç½®sshdæœåŠ¡å™¨ç»‘å®šçš„IPåœ°å€
+##ç›‘å¬çš„ä¸»æœºé€‚é…å¡ï¼Œä¸¾ä¸ªä¾‹å­æ¥è¯´ï¼Œå¦‚æœæ‚¨æœ‰ä¸¤ä¸ª IPï¼Œ åˆ†åˆ«æ˜¯ 192.168.0.11 åŠ 192.168.2.20 ï¼Œé‚£ä¹ˆåªæƒ³è¦
+###å¼€æ”¾ 192.168.0.11 æ—¶ï¼Œå°±å¯ä»¥è®¾ç½®ä¸ºï¼šListenAddress 192.168.0.11
+####è¡¨ç¤ºåªç›‘å¬æ¥è‡ª 192.168.0.11 è¿™ä¸ª IP çš„SSHè”æœºã€‚å¦‚æœä¸ä½¿ç”¨è®¾å®šçš„è¯ï¼Œåˆ™é¢„è®¾æ‰€æœ‰æ¥å£å‡æ¥å— SSH
+#############2. è¯´æ˜ä¸»æœºçš„ Private Key æ”¾ç½®çš„æ¡£æ¡ˆ##########ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€
 #ListenAddress ::
-##HostKeyÓÃÀ´ÉèÖÃ·şÎñÆ÷ÃØÔ¿ÎÄ¼şµÄÂ·¾¶
+##HostKeyç”¨æ¥è®¾ç½®æœåŠ¡å™¨ç§˜é’¥æ–‡ä»¶çš„è·¯å¾„
 # HostKey for protocol version 1
 #HostKey /etc/ssh/ssh_host_key
-##ÉèÖÃSSH version 1 Ê¹ÓÃµÄË½Ô¿
+##è®¾ç½®SSH version 1 ä½¿ç”¨çš„ç§é’¥
 # HostKeys for protocol version 2
 #HostKey /etc/ssh/ssh_host_rsa_key
-##ÉèÖÃSSH version 2 Ê¹ÓÃµÄ RSA Ë½Ô¿
+##è®¾ç½®SSH version 2 ä½¿ç”¨çš„ RSA ç§é’¥
 #HostKey /etc/ssh/ssh_host_dsa_key
-##ÉèÖÃSSH version 2 Ê¹ÓÃµÄ DSA Ë½Ô¿
+##è®¾ç½®SSH version 2 ä½¿ç”¨çš„ DSA ç§é’¥
 
-#Compression yes¡¡¡¡¡¡¡¡¡¡¡¡
-##ÉèÖÃÊÇ·ñ¿ÉÒÔÊ¹ÓÃÑ¹ËõÖ¸Áî
+#Compression yesã€€ã€€ã€€ã€€ã€€ã€€
+##è®¾ç½®æ˜¯å¦å¯ä»¥ä½¿ç”¨å‹ç¼©æŒ‡ä»¤
 # Lifetime and size of ephemeral version 1 server key
 #KeyRegenerationInterval 1h
-##KeyRegenerationIntervalÓÃÀ´ÉèÖÃ¶à³¤Ê±¼äºóÏµÍ³×Ô¶¯ÖØĞÂÉú³É·şÎñÆ÷µÄÃØÔ¿£¬
-###£¨Èç¹ûÊ¹ÓÃÃÜÔ¿£©¡£ÖØĞÂÉú³ÉÃØÔ¿ÊÇÎªÁË·ÀÖ¹ÀûÓÃµÁÓÃµÄÃÜÔ¿½âÃÜ±»½Ø»ñµÄĞÅÏ¢¡£
+##KeyRegenerationIntervalç”¨æ¥è®¾ç½®å¤šé•¿æ—¶é—´åç³»ç»Ÿè‡ªåŠ¨é‡æ–°ç”ŸæˆæœåŠ¡å™¨çš„ç§˜é’¥ï¼Œ
+###ï¼ˆå¦‚æœä½¿ç”¨å¯†é’¥ï¼‰ã€‚é‡æ–°ç”Ÿæˆç§˜é’¥æ˜¯ä¸ºäº†é˜²æ­¢åˆ©ç”¨ç›—ç”¨çš„å¯†é’¥è§£å¯†è¢«æˆªè·çš„ä¿¡æ¯ã€‚
 #ServerKeyBits 768
-##ServerKeyBitsÓÃÀ´¶¨Òå·şÎñÆ÷ÃÜÔ¿µÄ³¤¶È
-###Ö¸¶¨ÁÙÊ±·şÎñÆ÷ÃÜÔ¿µÄ³¤¶È¡£½öÓÃÓÚSSH-1¡£Ä¬ÈÏÖµÊÇ 768(Î»)¡£×îĞ¡ÖµÊÇ 512 ¡£
+##ServerKeyBitsç”¨æ¥å®šä¹‰æœåŠ¡å™¨å¯†é’¥çš„é•¿åº¦
+###æŒ‡å®šä¸´æ—¶æœåŠ¡å™¨å¯†é’¥çš„é•¿åº¦ã€‚ä»…ç”¨äºSSH-1ã€‚é»˜è®¤å€¼æ˜¯ 768(ä½)ã€‚æœ€å°å€¼æ˜¯ 512 ã€‚
 
 # Logging
 # obsoletes QuietMode and FascistLogging
 #SyslogFacility AUTH
 SyslogFacility AUTHPRIV
-##SyslogFacilityÓÃÀ´Éè¶¨ÔÚ¼ÇÂ¼À´×ÔsshdµÄÏûÏ¢µÄÊ±ºò£¬ÊÇ·ñ¸ø³ö¡°facility code¡±
+##SyslogFacilityç”¨æ¥è®¾å®šåœ¨è®°å½•æ¥è‡ªsshdçš„æ¶ˆæ¯çš„æ—¶å€™ï¼Œæ˜¯å¦ç»™å‡ºâ€œfacility codeâ€
 #LogLevel INFO
-##LogLevelÓÃÀ´Éè¶¨sshdÈÕÖ¾ÏûÏ¢µÄ¼¶±ğ
+##LogLevelç”¨æ¥è®¾å®šsshdæ—¥å¿—æ¶ˆæ¯çš„çº§åˆ«
 
-#################3.°²È«ÈÏÖ¤·½ÃæµÄÉè¶¨################
-#############3.1¡¢ÓĞ¹Ø°²È«µÇÂ¼µÄÉè¶¨###############
+#################3.å®‰å…¨è®¤è¯æ–¹é¢çš„è®¾å®š################
+#############3.1ã€æœ‰å…³å®‰å…¨ç™»å½•çš„è®¾å®š###############
 # Authentication:
-##ÏŞÖÆÓÃ»§±ØĞëÔÚÖ¸¶¨µÄÊ±ÏŞÄÚÈÏÖ¤³É¹¦£¬0 ±íÊ¾ÎŞÏŞÖÆ¡£Ä¬ÈÏÖµÊÇ 120 Ãë¡£
+##é™åˆ¶ç”¨æˆ·å¿…é¡»åœ¨æŒ‡å®šçš„æ—¶é™å†…è®¤è¯æˆåŠŸï¼Œ0 è¡¨ç¤ºæ— é™åˆ¶ã€‚é»˜è®¤å€¼æ˜¯ 120 ç§’ã€‚
 #LoginGraceTime 2m
-##LoginGraceTimeÓÃÀ´Éè¶¨Èç¹ûÓÃ»§µÇÂ¼Ê§°Ü£¬ÔÚÇĞ¶ÏÁ¬½ÓÇ°·şÎñÆ÷ĞèÒªµÈ´ıµÄÊ±¼ä£¬µ¥Î»ÎªÃî
+##LoginGraceTimeç”¨æ¥è®¾å®šå¦‚æœç”¨æˆ·ç™»å½•å¤±è´¥ï¼Œåœ¨åˆ‡æ–­è¿æ¥å‰æœåŠ¡å™¨éœ€è¦ç­‰å¾…çš„æ—¶é—´ï¼Œå•ä½ä¸ºå¦™
 #PermitRootLogin yes
-##PermitRootLoginÓÃÀ´ÉèÖÃÄÜ²»ÄÜÖ±½ÓÒÔ³¬¼¶ÓÃ»§sshµÇÂ¼£¬rootÔ¶³ÌµÇÂ¼LinuxºÜÎ£ÏÕ£¬½¨Òé×¢Ïú»òÉèÖÃÎªno
+##PermitRootLoginç”¨æ¥è®¾ç½®èƒ½ä¸èƒ½ç›´æ¥ä»¥è¶…çº§ç”¨æˆ·sshç™»å½•ï¼Œrootè¿œç¨‹ç™»å½•Linuxå¾ˆå±é™©ï¼Œå»ºè®®æ³¨é”€æˆ–è®¾ç½®ä¸ºno
 #StrictModes yes
-##StrictModesÓÃÀ´ÉèÖÃsshÔÚ½ÓÊÕµÇÂ¼ÇëÇóÖ®Ç°ÊÇ·ñ¼ì²éÓÃ»§¸ùÄ¿Â¼ºÍrhostsÎÄ¼şµÄÈ¨ÏŞºÍËùÓĞÈ¨£¬½¨Òé¿ªÆô
-###½¨ÒéÊ¹ÓÃÄ¬ÈÏÖµ"yes"À´Ô¤·À¿ÉÄÜ³öÏÖµÄµÍ¼¶´íÎó¡£
+##StrictModesç”¨æ¥è®¾ç½®sshåœ¨æ¥æ”¶ç™»å½•è¯·æ±‚ä¹‹å‰æ˜¯å¦æ£€æŸ¥ç”¨æˆ·æ ¹ç›®å½•å’Œrhostsæ–‡ä»¶çš„æƒé™å’Œæ‰€æœ‰æƒï¼Œå»ºè®®å¼€å¯
+###å»ºè®®ä½¿ç”¨é»˜è®¤å€¼"yes"æ¥é¢„é˜²å¯èƒ½å‡ºç°çš„ä½çº§é”™è¯¯ã€‚
 #RSAAuthentication yes
-##RSAAuthenticationÓÃÀ´ÉèÖÃÊÇ·ñ¿ªÆôRSAÃÜÔ¿ÑéÖ¤£¬Ö»Õë¶ÔSSH1
+##RSAAuthenticationç”¨æ¥è®¾ç½®æ˜¯å¦å¼€å¯RSAå¯†é’¥éªŒè¯ï¼Œåªé’ˆå¯¹SSH1
 #PubkeyAuthentication yes
-##PubkeyAuthenticationÓÃÀ´ÉèÖÃÊÇ·ñ¿ªÆô¹«Ô¿ÑéÖ¤£¬Èç¹ûÊ¹ÓÃ¹«Ô¿ÑéÖ¤µÄ·½Ê½µÇÂ¼Ê±£¬ÔòÉèÖÃÎªyes
+##PubkeyAuthenticationç”¨æ¥è®¾ç½®æ˜¯å¦å¼€å¯å…¬é’¥éªŒè¯ï¼Œå¦‚æœä½¿ç”¨å…¬é’¥éªŒè¯çš„æ–¹å¼ç™»å½•æ—¶ï¼Œåˆ™è®¾ç½®ä¸ºyes
 #AuthorizedKeysFile     .ssh/authorized_keys
-##AuthorizedKeysFileÓÃÀ´ÉèÖÃ¹«Ô¿ÑéÖ¤ÎÄ¼şµÄÂ·¾¶£¬ÓëPubkeyAuthenticationÅäºÏÊ¹ÓÃ,Ä¬ÈÏÖµÊÇ".ssh/authorized_keys"¡£
-###¸ÃÖ¸ÁîÖĞ¿ÉÒÔÊ¹ÓÃÏÂÁĞ¸ù¾İÁ¬½ÓÊ±µÄÊµ¼ÊÇé¿ö½øĞĞÕ¹¿ªµÄ·ûºÅ£º %% ±íÊ¾'%'¡¢%h ±íÊ¾ÓÃ»§µÄÖ÷Ä¿Â¼¡¢%u ±íÊ¾¸ÃÓÃ»§µÄÓÃ»§Ãû
-####¾­¹ıÀ©Õ¹Ö®ºóµÄÖµ±ØĞëÒªÃ´ÊÇ¾ø¶ÔÂ·¾¶£¬ÒªÃ´ÊÇÏà¶ÔÓÚÓÃ»§Ö÷Ä¿Â¼µÄÏà¶ÔÂ·¾¶¡£
+##AuthorizedKeysFileç”¨æ¥è®¾ç½®å…¬é’¥éªŒè¯æ–‡ä»¶çš„è·¯å¾„ï¼Œä¸PubkeyAuthenticationé…åˆä½¿ç”¨,é»˜è®¤å€¼æ˜¯".ssh/authorized_keys"ã€‚
+###è¯¥æŒ‡ä»¤ä¸­å¯ä»¥ä½¿ç”¨ä¸‹åˆ—æ ¹æ®è¿æ¥æ—¶çš„å®é™…æƒ…å†µè¿›è¡Œå±•å¼€çš„ç¬¦å·ï¼š %% è¡¨ç¤º'%'ã€%h è¡¨ç¤ºç”¨æˆ·çš„ä¸»ç›®å½•ã€%u è¡¨ç¤ºè¯¥ç”¨æˆ·çš„ç”¨æˆ·å
+####ç»è¿‡æ‰©å±•ä¹‹åçš„å€¼å¿…é¡»è¦ä¹ˆæ˜¯ç»å¯¹è·¯å¾„ï¼Œè¦ä¹ˆæ˜¯ç›¸å¯¹äºç”¨æˆ·ä¸»ç›®å½•çš„ç›¸å¯¹è·¯å¾„ã€‚
  
-#############3.2¡¢°²È«ÑéÖ¤µÄÉè¶¨###############
+#############3.2ã€å®‰å…¨éªŒè¯çš„è®¾å®š###############
 # For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
 #RhostsRSAAuthentication no
-##ÊÇ·ñÊ¹ÓÃÇ¿¿ÉĞÅÖ÷»úÈÏÖ¤(Í¨¹ı¼ì²éÔ¶³ÌÖ÷»úÃûºÍ¹ØÁªµÄÓÃ»§Ãû½øĞĞÈÏÖ¤)¡£½öÓÃÓÚSSH-1¡£
-###ÕâÊÇÍ¨¹ıÔÚRSAÈÏÖ¤³É¹¦ºóÔÙ¼ì²é ~/.rhosts »ò /etc/hosts.equiv ½øĞĞÈÏÖ¤µÄ¡£³öÓÚ°²È«¿¼ÂÇ£¬½¨ÒéÊ¹ÓÃÄ¬ÈÏÖµ"no"¡£
+##æ˜¯å¦ä½¿ç”¨å¼ºå¯ä¿¡ä¸»æœºè®¤è¯(é€šè¿‡æ£€æŸ¥è¿œç¨‹ä¸»æœºåå’Œå…³è”çš„ç”¨æˆ·åè¿›è¡Œè®¤è¯)ã€‚ä»…ç”¨äºSSH-1ã€‚
+###è¿™æ˜¯é€šè¿‡åœ¨RSAè®¤è¯æˆåŠŸåå†æ£€æŸ¥ ~/.rhosts æˆ– /etc/hosts.equiv è¿›è¡Œè®¤è¯çš„ã€‚å‡ºäºå®‰å…¨è€ƒè™‘ï¼Œå»ºè®®ä½¿ç”¨é»˜è®¤å€¼"no"ã€‚
 # similar for protocol version 2
 #HostbasedAuthentication no
-##Õâ¸öÖ¸ÁîÓë RhostsRSAAuthentication ÀàËÆ£¬µ«ÊÇ½ö¿ÉÒÔÓÃÓÚSSH-2¡£
+##è¿™ä¸ªæŒ‡ä»¤ä¸ RhostsRSAAuthentication ç±»ä¼¼ï¼Œä½†æ˜¯ä»…å¯ä»¥ç”¨äºSSH-2ã€‚
 # Change to yes if you don't trust ~/.ssh/known_hosts for
 # RhostsRSAAuthentication and HostbasedAuthentication
 #IgnoreUserKnownHosts no
-##IgnoreUserKnownHostsÓÃÀ´ÉèÖÃsshÔÚ½øĞĞRhostsRSAAuthentication°²È«ÑéÖ¤Ê±ÊÇ·ñºöÂÔÓÃ»§µÄ¡°/$HOME/.ssh/known_hosts¡±ÎÄ¼ş
+##IgnoreUserKnownHostsç”¨æ¥è®¾ç½®sshåœ¨è¿›è¡ŒRhostsRSAAuthenticationå®‰å…¨éªŒè¯æ—¶æ˜¯å¦å¿½ç•¥ç”¨æˆ·çš„â€œ/$HOME/.ssh/known_hostsâ€æ–‡ä»¶
 # Don't read the user's ~/.rhosts and ~/.shosts files
 #IgnoreRhosts yes
-##IgnoreRhostsÓÃÀ´ÉèÖÃÑéÖ¤µÄÊ±ºòÊÇ·ñÊ¹ÓÃ¡°~/.rhosts¡±ºÍ¡°~/.shosts¡±ÎÄ¼ş
+##IgnoreRhostsç”¨æ¥è®¾ç½®éªŒè¯çš„æ—¶å€™æ˜¯å¦ä½¿ç”¨â€œ~/.rhostsâ€å’Œâ€œ~/.shostsâ€æ–‡ä»¶
 # To disable tunneled clear text passwords, change to no here!
 #PasswordAuthentication yes
-##PasswordAuthenticationÓÃÀ´ÉèÖÃÊÇ·ñ¿ªÆôÃÜÂëÑéÖ¤»úÖÆ£¬Èç¹ûÓÃÃÜÂëµÇÂ¼ÏµÍ³£¬ÔòÉèÖÃyes
+##PasswordAuthenticationç”¨æ¥è®¾ç½®æ˜¯å¦å¼€å¯å¯†ç éªŒè¯æœºåˆ¶ï¼Œå¦‚æœç”¨å¯†ç ç™»å½•ç³»ç»Ÿï¼Œåˆ™è®¾ç½®yes
 #PermitEmptyPasswords no
-#PermitEmptyPasswordsÓÃÀ´ÉèÖÃÊÇ·ñÔÊĞíÓÃ¿ÚÁîÎª¿ÕµÄÕËºÅµÇÂ¼ÏµÍ³£¬ÉèÖÃno
+#PermitEmptyPasswordsç”¨æ¥è®¾ç½®æ˜¯å¦å…è®¸ç”¨å£ä»¤ä¸ºç©ºçš„è´¦å·ç™»å½•ç³»ç»Ÿï¼Œè®¾ç½®no
 #PasswordAuthentication yes
-##ÊÇ·ñÔÊĞíÊ¹ÓÃ»ùÓÚÃÜÂëµÄÈÏÖ¤¡£Ä¬ÈÏÎª"yes"¡£
+##æ˜¯å¦å…è®¸ä½¿ç”¨åŸºäºå¯†ç çš„è®¤è¯ã€‚é»˜è®¤ä¸º"yes"ã€‚
 PasswordAuthentication yes
 # Change to no to disable s/key passwords
-##ÉèÖÃ½ûÓÃs/keyÃÜÂë
+##è®¾ç½®ç¦ç”¨s/keyå¯†ç 
 #ChallengeResponseAuthentication yes
-##ChallengeResponseAuthentication ÊÇ·ñÔÊĞíÖÊÒÉ-Ó¦´ğ(challenge-response)ÈÏÖ¤
+##ChallengeResponseAuthentication æ˜¯å¦å…è®¸è´¨ç–‘-åº”ç­”(challenge-response)è®¤è¯
 ChallengeResponseAuthentication no
  
-########3.3¡¢Óë Kerberos ÓĞ¹ØµÄ²ÎÊıÉè¶¨£¬Ö¸¶¨ÊÇ·ñÔÊĞí»ùÓÚKerberosµÄÓÃ»§ÈÏÖ¤########
+########3.3ã€ä¸ Kerberos æœ‰å…³çš„å‚æ•°è®¾å®šï¼ŒæŒ‡å®šæ˜¯å¦å…è®¸åŸºäºKerberosçš„ç”¨æˆ·è®¤è¯########
 #Kerberos options
 #KerberosAuthentication no
-##ÊÇ·ñÒªÇóÓÃ»§ÎªPasswdAuthenticationÌá¹©µÄÃÜÂë±ØĞëÍ¨¹ıKerberos KDCÈÏÖ¤£¬ÒªÊ¹ÓÃKerberosÈÏÖ¤£¬
-###·şÎñÆ÷±ØĞëÌá¹©Ò»¸ö¿ÉÒÔĞ£ÑéKDC identityµÄKerberos servtab¡£Ä¬ÈÏÖµÎªno
+##æ˜¯å¦è¦æ±‚ç”¨æˆ·ä¸ºPasswdAuthenticationæä¾›çš„å¯†ç å¿…é¡»é€šè¿‡Kerberos KDCè®¤è¯ï¼Œè¦ä½¿ç”¨Kerberosè®¤è¯ï¼Œ
+###æœåŠ¡å™¨å¿…é¡»æä¾›ä¸€ä¸ªå¯ä»¥æ ¡éªŒKDC identityçš„Kerberos servtabã€‚é»˜è®¤å€¼ä¸ºno
 #KerberosOrLocalPasswd yes
-##Èç¹ûKerberosÃÜÂëÈÏÖ¤Ê§°Ü£¬ÄÇÃ´¸ÃÃÜÂë»¹½«ÒªÍ¨¹ıÆäËûµÄµÄÈÏÖ¤»úÖÆ£¬Èç/etc/passwd
-###ÔÚÆôÓÃ´ËÏîºó£¬Èç¹ûÎŞ·¨Í¨¹ıKerberosÑéÖ¤£¬ÔòÃÜÂëµÄÕıÈ·ĞÔ½«ÓÉ±¾µØµÄ»úÖÆÀ´¾ö¶¨£¬Èç/etc/passwd£¬Ä¬ÈÏÎªyes
+##å¦‚æœKerberoså¯†ç è®¤è¯å¤±è´¥ï¼Œé‚£ä¹ˆè¯¥å¯†ç è¿˜å°†è¦é€šè¿‡å…¶ä»–çš„çš„è®¤è¯æœºåˆ¶ï¼Œå¦‚/etc/passwd
+###åœ¨å¯ç”¨æ­¤é¡¹åï¼Œå¦‚æœæ— æ³•é€šè¿‡KerberoséªŒè¯ï¼Œåˆ™å¯†ç çš„æ­£ç¡®æ€§å°†ç”±æœ¬åœ°çš„æœºåˆ¶æ¥å†³å®šï¼Œå¦‚/etc/passwdï¼Œé»˜è®¤ä¸ºyes
 #KerberosTicketCleanup yes
-##ÉèÖÃÊÇ·ñÔÚÓÃ»§ÍË³öµÇÂ¼ÊÇ×Ô¶¯Ïú»ÙÓÃ»§µÄticket
+##è®¾ç½®æ˜¯å¦åœ¨ç”¨æˆ·é€€å‡ºç™»å½•æ˜¯è‡ªåŠ¨é”€æ¯ç”¨æˆ·çš„ticket
 #KerberosGetAFSToken no
-##Èç¹ûÊ¹ÓÃAFS²¢ÇÒ¸ÃÓÃ»§ÓĞÒ»¸öKerberos 5 TGT,ÄÇÃ´¿ªÆô¸ÃÖ¸Áîºó£¬
-###½«»áÔÚ·ÃÎÊÓÃ»§µÄ¼ÒÄ¿Â¼Ç°³¢ÊÔ»ñÈ¡Ò»¸öAFS token,²¢³¢ÊÔ´«ËÍ AFS token ¸ø Server ¶Ë£¬Ä¬ÈÏÎªno
+##å¦‚æœä½¿ç”¨AFSå¹¶ä¸”è¯¥ç”¨æˆ·æœ‰ä¸€ä¸ªKerberos 5 TGT,é‚£ä¹ˆå¼€å¯è¯¥æŒ‡ä»¤åï¼Œ
+###å°†ä¼šåœ¨è®¿é—®ç”¨æˆ·çš„å®¶ç›®å½•å‰å°è¯•è·å–ä¸€ä¸ªAFS token,å¹¶å°è¯•ä¼ é€ AFS token ç»™ Server ç«¯ï¼Œé»˜è®¤ä¸ºno
  
-####3.4¡¢Óë GSSAPI ÓĞ¹ØµÄ²ÎÊıÉè¶¨£¬Ö¸¶¨ÊÇ·ñÔÊĞí»ùÓÚGSSAPIµÄÓÃ»§ÈÏÖ¤£¬½öÊÊÓÃÓÚSSH2####
-##GSSAPI ÊÇÒ»Ì×ÀàËÆ Kerberos 5 µÄÍ¨ÓÃÍøÂç°²È«ÏµÍ³½Ó¿Ú¡£
-###Èç¹ûÄãÓµÓĞÒ»Ì× GSSAPI¿â£¬¾Í¿ÉÒÔÍ¨¹ı tcp Á¬½ÓÖ±½Ó½¨Á¢ cvs Á¬½Ó£¬ÓÉ GSSAPI ½øĞĞ°²È«¼ø±ğ¡£
+####3.4ã€ä¸ GSSAPI æœ‰å…³çš„å‚æ•°è®¾å®šï¼ŒæŒ‡å®šæ˜¯å¦å…è®¸åŸºäºGSSAPIçš„ç”¨æˆ·è®¤è¯ï¼Œä»…é€‚ç”¨äºSSH2####
+##GSSAPI æ˜¯ä¸€å¥—ç±»ä¼¼ Kerberos 5 çš„é€šç”¨ç½‘ç»œå®‰å…¨ç³»ç»Ÿæ¥å£ã€‚
+###å¦‚æœä½ æ‹¥æœ‰ä¸€å¥— GSSAPIåº“ï¼Œå°±å¯ä»¥é€šè¿‡ tcp è¿æ¥ç›´æ¥å»ºç«‹ cvs è¿æ¥ï¼Œç”± GSSAPI è¿›è¡Œå®‰å…¨é‰´åˆ«ã€‚
 # GSSAPI options
 #GSSAPIAuthentication no
-##GSSAPIAuthentication Ö¸¶¨ÊÇ·ñÔÊĞí»ùÓÚGSSAPIµÄÓÃ»§ÈÏÖ¤£¬Ä¬ÈÏÎªno
+##GSSAPIAuthentication æŒ‡å®šæ˜¯å¦å…è®¸åŸºäºGSSAPIçš„ç”¨æˆ·è®¤è¯ï¼Œé»˜è®¤ä¸ºno
 GSSAPIAuthentication yes
 #GSSAPICleanupCredentials yes
-##GSSAPICleanupCredentials ÉèÖÃÊÇ·ñÔÚÓÃ»§ÍË³öµÇÂ¼ÊÇ×Ô¶¯Ïú»ÙÓÃ»§µÄÆ¾Ö¤»º´æ
+##GSSAPICleanupCredentials è®¾ç½®æ˜¯å¦åœ¨ç”¨æˆ·é€€å‡ºç™»å½•æ˜¯è‡ªåŠ¨é”€æ¯ç”¨æˆ·çš„å‡­è¯ç¼“å­˜
 GSSAPICleanupCredentials yes
 # Set this to 'yes' to enable PAM authentication, account processing,
 # and session processing. If this is enabled, PAM authentication will
@@ -1080,72 +1080,72 @@ GSSAPICleanupCredentials yes
 # session checks to run without PAM authentication, then enable this but set
 # ChallengeResponseAuthentication=no
 #UsePAM no
-##ÉèÖÃÊÇ·ñÍ¨¹ıPAMÑéÖ¤
+##è®¾ç½®æ˜¯å¦é€šè¿‡PAMéªŒè¯
 UsePAM yes
 # Accept locale-related environment variables
-##AcceptEnv Ö¸¶¨¿Í»§¶Ë·¢ËÍµÄÄÄĞ©»·¾³±äÁ¿½«»á±»´«µİµ½»á»°»·¾³ÖĞ¡£
-###[×¢Òâ]Ö»ÓĞSSH-2Ğ­ÒéÖ§³Ö»·¾³±äÁ¿µÄ´«µİ¡£Ö¸ÁîµÄÖµÊÇ¿Õ¸ñ·Ö¸ôµÄ±äÁ¿ÃûÁĞ±í(ÆäÖĞ¿ÉÒÔÊ¹ÓÃ'*'ºÍ'?'×÷ÎªÍ¨Åä·û)¡£
-####Ò²¿ÉÒÔÊ¹ÓÃ¶à¸ö AcceptEnv ´ïµ½Í¬ÑùµÄÄ¿µÄ¡£ĞèÒª×¢ÒâµÄÊÇ£¬ÓĞĞ©»·¾³±äÁ¿¿ÉÄÜ»á±»ÓÃÓÚÈÆ¹ı½ûÖ¹ÓÃ»§Ê¹ÓÃµÄ»·¾³±äÁ¿¡£
-#####ÓÉÓÚÕâ¸öÔ­Òò£¬¸ÃÖ¸ÁîÓ¦µ±Ğ¡ĞÄÊ¹ÓÃ¡£Ä¬ÈÏÊÇ²»´«µİÈÎºÎ»·¾³±äÁ¿¡£
+##AcceptEnv æŒ‡å®šå®¢æˆ·ç«¯å‘é€çš„å“ªäº›ç¯å¢ƒå˜é‡å°†ä¼šè¢«ä¼ é€’åˆ°ä¼šè¯ç¯å¢ƒä¸­ã€‚
+###[æ³¨æ„]åªæœ‰SSH-2åè®®æ”¯æŒç¯å¢ƒå˜é‡çš„ä¼ é€’ã€‚æŒ‡ä»¤çš„å€¼æ˜¯ç©ºæ ¼åˆ†éš”çš„å˜é‡ååˆ—è¡¨(å…¶ä¸­å¯ä»¥ä½¿ç”¨'*'å’Œ'?'ä½œä¸ºé€šé…ç¬¦)ã€‚
+####ä¹Ÿå¯ä»¥ä½¿ç”¨å¤šä¸ª AcceptEnv è¾¾åˆ°åŒæ ·çš„ç›®çš„ã€‚éœ€è¦æ³¨æ„çš„æ˜¯ï¼Œæœ‰äº›ç¯å¢ƒå˜é‡å¯èƒ½ä¼šè¢«ç”¨äºç»•è¿‡ç¦æ­¢ç”¨æˆ·ä½¿ç”¨çš„ç¯å¢ƒå˜é‡ã€‚
+#####ç”±äºè¿™ä¸ªåŸå› ï¼Œè¯¥æŒ‡ä»¤åº”å½“å°å¿ƒä½¿ç”¨ã€‚é»˜è®¤æ˜¯ä¸ä¼ é€’ä»»ä½•ç¯å¢ƒå˜é‡ã€‚
 AcceptEnv LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
 AcceptEnv LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
 AcceptEnv LC_IDENTIFICATION LC_ALL
 AllowTcpForwarding yes
-##AllowTcpForwardingÉèÖÃÊÇ·ñÔÊĞíÔÊĞítcp¶Ë¿Ú×ª·¢£¬±£»¤ÆäËûµÄtcpÁ¬½Ó
+##AllowTcpForwardingè®¾ç½®æ˜¯å¦å…è®¸å…è®¸tcpç«¯å£è½¬å‘ï¼Œä¿æŠ¤å…¶ä»–çš„tcpè¿æ¥
 #GatewayPorts no
-##GatewayPorts ÉèÖÃÊÇ·ñÔÊĞíÔ¶³Ì¿Í»§¶ËÊ¹ÓÃ±¾µØÖ÷»úµÄ¶Ë¿Ú×ª·¢¹¦ÄÜ£¬³öÓÚ°²È«¿¼ÂÇ£¬½¨Òé½ûÖ¹
+##GatewayPorts è®¾ç½®æ˜¯å¦å…è®¸è¿œç¨‹å®¢æˆ·ç«¯ä½¿ç”¨æœ¬åœ°ä¸»æœºçš„ç«¯å£è½¬å‘åŠŸèƒ½ï¼Œå‡ºäºå®‰å…¨è€ƒè™‘ï¼Œå»ºè®®ç¦æ­¢
  
-#############3.5¡¢X-WindowÏÂÊ¹ÓÃµÄÏà¹ØÉè¶¨###############
+#############3.5ã€X-Windowä¸‹ä½¿ç”¨çš„ç›¸å…³è®¾å®š###############
 #X11Forwarding no
-##X11Forwarding ÓÃÀ´ÉèÖÃÊÇ·ñÔÊĞíX11×ª·¢
+##X11Forwarding ç”¨æ¥è®¾ç½®æ˜¯å¦å…è®¸X11è½¬å‘
 X11Forwarding yes
 #X11DisplayOffset 10
-##Ö¸¶¨X11 ×ª·¢µÄµÚÒ»¸ö¿ÉÓÃµÄÏÔÊ¾Çø(display)Êı×Ö¡£Ä¬ÈÏÖµÊÇ 10 ¡£
-###¿ÉÒÔÓÃÓÚ·ÀÖ¹ sshd Õ¼ÓÃÁËÕæÊµµÄ X11 ·şÎñÆ÷ÏÔÊ¾Çø£¬´Ó¶ø·¢Éú»ìÏı¡£
+##æŒ‡å®šX11 è½¬å‘çš„ç¬¬ä¸€ä¸ªå¯ç”¨çš„æ˜¾ç¤ºåŒº(display)æ•°å­—ã€‚é»˜è®¤å€¼æ˜¯ 10 ã€‚
+###å¯ä»¥ç”¨äºé˜²æ­¢ sshd å ç”¨äº†çœŸå®çš„ X11 æœåŠ¡å™¨æ˜¾ç¤ºåŒºï¼Œä»è€Œå‘ç”Ÿæ··æ·†ã€‚
 X11DisplayOffset 10
 #X11UseLocalhost yes
  
-#################3.6¡¢µÇÈëºóµÄÏà¹ØÉè¶¨#################
+#################3.6ã€ç™»å…¥åçš„ç›¸å…³è®¾å®š#################
 #PrintMotd yes
-##PrintMotdÓÃÀ´ÉèÖÃsshdÊÇ·ñÔÚÓÃ»§µÇÂ¼Ê±ÏÔÊ¾¡°/etc/motd¡±ÖĞµÄĞÅÏ¢£¬¿ÉÒÔÑ¡ÔÚÔÚ¡°/etc/motd¡±ÖĞ¼ÓÈë¾¯¸æµÄĞÅÏ¢
+##PrintMotdç”¨æ¥è®¾ç½®sshdæ˜¯å¦åœ¨ç”¨æˆ·ç™»å½•æ—¶æ˜¾ç¤ºâ€œ/etc/motdâ€ä¸­çš„ä¿¡æ¯ï¼Œå¯ä»¥é€‰åœ¨åœ¨â€œ/etc/motdâ€ä¸­åŠ å…¥è­¦å‘Šçš„ä¿¡æ¯
 #PrintLastLog yes
-#PrintLastLog ÊÇ·ñÏÔÊ¾ÉÏ´ÎµÇÂ¼ĞÅÏ¢
+#PrintLastLog æ˜¯å¦æ˜¾ç¤ºä¸Šæ¬¡ç™»å½•ä¿¡æ¯
 #TCPKeepAlive yes
-##TCPKeepAlive ÊÇ·ñ³ÖĞøÁ¬½Ó£¬ÉèÖÃyes¿ÉÒÔ·ÀÖ¹ËÀÁ¬½Ó
-###Ò»°ã¶øÑÔ£¬Èç¹ûÉè¶¨ÕâÏîÄ¿µÄ»°£¬ÄÇÃ´ SSH Server »á´«ËÍ KeepAlive µÄÑ¶Ï¢¸ø Client ¶Ë£¬ÒÔÈ·±£Á½ÕßµÄÁª»úÕı³££¡
-####ÕâÖÖÏûÏ¢¿ÉÒÔ¼ì²âµ½ËÀÁ¬½Ó¡¢Á¬½Ó²»µ±¹Ø±Õ¡¢¿Í»§¶Ë±ÀÀ£µÈÒì³£¡£ÔÚÕâ¸öÇé¿öÏÂ£¬ÈÎºÎÒ»¶ËËÀµôºó£¬ SSH ¿ÉÒÔÁ¢¿ÌÖªµÀ£¬¶ø²»»áÓĞ½©Ê¬³ÌĞòµÄ·¢Éú£¡
+##TCPKeepAlive æ˜¯å¦æŒç»­è¿æ¥ï¼Œè®¾ç½®yeså¯ä»¥é˜²æ­¢æ­»è¿æ¥
+###ä¸€èˆ¬è€Œè¨€ï¼Œå¦‚æœè®¾å®šè¿™é¡¹ç›®çš„è¯ï¼Œé‚£ä¹ˆ SSH Server ä¼šä¼ é€ KeepAlive çš„è®¯æ¯ç»™ Client ç«¯ï¼Œä»¥ç¡®ä¿ä¸¤è€…çš„è”æœºæ­£å¸¸ï¼
+####è¿™ç§æ¶ˆæ¯å¯ä»¥æ£€æµ‹åˆ°æ­»è¿æ¥ã€è¿æ¥ä¸å½“å…³é—­ã€å®¢æˆ·ç«¯å´©æºƒç­‰å¼‚å¸¸ã€‚åœ¨è¿™ä¸ªæƒ…å†µä¸‹ï¼Œä»»ä½•ä¸€ç«¯æ­»æ‰åï¼Œ SSH å¯ä»¥ç«‹åˆ»çŸ¥é“ï¼Œè€Œä¸ä¼šæœ‰åƒµå°¸ç¨‹åºçš„å‘ç”Ÿï¼
 #UseLogin no
-##UseLogin ÉèÖÃÊÇ·ñÔÚ½»»¥Ê½»á»°µÄµÇÂ¼¹ı³ÌÖĞÊ¹ÓÃ¡£Ä¬ÈÏÖµÊÇ"no"¡£
-###Èç¹û¿ªÆô´ËÖ¸Áî£¬ÄÇÃ´X11Forwarding ½«»á±»½ûÖ¹£¬ÒòÎªlogin²»ÖªµÀÈçºÎ´¦Àí xauth cookies ¡£
-####ĞèÒª×¢ÒâµÄÊÇ£¬ÔÚSSHµ×ÏÂ±¾À´¾Í²»½ÓÊÜ login Õâ¸ö³ÌĞòµÄµÇÈë£¬Èç¹ûÖ¸UsePrivilegeSeparation £¬ÄÇÃ´Ëü½«ÔÚÈÏÖ¤Íê³Éºó±»½ûÓÃ¡£
-UserLogin no¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+##UseLogin è®¾ç½®æ˜¯å¦åœ¨äº¤äº’å¼ä¼šè¯çš„ç™»å½•è¿‡ç¨‹ä¸­ä½¿ç”¨ã€‚é»˜è®¤å€¼æ˜¯"no"ã€‚
+###å¦‚æœå¼€å¯æ­¤æŒ‡ä»¤ï¼Œé‚£ä¹ˆX11Forwarding å°†ä¼šè¢«ç¦æ­¢ï¼Œå› ä¸ºloginä¸çŸ¥é“å¦‚ä½•å¤„ç† xauth cookies ã€‚
+####éœ€è¦æ³¨æ„çš„æ˜¯ï¼Œåœ¨SSHåº•ä¸‹æœ¬æ¥å°±ä¸æ¥å— login è¿™ä¸ªç¨‹åºçš„ç™»å…¥ï¼Œå¦‚æœæŒ‡UsePrivilegeSeparation ï¼Œé‚£ä¹ˆå®ƒå°†åœ¨è®¤è¯å®Œæˆåè¢«ç¦ç”¨ã€‚
+UserLogin noã€€ã€€ã€€ã€€ã€€ã€€ã€€
 #UsePrivilegeSeparation yes
-##UsePrivilegeSeparation ÉèÖÃÊ¹ÓÃÕßµÄÈ¨ÏŞ
+##UsePrivilegeSeparation è®¾ç½®ä½¿ç”¨è€…çš„æƒé™
 #PermitUserEnvironment no
 #Compression delayed
 #ClientAliveInterval 0
 #ClientAliveCountMax 3
 #ShowPatchLevel no
 #UseDNS yes
-##UseDNSÊÇ·ñÊ¹ÓÃdns·´Ïò½âÎö
+##UseDNSæ˜¯å¦ä½¿ç”¨dnsåå‘è§£æ
 #PidFile /var/run/sshd.pid
 #MaxStartups 10
-##MaxStartups ÉèÖÃÍ¬Ê±ÔÊĞí¼¸¸öÉĞÎ´µÇÈëµÄÁª»ú£¬µ±ÓÃ»§Á¬ÉÏsshµ«²¢Î´ÊäÈëÃÜÂë¼´ÎªËùÎ½µÄÁª»ú£¬
-###ÔÚÕâ¸öÁª»úÖĞ£¬ÎªÁË±£»¤Ö÷»ú£¬ËùÒÔĞèÒªÉèÖÃ×î´óÖµ£¬Ô¤ÉèÎª10¸ö£¬¶øÒÑ¾­½¨Á¢Áª»úµÄ²»¼ÆËãÈëÄÚ£¬
-####ËùÒÔÒ»°ã5¸ö¼´¿É£¬Õâ¸öÉèÖÃ¿ÉÒÔ·ÀÖ¹¶ñÒâ¶Ô·şÎñÆ÷½øĞĞÁ¬½Ó
+##MaxStartups è®¾ç½®åŒæ—¶å…è®¸å‡ ä¸ªå°šæœªç™»å…¥çš„è”æœºï¼Œå½“ç”¨æˆ·è¿ä¸Šsshä½†å¹¶æœªè¾“å…¥å¯†ç å³ä¸ºæ‰€è°“çš„è”æœºï¼Œ
+###åœ¨è¿™ä¸ªè”æœºä¸­ï¼Œä¸ºäº†ä¿æŠ¤ä¸»æœºï¼Œæ‰€ä»¥éœ€è¦è®¾ç½®æœ€å¤§å€¼ï¼Œé¢„è®¾ä¸º10ä¸ªï¼Œè€Œå·²ç»å»ºç«‹è”æœºçš„ä¸è®¡ç®—å…¥å†…ï¼Œ
+####æ‰€ä»¥ä¸€èˆ¬5ä¸ªå³å¯ï¼Œè¿™ä¸ªè®¾ç½®å¯ä»¥é˜²æ­¢æ¶æ„å¯¹æœåŠ¡å™¨è¿›è¡Œè¿æ¥
 #MaxAuthTries 6
-##MaxAuthTries ÓÃÀ´ÉèÖÃ×î´óÊ§°Ü³¢ÊÔµÇÂ½´ÎÊıÎª6£¬ºÏÀíÉèÖÃ´ÇÖ°£¬¿ÉÒÔ·ÀÖ¹¹¥»÷ÕßÇî¾ÙµÇÂ¼·şÎñÆ÷
+##MaxAuthTries ç”¨æ¥è®¾ç½®æœ€å¤§å¤±è´¥å°è¯•ç™»é™†æ¬¡æ•°ä¸º6ï¼Œåˆç†è®¾ç½®è¾èŒï¼Œå¯ä»¥é˜²æ­¢æ”»å‡»è€…ç©·ä¸¾ç™»å½•æœåŠ¡å™¨
 #PermitTunnel no
  
-############3.7¡¢¿ª·Å½ûÖ¹ÓÃ»§Éè¶¨############
-#AllowUsers<ÓÃ»§Ãû1> <ÓÃ»§Ãû2> <ÓÃ»§Ãû3> ...
-##Ö¸¶¨ÔÊĞíÍ¨¹ıÔ¶³Ì·ÃÎÊµÄÓÃ»§£¬¶à¸öÓÃ»§ÒÔ¿Õ¸ñ¸ô¿ª
-#AllowGroups<×éÃû1> <×éÃû2> <×éÃû3> ...
-##Ö¸¶¨ÔÊĞíÍ¨¹ıÔ¶³Ì·ÃÎÊµÄ×é£¬¶à¸ö×éÒÔ¿Õ¸ñ¸ô¿ª¡£µ±¶à¸öÓÃ»§ĞèÒªÍ¨¹ısshµÇÂ¼ÏµÍ³Ê±£¬¿É½«ËùÓĞÓÃ»§¼ÓÈëÒ»¸ö×éÖĞ¡£
-#DenyUsers<ÓÃ»§Ãû1> <ÓÃ»§Ãû2> <ÓÃ»§Ãû3> ...
-##Ö¸¶¨½ûÖ¹Í¨¹ıÔ¶³Ì·ÃÎÊµÄÓÃ»§£¬¶à¸öÓÃ»§ÒÔ¿Õ¸ñ¸ô¿ª
-#DenyGroups<×éÃû1> <×éÃû2> <×éÃû3> ...
-##Ö¸¶¨½ûÖ¹Í¨¹ıÔ¶³Ì·ÃÎÊµÄ×é£¬¶à¸ö×éÒÔ¿Õ¸ñ¸ô¿ª¡£
+############3.7ã€å¼€æ”¾ç¦æ­¢ç”¨æˆ·è®¾å®š############
+#AllowUsers<ç”¨æˆ·å1> <ç”¨æˆ·å2> <ç”¨æˆ·å3> ...
+##æŒ‡å®šå…è®¸é€šè¿‡è¿œç¨‹è®¿é—®çš„ç”¨æˆ·ï¼Œå¤šä¸ªç”¨æˆ·ä»¥ç©ºæ ¼éš”å¼€
+#AllowGroups<ç»„å1> <ç»„å2> <ç»„å3> ...
+##æŒ‡å®šå…è®¸é€šè¿‡è¿œç¨‹è®¿é—®çš„ç»„ï¼Œå¤šä¸ªç»„ä»¥ç©ºæ ¼éš”å¼€ã€‚å½“å¤šä¸ªç”¨æˆ·éœ€è¦é€šè¿‡sshç™»å½•ç³»ç»Ÿæ—¶ï¼Œå¯å°†æ‰€æœ‰ç”¨æˆ·åŠ å…¥ä¸€ä¸ªç»„ä¸­ã€‚
+#DenyUsers<ç”¨æˆ·å1> <ç”¨æˆ·å2> <ç”¨æˆ·å3> ...
+##æŒ‡å®šç¦æ­¢é€šè¿‡è¿œç¨‹è®¿é—®çš„ç”¨æˆ·ï¼Œå¤šä¸ªç”¨æˆ·ä»¥ç©ºæ ¼éš”å¼€
+#DenyGroups<ç»„å1> <ç»„å2> <ç»„å3> ...
+##æŒ‡å®šç¦æ­¢é€šè¿‡è¿œç¨‹è®¿é—®çš„ç»„ï¼Œå¤šä¸ªç»„ä»¥ç©ºæ ¼éš”å¼€ã€‚
 # no default banner path
 #Banner /some/path
 # override default of no subsystems
@@ -1155,172 +1155,172 @@ ClientAliveCountMax 0
 
 ----------------------------------------------------------------------
 
-# uname -a               # ²é¿´ÄÚºË/²Ù×÷ÏµÍ³/CPUĞÅÏ¢
-# head -n 1 /etc/issue   # ²é¿´²Ù×÷ÏµÍ³°æ±¾
-# cat /proc/cpuinfo      # ²é¿´CPUĞÅÏ¢
-# hostname               # ²é¿´¼ÆËã»úÃû
-# lspci -tv              # ÁĞ³öËùÓĞPCIÉè±¸
-# lsusb -tv              # ÁĞ³öËùÓĞUSBÉè±¸
-# lsmod                  # ÁĞ³ö¼ÓÔØµÄÄÚºËÄ£¿é
-# env                    # ²é¿´»·¾³±äÁ¿
+# uname -a               # æŸ¥çœ‹å†…æ ¸/æ“ä½œç³»ç»Ÿ/CPUä¿¡æ¯
+# head -n 1 /etc/issue   # æŸ¥çœ‹æ“ä½œç³»ç»Ÿç‰ˆæœ¬
+# cat /proc/cpuinfo      # æŸ¥çœ‹CPUä¿¡æ¯
+# hostname               # æŸ¥çœ‹è®¡ç®—æœºå
+# lspci -tv              # åˆ—å‡ºæ‰€æœ‰PCIè®¾å¤‡
+# lsusb -tv              # åˆ—å‡ºæ‰€æœ‰USBè®¾å¤‡
+# lsmod                  # åˆ—å‡ºåŠ è½½çš„å†…æ ¸æ¨¡å—
+# env                    # æŸ¥çœ‹ç¯å¢ƒå˜é‡
 
-×ÊÔ´
-# free -m                # ²é¿´ÄÚ´æÊ¹ÓÃÁ¿ºÍ½»»»ÇøÊ¹ÓÃÁ¿
-# df -h                  # ²é¿´¸÷·ÖÇøÊ¹ÓÃÇé¿ö
-# du -sh <Ä¿Â¼Ãû>        # ²é¿´Ö¸¶¨Ä¿Â¼µÄ´óĞ¡
-# grep MemTotal /proc/meminfo   # ²é¿´ÄÚ´æ×ÜÁ¿
-# grep MemFree /proc/meminfo    # ²é¿´¿ÕÏĞÄÚ´æÁ¿
-# uptime                 # ²é¿´ÏµÍ³ÔËĞĞÊ±¼ä¡¢ÓÃ»§Êı¡¢¸ºÔØ
-# cat /proc/loadavg      # ²é¿´ÏµÍ³¸ºÔØ
+èµ„æº
+# free -m                # æŸ¥çœ‹å†…å­˜ä½¿ç”¨é‡å’Œäº¤æ¢åŒºä½¿ç”¨é‡
+# df -h                  # æŸ¥çœ‹å„åˆ†åŒºä½¿ç”¨æƒ…å†µ
+# du -sh <ç›®å½•å>        # æŸ¥çœ‹æŒ‡å®šç›®å½•çš„å¤§å°
+# grep MemTotal /proc/meminfo   # æŸ¥çœ‹å†…å­˜æ€»é‡
+# grep MemFree /proc/meminfo    # æŸ¥çœ‹ç©ºé—²å†…å­˜é‡
+# uptime                 # æŸ¥çœ‹ç³»ç»Ÿè¿è¡Œæ—¶é—´ã€ç”¨æˆ·æ•°ã€è´Ÿè½½
+# cat /proc/loadavg      # æŸ¥çœ‹ç³»ç»Ÿè´Ÿè½½
 
-´ÅÅÌºÍ·ÖÇø
-# mount | column -t      # ²é¿´¹Ò½ÓµÄ·ÖÇø×´Ì¬
-# fdisk -l               # ²é¿´ËùÓĞ·ÖÇø
-# swapon -s              # ²é¿´ËùÓĞ½»»»·ÖÇø
-# hdparm -i /dev/hda     # ²é¿´´ÅÅÌ²ÎÊı(½öÊÊÓÃÓÚIDEÉè±¸)
-# dmesg | grep IDE       # ²é¿´Æô¶¯Ê±IDEÉè±¸¼ì²â×´¿ö
+ç£ç›˜å’Œåˆ†åŒº
+# mount | column -t      # æŸ¥çœ‹æŒ‚æ¥çš„åˆ†åŒºçŠ¶æ€
+# fdisk -l               # æŸ¥çœ‹æ‰€æœ‰åˆ†åŒº
+# swapon -s              # æŸ¥çœ‹æ‰€æœ‰äº¤æ¢åˆ†åŒº
+# hdparm -i /dev/hda     # æŸ¥çœ‹ç£ç›˜å‚æ•°(ä»…é€‚ç”¨äºIDEè®¾å¤‡)
+# dmesg | grep IDE       # æŸ¥çœ‹å¯åŠ¨æ—¶IDEè®¾å¤‡æ£€æµ‹çŠ¶å†µ
 
-ÍøÂç
-# ifconfig               # ²é¿´ËùÓĞÍøÂç½Ó¿ÚµÄÊôĞÔ
-# iptables -L            # ²é¿´·À»ğÇ½ÉèÖÃ
-# route -n               # ²é¿´Â·ÓÉ±í
-# netstat -lntp          # ²é¿´ËùÓĞ¼àÌı¶Ë¿Ú
-# netstat -antp          # ²é¿´ËùÓĞÒÑ¾­½¨Á¢µÄÁ¬½Ó
-# netstat -s             # ²é¿´ÍøÂçÍ³¼ÆĞÅÏ¢
+ç½‘ç»œ
+# ifconfig               # æŸ¥çœ‹æ‰€æœ‰ç½‘ç»œæ¥å£çš„å±æ€§
+# iptables -L            # æŸ¥çœ‹é˜²ç«å¢™è®¾ç½®
+# route -n               # æŸ¥çœ‹è·¯ç”±è¡¨
+# netstat -lntp          # æŸ¥çœ‹æ‰€æœ‰ç›‘å¬ç«¯å£
+# netstat -antp          # æŸ¥çœ‹æ‰€æœ‰å·²ç»å»ºç«‹çš„è¿æ¥
+# netstat -s             # æŸ¥çœ‹ç½‘ç»œç»Ÿè®¡ä¿¡æ¯
 
-½ø³Ì
-# ps -ef                 # ²é¿´ËùÓĞ½ø³Ì
-# top                    # ÊµÊ±ÏÔÊ¾½ø³Ì×´Ì¬
+è¿›ç¨‹
+# ps -ef                 # æŸ¥çœ‹æ‰€æœ‰è¿›ç¨‹
+# top                    # å®æ—¶æ˜¾ç¤ºè¿›ç¨‹çŠ¶æ€
 
-ÓÃ»§
-# w                      # ²é¿´»î¶¯ÓÃ»§
-# id <ÓÃ»§Ãû>            # ²é¿´Ö¸¶¨ÓÃ»§ĞÅÏ¢
-# last                   # ²é¿´ÓÃ»§µÇÂ¼ÈÕÖ¾
-# cut -d: -f1 /etc/passwd   # ²é¿´ÏµÍ³ËùÓĞÓÃ»§
-# cut -d: -f1 /etc/group    # ²é¿´ÏµÍ³ËùÓĞ×é
-# crontab -l             # ²é¿´µ±Ç°ÓÃ»§µÄ¼Æ»®ÈÎÎñ
+ç”¨æˆ·
+# w                      # æŸ¥çœ‹æ´»åŠ¨ç”¨æˆ·
+# id <ç”¨æˆ·å>            # æŸ¥çœ‹æŒ‡å®šç”¨æˆ·ä¿¡æ¯
+# last                   # æŸ¥çœ‹ç”¨æˆ·ç™»å½•æ—¥å¿—
+# cut -d: -f1 /etc/passwd   # æŸ¥çœ‹ç³»ç»Ÿæ‰€æœ‰ç”¨æˆ·
+# cut -d: -f1 /etc/group    # æŸ¥çœ‹ç³»ç»Ÿæ‰€æœ‰ç»„
+# crontab -l             # æŸ¥çœ‹å½“å‰ç”¨æˆ·çš„è®¡åˆ’ä»»åŠ¡
 
-·şÎñ
-# chkconfig --list       # ÁĞ³öËùÓĞÏµÍ³·şÎñ
-# chkconfig --list | grep on    # ÁĞ³öËùÓĞÆô¶¯µÄÏµÍ³·şÎñ
+æœåŠ¡
+# chkconfig --list       # åˆ—å‡ºæ‰€æœ‰ç³»ç»ŸæœåŠ¡
+# chkconfig --list | grep on    # åˆ—å‡ºæ‰€æœ‰å¯åŠ¨çš„ç³»ç»ŸæœåŠ¡
 
-³ÌĞò
-# rpm -qa                # ²é¿´ËùÓĞ°²×°µÄÈí¼ş°ü
+ç¨‹åº
+# rpm -qa                # æŸ¥çœ‹æ‰€æœ‰å®‰è£…çš„è½¯ä»¶åŒ…
 
 ----------------------------------------------------------------------
 
-psÃüÁî
+pså‘½ä»¤
 
-ÊäÈëÏÂÃæµÄpsÃüÁî£¬ÏÔÊ¾ËùÓĞÔËĞĞÖĞµÄ½ø³Ì£º
+è¾“å…¥ä¸‹é¢çš„pså‘½ä»¤ï¼Œæ˜¾ç¤ºæ‰€æœ‰è¿è¡Œä¸­çš„è¿›ç¨‹ï¼š
 
 # ps aux | less
-ÆäÖĞ£¬
+å…¶ä¸­ï¼Œ
 
--A£ºÏÔÊ¾ËùÓĞ½ø³Ì
+-Aï¼šæ˜¾ç¤ºæ‰€æœ‰è¿›ç¨‹
 
-a£ºÏÔÊ¾ÖÕ¶ËÖĞ°üÀ¨ÆäËüÓÃ»§µÄËùÓĞ½ø³Ì
+aï¼šæ˜¾ç¤ºç»ˆç«¯ä¸­åŒ…æ‹¬å…¶å®ƒç”¨æˆ·çš„æ‰€æœ‰è¿›ç¨‹
 
-x£ºÏÔÊ¾ÎŞ¿ØÖÆÖÕ¶ËµÄ½ø³Ì
+xï¼šæ˜¾ç¤ºæ— æ§åˆ¶ç»ˆç«¯çš„è¿›ç¨‹
 
-ÈÎÎñ£º²é¿´ÏµÍ³ÖĞµÄÃ¿¸ö½ø³Ì¡£
+ä»»åŠ¡ï¼šæŸ¥çœ‹ç³»ç»Ÿä¸­çš„æ¯ä¸ªè¿›ç¨‹ã€‚
 
 # ps -A
 # ps -e
-ÈÎÎñ£º²é¿´·ÇrootÔËĞĞµÄ½ø³Ì
+ä»»åŠ¡ï¼šæŸ¥çœ‹érootè¿è¡Œçš„è¿›ç¨‹
 
 # ps -U root -u root -N
-ÈÎÎñ£º²é¿´ÓÃ»§vivekÔËĞĞµÄ½ø³Ì
+ä»»åŠ¡ï¼šæŸ¥çœ‹ç”¨æˆ·vivekè¿è¡Œçš„è¿›ç¨‹
 
 # ps -u vivek
-ÈÎÎñ£ºtopÃüÁî
+ä»»åŠ¡ï¼štopå‘½ä»¤
 
-topÃüÁîÌá¹©ÁËÔËĞĞÖĞÏµÍ³µÄ¶¯Ì¬ÊµÊ±ÊÓÍ¼¡£ÔÚÃüÁîÌáÊ¾ĞĞÖĞÊäÈëtop£º
+topå‘½ä»¤æä¾›äº†è¿è¡Œä¸­ç³»ç»Ÿçš„åŠ¨æ€å®æ—¶è§†å›¾ã€‚åœ¨å‘½ä»¤æç¤ºè¡Œä¸­è¾“å…¥topï¼š
 
 # top
 
 
-°´qÍË³ö£¬°´h½øÈë°ïÖú¡£
+æŒ‰qé€€å‡ºï¼ŒæŒ‰hè¿›å…¥å¸®åŠ©ã€‚
 
-ÈÎÎñ£ºÏÔÊ¾½ø³ÌµÄÊ÷×´Í¼¡£
+ä»»åŠ¡ï¼šæ˜¾ç¤ºè¿›ç¨‹çš„æ ‘çŠ¶å›¾ã€‚
 
-pstreeÒÔÊ÷×´ÏÔÊ¾ÕıÔÚÔËĞĞµÄ½ø³Ì¡£Ê÷µÄ¸ù½ÚµãÎªpid»òinit¡£Èç¹ûÖ¸¶¨ÁËÓÃ»§Ãû£¬½ø³ÌÊ÷½«ÒÔÓÃ»§ËùÓµÓĞµÄ½ø³Ì×÷Îª¸ù½Úµã¡£
+pstreeä»¥æ ‘çŠ¶æ˜¾ç¤ºæ­£åœ¨è¿è¡Œçš„è¿›ç¨‹ã€‚æ ‘çš„æ ¹èŠ‚ç‚¹ä¸ºpidæˆ–initã€‚å¦‚æœæŒ‡å®šäº†ç”¨æˆ·åï¼Œè¿›ç¨‹æ ‘å°†ä»¥ç”¨æˆ·æ‰€æ‹¥æœ‰çš„è¿›ç¨‹ä½œä¸ºæ ¹èŠ‚ç‚¹ã€‚
 
 $ pstree
 
 
-ÈÎÎñ£ºÊ¹ÓÃpsÁĞÓ¡½ø³ÌÊ÷
+ä»»åŠ¡ï¼šä½¿ç”¨psåˆ—å°è¿›ç¨‹æ ‘
 
 # ps -ejH
 # ps axjf
-ÈÎÎñ£º»ñµÃÏß³ÌĞÅÏ¢
+ä»»åŠ¡ï¼šè·å¾—çº¿ç¨‹ä¿¡æ¯
 
-ÊäÈëÏÂÁĞÃüÁî£º
+è¾“å…¥ä¸‹åˆ—å‘½ä»¤ï¼š
 
 # ps -eLf
 # ps axms
-ÈÎÎñ£º»ñµÃ°²È«ĞÅÏ¢
+ä»»åŠ¡ï¼šè·å¾—å®‰å…¨ä¿¡æ¯
 
-ÊäÈëÏÂÁĞÃüÁî£º
+è¾“å…¥ä¸‹åˆ—å‘½ä»¤ï¼š
 
 # ps -eo euser,ruser,suser,fuser,f,comm,label
 # ps axZ
 # ps -eM
-ÈÎÎñ£º½«½ø³Ì¿ìÕÕ´¢´æµ½ÎÄ¼şÖĞ
+ä»»åŠ¡ï¼šå°†è¿›ç¨‹å¿«ç…§å‚¨å­˜åˆ°æ–‡ä»¶ä¸­
 
-ÊäÈëÏÂÁĞÃüÁî£º
+è¾“å…¥ä¸‹åˆ—å‘½ä»¤ï¼š
 
 # top -b -n1 > /tmp/process.log
-ÄãÒ²¿ÉÒÔ½«½á¹ûÍ¨¹ıÓÊ¼ş·¢¸ø×Ô¼º£º
+ä½ ä¹Ÿå¯ä»¥å°†ç»“æœé€šè¿‡é‚®ä»¶å‘ç»™è‡ªå·±ï¼š
 
 # top -b -n1 | mail -s 'Process snapshot' you@example.com
-ÈÎÎñ£º²éÕÒ½ø³Ì
+ä»»åŠ¡ï¼šæŸ¥æ‰¾è¿›ç¨‹
 
-Ê¹ÓÃpgrepÃüÁî¡£pgrepÄÜ²éÕÒµ±Ç°ÕıÔÚÔËĞĞµÄ½ø³Ì²¢ÁĞ³ö·ûºÏÌõ¼şµÄ½ø³ÌID¡£ÀıÈçÏÔÊ¾firefoxµÄ½ø³ÌID£º
+ä½¿ç”¨pgrepå‘½ä»¤ã€‚pgrepèƒ½æŸ¥æ‰¾å½“å‰æ­£åœ¨è¿è¡Œçš„è¿›ç¨‹å¹¶åˆ—å‡ºç¬¦åˆæ¡ä»¶çš„è¿›ç¨‹IDã€‚ä¾‹å¦‚æ˜¾ç¤ºfirefoxçš„è¿›ç¨‹IDï¼š
 
 $ pgrep firefox
-ÏÂÃæÃüÁî½«ÏÔÊ¾½ø³ÌÃûÎªsshd¡¢ËùÓĞÕßÎªrootµÄ½ø³Ì¡£
+ä¸‹é¢å‘½ä»¤å°†æ˜¾ç¤ºè¿›ç¨‹åä¸ºsshdã€æ‰€æœ‰è€…ä¸ºrootçš„è¿›ç¨‹ã€‚
 
 $ pgrep -u root sshd
 
 ----------------------------------------------------------------------
 
 
-cert.pem	·şÎñ¶ËÖ¤Êé
+cert.pem	æœåŠ¡ç«¯è¯ä¹¦
 
-chain.pem	ä¯ÀÀÆ÷ĞèÒªµÄËùÓĞÖ¤Êéµ«²»°üÀ¨·şÎñ¶ËÖ¤Êé£¬±ÈÈç¸ùÖ¤ÊéºÍÖĞ¼äÖ¤Êé
+chain.pem	æµè§ˆå™¨éœ€è¦çš„æ‰€æœ‰è¯ä¹¦ä½†ä¸åŒ…æ‹¬æœåŠ¡ç«¯è¯ä¹¦ï¼Œæ¯”å¦‚æ ¹è¯ä¹¦å’Œä¸­é—´è¯ä¹¦
 
-fullchain.pem	°üÀ¨ÁËcert.pemºÍchain.pemµÄÄÚÈİ
+fullchain.pem	åŒ…æ‹¬äº†cert.pemå’Œchain.pemçš„å†…å®¹
 
-privkey.pem	Ö¤ÊéµÄË½Ô¿
+privkey.pem	è¯ä¹¦çš„ç§é’¥
 
 
-Ò»°ãÇé¿öÏÂfullchain.pemºÍprivkey.pem¾Í¹»ÓÃÁË
+ä¸€èˆ¬æƒ…å†µä¸‹fullchain.pemå’Œprivkey.pemå°±å¤Ÿç”¨äº†
 
 ----------------------------------------------------------------------
 
-µ¥ÓòÃûÉú³ÉÖ¤Êé£º
+å•åŸŸåç”Ÿæˆè¯ä¹¦ï¼š
 
 ./certbot-auto certonly --email info@k82.org --agree-tos --no-eff-email --webroot -w /home/wwwroot/k82 -d www.k82.org
 
-¶àÓòÃûµ¥Ä¿Â¼Éú³Éµ¥Ö¤Êé£º(¼´Ò»¸öÍøÕ¾¶à¸öÓòÃûÊ¹ÓÃÍ¬Ò»¸öÖ¤Êé)
+å¤šåŸŸåå•ç›®å½•ç”Ÿæˆå•è¯ä¹¦ï¼š(å³ä¸€ä¸ªç½‘ç«™å¤šä¸ªåŸŸåä½¿ç”¨åŒä¸€ä¸ªè¯ä¹¦)
 
 ./certbot-auto certonly --email info@k82.org --agree-tos --no-eff-email --webroot -w /home/wwwroot/k82 -d www.k82.org -d bbs.k82.org
 
-¶àÓòÃû¶àÄ¿Â¼Éú³ÉÒ»¸öÖ¤Êé£º(¼´Ò»´ÎÉú³É¶à¸öÓòÃûµÄÒ»¸öÖ¤Êé)
+å¤šåŸŸåå¤šç›®å½•ç”Ÿæˆä¸€ä¸ªè¯ä¹¦ï¼š(å³ä¸€æ¬¡ç”Ÿæˆå¤šä¸ªåŸŸåçš„ä¸€ä¸ªè¯ä¹¦)
 
 ./certbot-auto certonly --email info@k82.org --agree-tos --no-eff-email --webroot -w /home/Website/K82ORG -d k82.org -d www.k82.org -w /home/WebSSL/CN3i5 -d 3i5.cn -d www.3i5.cn -w /home/wwwroot/enoou -d enoou.com -d www.enoou.com
 
 ----------------------------------------------------------------------
 
-certbot ¸üĞÂÖ¤ÊéÏÈÔÚÃüÁîĞĞÄ£ÄâÖ¤Êé¸üĞÂ
+certbot æ›´æ–°è¯ä¹¦å…ˆåœ¨å‘½ä»¤è¡Œæ¨¡æ‹Ÿè¯ä¹¦æ›´æ–°
 
 ./certbot-auto renew --dry-run
 
 ----------------------------------------------------------------------
 
-¿ªÆôsession_ticket
+å¼€å¯session_ticket
 
-ÔÚ nginx ÅäÖÃÄ¿Â¼ÏÂÖ´ĞĞ
+åœ¨ nginx é…ç½®ç›®å½•ä¸‹æ‰§è¡Œ
 
 cd /opt
 mkdir ssl
@@ -1328,14 +1328,14 @@ cd ssl
 
 openssl rand -out ticket.key 48
 
-±à¼­nginx.conf£¬ÔÚSSLÅäÖÃºóÃæ¼ÓÈëÏÂÃæÁ½ĞĞ
+ç¼–è¾‘nginx.confï¼Œåœ¨SSLé…ç½®åé¢åŠ å…¥ä¸‹é¢ä¸¤è¡Œ
 
 ssl_session_ticket_key ssl/ticket.key;
 ssl_session_tickets on;
 
 ----------------------------------------------------------------------
 
-ÅäÖÃdhparams³¤¶È
+é…ç½®dhparamsé•¿åº¦
 
 cd /opt
 mkdir dhparam
@@ -1348,29 +1348,29 @@ sudo chmod 700 keys
 
 ----------------------------------------------------------------------
 
-ÉêÇëHSTS
+ç”³è¯·HSTS
 
-±à¼­nginx.conf£¬ÔÚSSLÅäÖÃºóÃæ¼ÓÈëÏÂÃæÁ½ĞĞ
+ç¼–è¾‘nginx.confï¼Œåœ¨SSLé…ç½®åé¢åŠ å…¥ä¸‹é¢ä¸¤è¡Œ
 
 add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload"
 
 https://hstspreload.org/
 https://hstspreload.appspot.com/ 
 
-ÈçºÎ³·ÏúHSTS£¿Í¨¹ıStrict-Transport-Security: max-age=0½«»º´æÉèÖÃÎª0¿ÉÒÔ³·ÏúHSTS¡£
+å¦‚ä½•æ’¤é”€HSTSï¼Ÿé€šè¿‡Strict-Transport-Security: max-age=0å°†ç¼“å­˜è®¾ç½®ä¸º0å¯ä»¥æ’¤é”€HSTSã€‚
 
 ----------------------------------------------------------------------
-HTTPSÅäÖÃHPKP
+HTTPSé…ç½®HPKP
 
-Éú³ÉµÚÒ»¸öÖ¸ÎÆ£º
+ç”Ÿæˆç¬¬ä¸€ä¸ªæŒ‡çº¹ï¼š
 openssl x509 -pubkey < /etc/letsencrypt/archive/k82.org/cert1.pem | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | base64
 
-Ö´ĞĞÒÔÏÂÃüÁî£º
+æ‰§è¡Œä»¥ä¸‹å‘½ä»¤ï¼š
 mkdir -p /opt/hpkp
 cp /etc/letsencrypt/archive/k82.org/privkey1.pem /opt/hpkp/all.first.key
 cp /etc/letsencrypt/csr/0000_csr-certbot.pem /opt/hpkp/all.first.csr
 
-Éú³É±¸·İkey¡¢csrºÍ¸÷×ÔµÄÖ¸ÎÆ£º
+ç”Ÿæˆå¤‡ä»½keyã€csrå’Œå„è‡ªçš„æŒ‡çº¹ï¼š
 
 cd /opt/hpkp
 openssl genrsa -out all.second.key 4096
@@ -1391,7 +1391,7 @@ to be sent with your certificate request
 A challenge password []:
 An optional company name []:
 
-¸ü¸ÄÉÏÊöÊ¾ÀıÖĞµÄĞÅÏ¢ÒÔÊÊºÏÄú×Ô¼ºµÄ×¢Òâ£¬×îºó2¸ö×Ö¶Î¿ÉÒÔ±£ÁôÎª¿Õ¡£ÏÖÔÚCSRÉú³ÉÁË£¬ËùÓĞÎÒÃÇĞèÒªµÄÊÇÖ¸ÎÆ£¬°üÀ¨ÔÚHPKP±êÌâÖĞ£¬ÎÒÃÇºÜºÃ¡£
+æ›´æ”¹ä¸Šè¿°ç¤ºä¾‹ä¸­çš„ä¿¡æ¯ä»¥é€‚åˆæ‚¨è‡ªå·±çš„æ³¨æ„ï¼Œæœ€å2ä¸ªå­—æ®µå¯ä»¥ä¿ç•™ä¸ºç©ºã€‚ç°åœ¨CSRç”Ÿæˆäº†ï¼Œæ‰€æœ‰æˆ‘ä»¬éœ€è¦çš„æ˜¯æŒ‡çº¹ï¼ŒåŒ…æ‹¬åœ¨HPKPæ ‡é¢˜ä¸­ï¼Œæˆ‘ä»¬å¾ˆå¥½ã€‚
 ######################################################################
 
 openssl genrsa -out all.third.key 4096
@@ -1467,68 +1467,68 @@ server
             rewrite ^/(.*)$ https://k82.org/$1 permanent;
         }
 
-        # ¿ªÆô ssl 
+        # å¼€å¯ ssl 
         ssl on;
 
-        # ÓÉ·şÎñÆ÷Ñ¡ÔñÊÊÅäËã·¨¶ø²»ÊÇ¿Í»§¶Ë
+        # ç”±æœåŠ¡å™¨é€‰æ‹©é€‚é…ç®—æ³•è€Œä¸æ˜¯å®¢æˆ·ç«¯
         ssl_prefer_server_ciphers on;
 
-        # Ö§³ÖµÄ¼ÓÃÜĞ­Òé
+        # æ”¯æŒçš„åŠ å¯†åè®®
         ssl_protocols TLSv1.2;
         # ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 
-        # ÉùÃ÷ÔÚECDHÃØÔ¿½»»»ÖĞÒªÊ¹ÓÃµÄcurveµÄÃû×Ö
+        # å£°æ˜åœ¨ECDHç§˜é’¥äº¤æ¢ä¸­è¦ä½¿ç”¨çš„curveçš„åå­—
         ssl_ecdh_curve secp384r1;
 
-        # Ö§³ÖµÄ¼ÓÃÜÌ×¼ş
+        # æ”¯æŒçš„åŠ å¯†å¥—ä»¶
         ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4';
         # ssl_ciphers "EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5";
 
-        # ¶¨Òåsession»º´æ´óĞ¡
+        # å®šä¹‰sessionç¼“å­˜å¤§å°
         ssl_session_cache builtin:1000 shared:SSL:10m;
 
-        # ¶¨Òåsession¹ıÆÚÊ±¼ä
+        # å®šä¹‰sessionè¿‡æœŸæ—¶é—´
         ssl_session_timeout 5m;
 
-        # »á»°»Ö¸´¼õÉÙÁËTLSÎÕÊÖµÄ¿ªÏú×¢Òâ¼¯ÈºÇé¿öÏÂkeyÖµ±£³ÖÒ»ÖÂ¡£
+        # ä¼šè¯æ¢å¤å‡å°‘äº†TLSæ¡æ‰‹çš„å¼€é”€æ³¨æ„é›†ç¾¤æƒ…å†µä¸‹keyå€¼ä¿æŒä¸€è‡´ã€‚
         ssl_session_tickets on;
         # openssl rand -out ticket.key 48
         ssl_session_ticket_key /usr/local/nginx/conf/ssl/ticket.key;
 
-        # httpsÖ¤Êé¹«Ô¿
+        # httpsè¯ä¹¦å…¬é’¥
         ssl_certificate /etc/letsencrypt/live/k82.org/fullchain.pem;
 
-        # httpsÖ¤ÊéË½Ô¿
+        # httpsè¯ä¹¦ç§é’¥
         ssl_certificate_key /etc/letsencrypt/live/k82.org/privkey.pem;
 
-        # nginxÄ¬ÈÏ»áÊ¹ÓÃDiffiel-Hellman½»»»ÃÜÔ¿ÊÇ1024Î»µÄ£¬Ïà¶Ô²»°²È«£¬ËùÒÔĞèÒªÌæ»»Ê¹ÓÃ¸ü°²È«µÄ¡£
+        # nginxé»˜è®¤ä¼šä½¿ç”¨Diffiel-Hellmanäº¤æ¢å¯†é’¥æ˜¯1024ä½çš„ï¼Œç›¸å¯¹ä¸å®‰å…¨ï¼Œæ‰€ä»¥éœ€è¦æ›¿æ¢ä½¿ç”¨æ›´å®‰å…¨çš„ã€‚
         # openssl dhparam -out /usr/local/nginx/conf/ssl/dhparam.pem 2048
         ssl_dhparam /usr/local/nginx/conf/ssl/dhparam.pem;
 
-        # ÆôÓÃOCSP stapling
+        # å¯ç”¨OCSP stapling
         ssl_stapling on;
-        # valid±íÊ¾»º´æ5·ÖÖÓ£¬resolver_timeout±íÊ¾ÍøÂç³¬Ê±Ê±¼ä
+        # validè¡¨ç¤ºç¼“å­˜5åˆ†é’Ÿï¼Œresolver_timeoutè¡¨ç¤ºç½‘ç»œè¶…æ—¶æ—¶é—´
         resolver 8.8.8.8 8.8.4.4 63.76.176.252 63.88.42.5 4.2.2.1 4.2.2.2 36.2.8.242 36.2.24.145 223.5.5.5 223.6.6.6 valid=300s;
-        # resolver_timeout ±íÊ¾ÍøÂç³¬Ê±Ê±¼ä
+        # resolver_timeout è¡¨ç¤ºç½‘ç»œè¶…æ—¶æ—¶é—´
         resolver_timeout 5s;
-        # ÆôÓÃOCSPÏìÓ¦ÑéÖ¤£¬OCSPĞÅÏ¢ÏìÓ¦ÊÊÓÃµÄÖ¤Êé  
+        # å¯ç”¨OCSPå“åº”éªŒè¯ï¼ŒOCSPä¿¡æ¯å“åº”é€‚ç”¨çš„è¯ä¹¦  
         ssl_stapling_verify on;
-        # Èô ssl_certificate Ö¸ÁîÖ¸¶¨ÁËÍêÕûµÄÖ¤ÊéÁ´£¬Ôò ssl_trusted_certificate ¿ÉÊ¡ÂÔ¡£
+        # è‹¥ ssl_certificate æŒ‡ä»¤æŒ‡å®šäº†å®Œæ•´çš„è¯ä¹¦é“¾ï¼Œåˆ™ ssl_trusted_certificate å¯çœç•¥ã€‚
         ssl_trusted_certificate /etc/letsencrypt/live/k82.org/fullchain.pem;
 
-        # ÓĞË«ÏòÑéÖ¤µÄĞèÇó£¬¿ÉÒÔ¿ªÆôNginxµÄ¿Í»§¶ËÉí·İÑéÖ¤¡£Nginx½«Ö»½ÓÊÜ°üº¬ÓĞĞ§¿Í»§¶ËÖ¤ÊéµÄÇëÇó
-        # ÒªÇó¿Í»§¶ËÉí·İÑéÖ¤
+        # æœ‰åŒå‘éªŒè¯çš„éœ€æ±‚ï¼Œå¯ä»¥å¼€å¯Nginxçš„å®¢æˆ·ç«¯èº«ä»½éªŒè¯ã€‚Nginxå°†åªæ¥å—åŒ…å«æœ‰æ•ˆå®¢æˆ·ç«¯è¯ä¹¦çš„è¯·æ±‚
+        # è¦æ±‚å®¢æˆ·ç«¯èº«ä»½éªŒè¯
         # ssl_verify_client on;
-        # Ö¸¶¨¿Í»§¶ËÖ¤Êéµ½¸ùÖ¤ÊéµÄ×î´óÖ¤ÊéÂ·¾¶³¤¶È
+        # æŒ‡å®šå®¢æˆ·ç«¯è¯ä¹¦åˆ°æ ¹è¯ä¹¦çš„æœ€å¤§è¯ä¹¦è·¯å¾„é•¿åº¦
         # ssl_verify_depth 3;
-        # Ö¸¶¨ÔÊĞíÇ©·¢¿Í»§¶ËÖ¤ÊéµÄCAÖ¤Êé
+        # æŒ‡å®šå…è®¸ç­¾å‘å®¢æˆ·ç«¯è¯ä¹¦çš„CAè¯ä¹¦
         # ssl_client_certificate trustchain.crt;
-        # ÍêÕûÖ¤ÊéÁ´ÖĞĞèÒª°üº¬µÄÆäËûCAÖ¤Êé
+        # å®Œæ•´è¯ä¹¦é“¾ä¸­éœ€è¦åŒ…å«çš„å…¶ä»–CAè¯ä¹¦
         # ssl_trusted_certificate root-ca.crt;
-        # Ö¤ÊéµõÏúÁĞ±í
+        # è¯ä¹¦åŠé”€åˆ—è¡¨
         # ssl_crl revoked-certificates.crl;
 
-        # ½ûÖ¹±»ÍâÕ¾frameÇ¶ÈëÒıÓÃ
+        # ç¦æ­¢è¢«å¤–ç«™frameåµŒå…¥å¼•ç”¨
         add_header X-Frame-Options DENY;
 
         add_header X-XSS-Protection "1; mode=block";
@@ -1536,7 +1536,7 @@ server
         add_header X-Content-Type-Options nosniff;
         add_header Referrer-Policy "no-referrer";
 
-        # Ö»ÔÊĞíÍ¬Ô´ÏÂµÄ×ÊÔ´
+        # åªå…è®¸åŒæºä¸‹çš„èµ„æº
         #  add_header Content-Security-Policy "default-src 'self';";
 
         # HSTS (ngx_http_headers_module is required) (15768000 seconds = 6 months)
@@ -1594,7 +1594,7 @@ server
 
 ----------------------------------------------------------------------
 
-²âÊÔOCSPÊÇ·ñ×°¶©ÓĞĞ§
+æµ‹è¯•OCSPæ˜¯å¦è£…è®¢æœ‰æ•ˆ
 openssl s_client -connect 129.co:443 -tls1 -tlsextdebug -status
 
 openssl s_client -connect 129.co:443 -servername 129.co -status -tlsextdebug < /dev/null 2>&1 | grep -i "OCSP response"
@@ -1606,7 +1606,7 @@ https://sslmate.com/caa/
 
 ----------------------------------------------------------------------
 
-SSL °²È«²âÊÔ
+SSL å®‰å…¨æµ‹è¯•
 https://www.ssllabs.com/ssltest/index.html
 
 ----------------------------------------------------------------------
