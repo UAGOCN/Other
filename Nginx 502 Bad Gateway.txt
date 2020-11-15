@@ -1,0 +1,40 @@
+nginx 502 Bad Gateway 错误解决办法
+
+设置 php.ini
+memory_limit = 512M
+max_execution_time = 300
+
+设置 php-fpm.conf
+max_children = 128 // max_children是PHP-FPM Pool 最大的子进程数,一个PHP请求占用内存10M-40M比如说，1G设置64 , 2G 设置128 这个根据实际情况自行调整
+max_requests = 1024 // max_requests 该参数指明了每个max_children最多处理多少个请求后便会被关闭， 默认值为unlimited（默认为1024）
+request_terminate_timeout = 100
+
+查看当前的PHP FastCGI进程数是否够用的命令
+netstat  -anpo |grep "php-cgi" | wc -l
+
+设置 nginx.conf
+http {
+client_header_buffer_size 32k;
+keepalive_timeout 60;
+fastcgi_connect_timeout 300;
+fastcgi_send_timeout 300;
+fastcgi_read_timeout 300;
+fastcgi_buffer_size 64k;}
+
+调高调高Linux内核打开文件数量
+可以使用这些命令(必须是root帐号)
+echo 'ulimit -HSn 65536'>> /etc/profile
+echo 'ulimit -HSn 65536'>> /etc/rc.local
+source /etc/profile
+
+child 27327 exited with code 0 after 19936.476801 seconds from start 错误解决办法
+原因就是没有pm.start_servers这个参数没有按照下面的这个公式来:
+pm.start_servers= min_spare_servers + (max_spare_servers - min_spare_servers) / 2
+
+一般min_spare_servers设置为20
+max_spare_servers是根据服务器本身的内存来计算的，标准算法就是内存大小除以30M
+
+当然，有的php程序可能占用比较小，不到30M，这就看情况来计算了。
+
+pm.start_servers 必须是介于  pm.min_spare_servers 和  pm.max_spare_servers  这个值之间
+
