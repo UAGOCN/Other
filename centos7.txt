@@ -296,7 +296,7 @@ COMMIT
 -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
--A INPUT -m state --state NEW -m tcp -p tcp --dport 29587 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 29123 -j ACCEPT
 -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
 COMMIT
 # Completed on Wed Oct 21 22:38:48 2020
@@ -784,9 +784,9 @@ chmod 700 /usr/bin/vim         恢复  chmod 755 /usr/bin/vim
 chmod 700 /usr/bin/tail          恢复  chmod 755 /usr/bin/tail
 chmod 700 /usr/bin/less         恢复  chmod 755 /usr/bin/less
 chmod 700 /usr/bin/head       恢复  chmod 755 /usr/bin/head
+chmod 700 /bin/cat                恢复  chmod 755 /bin/cat
 chmod 700 /bin/netstat          恢复  chmod 755 /bin/netstat
 chmod 700 /bin/ping              恢复  chmod 4755 /bin/ping
-chmod 700 /bin/cat                恢复  chmod 755 /bin/cat
 chmod 700 /bin/uname          恢复  chmod 755 /bin/uname
 chmod 500 /bin/ps                 恢复  chmod 755 /bin/ps
 
@@ -1515,6 +1515,16 @@ server
         ssl_stapling_verify on;
         # 若 ssl_certificate 指令指定了完整的证书链，则 ssl_trusted_certificate 可省略。
         ssl_trusted_certificate /etc/letsencrypt/live/k82.org/fullchain.pem;
+
+        # 当客户端访问时 NginX 将去指定的证书中查找 OCSP 服务的地址，获得响应内容后通过证书链下发给客户端
+        # 启用OCSP stapling
+        ssl_stapling on;
+        # 利用 NginX 的 ssl_stapling_file 指令直接将 OCSP 响应存成文件
+        ssl_stapling_file /etc/letsencrypt/live/k82.org/stapling_file.ocsp; 
+        # 启用OCSP响应验证，OCSP信息响应适用的证书
+        ssl_stapling_verify on;
+        #若 ssl_certificate 指令指定了完整的证书链，则 ssl_trusted_certificate 可省略。
+        ssl_trusted_certificate /path/to/xxx.pem;
 
         # 有双向验证的需求，可以开启Nginx的客户端身份验证。Nginx将只接受包含有效客户端证书的请求
         # 要求客户端身份验证
