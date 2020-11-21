@@ -1,0 +1,47 @@
+一：环境部署
+VMware版本：VMware-workstation-full-16.0.0-16894299
+MacOS版本: MacOS Catalina-10.15.7(19H2)
+操作系统版本：Windows 10.0.15063
+Part 1.1 
+VMware下载及许可证密钥
+下载地址：https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html
+流程：双击打开VMware-workstation安装包后直接全部选择下一步即可完成安装！
+VMware-workstation 16 许可证密钥
+ZF3R0-FHED2-M80TY-8QYGC-NPKYF
+YF390-0HF8P-M81RQ-2DXQE-M2UT6
+ZF71R-DMX85-08DQY-8YMNC-PPHV8
+此处以大力盘搜索为案例,搜索关键字macOS Catalina-10.15.7(19H2)
+后续VMware导入的内容需以cdr为后缀的文件
+默认情况下，VMware无法直接新建MacOS系统的虚拟机，需要依赖Unlocker for VMware工具来解锁，才能够在VMware上跑MacOS系统
+VMware15及以下版本可使用此解锁器
+下载地址：https://github.com/paolo-projects/unlocker/releases
+下载完成后，解压unlocker.zip文件，并选择以管理员身份运行打开win-install.cmd文件
+如果安装的是最新版VMware16，推荐使用以下自动解锁器
+https://github.com/paolo-projects/auto-unlocker/releases
+下载完成后，解压Unlocker.zip文件，并选择以管理员身份运行打开Unlocker文件
+运行后自动关闭服务及进程，开始解锁任务并下载相关文件【下载速度有别于当前网络延迟情况】
+通过分析代码发现一种更快速下载的方式
+使用浏览器打开网址：http://softwareupdate.vmware.com/cds/vmw-desktop/fusion/ 选择列表中最大的版本
+将com.vmware.fusion.zip.tar文件下载到本地
+用7zip打开这个解压文件，把darwin.iso和darwinPre15.iso解压缩到Unlocker的tools目录下
+运行Unlocker后会自动生成tools文件夹
+再将darwin.iso和darwinPre15.iso文件复制到WMware的安装目录中，然后用管理员权限运行一下 Unlocker
+运行后出现以下提示，默认选中Y即可
+二：安装MacOS系统
+在新建虚拟机时选择Apple Mac OS X并选择对应版本
+设置完成之后选择编辑虚拟机设置并添加MacOS镜像文件，启动虚拟机
+设置完语言后选择磁盘工具
+选择对应盘符并选择抹掉盘符内容及设置名称
+完成之后选择安装macOS
+点击继续并同意协议，选择对应盘符开始安装
+安装完成后选择对应地区
+创建用户名
+全部完成后就正式进入桌面
+三：安装VMware Tool
+默认情况下分辨率是较低的需要进行调试
+修改IOS镜像文件，选择VMware目录下的darwinPre15.iso文件
+先选择退出光盘
+然后选择安装VMware Tools
+选择安装VMware Tools
+一直选择继续安装，在安全性和隐私中选择解锁并点击允许并选择重启虚拟机
+重启虚拟机后就可以开始正常使用
