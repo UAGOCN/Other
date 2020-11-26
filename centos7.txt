@@ -1688,11 +1688,18 @@ https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html
 
 php Cookie会话安全
 
-ini_set('session.cookie_httponly', TRUE);
-ini_set('session.cookie_cookie_secure', TRUE);
-
 register_shutdown_function('session_write_close');
-session_set_cookie_params('3600', "/", 'domain.com', TRUE, TRUE, 'lax');
-@session_start();
+session_set_cookie_params(0, '/; samesite=lax', '.san.tv', TRUE, TRUE);
+session_name('__cflb');
+session_start();
 
+$arr_cookie_options = array (
+'expires' => $expire,
+'path' => $path,
+'domain' => $domain,
+'secure' => TRUE,
+'httponly' => TRUE,
+'samesite' => 'Lax');
+
+setcookie($name, $value, $arr_cookie_options);
 ----------------------------------------------------------------------
