@@ -1456,10 +1456,13 @@ server
         index index.html index.htm index.php;
         root  /home/WebSite/K82ORG;
 
+        # 强制http 301跳转
+        return 301 https://$host$request_uri;
+
         # redirect – 返回临时重定向的HTTP状态302
         # permanent – 返回永久重定向的HTTP状态301
 
-        rewrite ^/(.*) https://k82.org/$1 permanent;  // 301跳转设置 permanent;  302跳转设置 redirect;
+        # rewrite ^/(.*) https://k82.org/$1 permanent;  // 301跳转设置 permanent;  302跳转设置 redirect;
 
         add_header X-Frame-Options DENY;
         add_header X-XSS-Protection "1; mode=block";
@@ -1674,5 +1677,9 @@ https://sslmate.com/caa/
 
 SSL 安全测试
 https://www.ssllabs.com/ssltest/index.html
+
+https://securityheaders.com/
+
+https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html
 
 ----------------------------------------------------------------------
