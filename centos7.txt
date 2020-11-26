@@ -1598,18 +1598,20 @@ server
         # ssl_crl revoked-certificates.crl;
 
         # 禁止被外站frame嵌入引用
-        add_header X-Frame-Options DENY;
+        add_header X-Frame-Options "SAMEORIGIN" always;
 
-        add_header X-XSS-Protection "1; mode=block";
         add_header X-Robots-Tag none;
-        add_header X-Content-Type-Options nosniff;
         add_header Referrer-Policy "no-referrer";
+        add_header X-Xss-Protection "1; mode=block" always;
+        add_header X-Content-Type-Options "nosniff" always;
+
 
         # 只允许同源下的资源
         #  add_header Content-Security-Policy "default-src 'self';";
+        #  add_header Content-Security-Policy "default-src https: data: 'unsafe-inline' 'unsafe-eval'" always;
 
         # HSTS (ngx_http_headers_module is required) (15768000 seconds = 6 months)
-        # add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
+        # add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload" always;
 
         location / {
             try_files $uri $uri/ /index.php;
@@ -1681,5 +1683,16 @@ https://www.ssllabs.com/ssltest/index.html
 https://securityheaders.com/
 
 https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html
+
+----------------------------------------------------------------------
+
+php Cookie会话安全
+
+ini_set('session.cookie_httponly', TRUE);
+ini_set('session.cookie_cookie_secure', TRUE);
+
+register_shutdown_function('session_write_close');
+session_set_cookie_params('3600', "/", 'domain.com', TRUE, TRUE, 'lax');
+@session_start();
 
 ----------------------------------------------------------------------
