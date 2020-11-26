@@ -1689,7 +1689,7 @@ https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html
 php Cookie会话安全
 
 register_shutdown_function('session_write_close');
-session_set_cookie_params(0, '/; samesite=lax', '.san.tv', TRUE, TRUE);
+session_set_cookie_params(['lifetime' => time()+900,'path' => '/','domain' => $_SERVER['HTTP_HOST'],'secure' => TRUE,'httponly' => TRUE,'samesite' => 'lax']);
 session_name('__cflb');
 session_start();
 
