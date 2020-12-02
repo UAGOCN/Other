@@ -1462,7 +1462,7 @@ server
         # redirect – 返回临时重定向的HTTP状态302
         # permanent – 返回永久重定向的HTTP状态301
 
-        # rewrite ^/(.*) https://k82.org/$1 permanent;  // 301跳转设置 permanent;  302跳转设置 redirect;
+        # rewrite ^/(.*) https://$host/$1 permanent;  // 301跳转设置 permanent;  302跳转设置 redirect;
 
         include none.conf;
         #error_page   404   /404.html;
