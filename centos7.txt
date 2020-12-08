@@ -469,7 +469,6 @@ echo "Welcome to Server" >/etc/redhat-release
 
 CentOS release 6.5 (Final)
 
-
 ----------------------------------------------------------------------
 
 vi /etc/php.ini   #编辑
@@ -495,6 +494,17 @@ posix_getpwuid,posix_getrlimit,posix_getsid,posix_getuid,posix_isatty,posix_kill
 posix_setegid,posix_seteuid,posix_setgid,posix_setpgid,posix_setsid,posix_setuid,posix_strerror,
 
 posix_times,posix_ttyname,posix_uname
+
+----------------------------------------------------------------------
+
+php超时
+/usr/local/php/etc/php.ini
+
+max_execution_time = 300
+
+/usr/local/php/etc/php-fpm.conf
+
+request_terminate_timeout = 300
 
 ----------------------------------------------------------------------
 
