@@ -1,0 +1,25 @@
+ php日志报错child exited with code 0 after seconds from start
+
+因为日志文件老是有这种提示： 
+[27-May-2015 15:13:48] NOTICE: [pool www] child 3998 started
+[27-May-2015 15:13:59] NOTICE: [pool www] child 9242 exited with code 0 after 47575.960999 seconds from start
+[27-May-2015 15:13:59] NOTICE: [pool www] child 4210 started
+[27-May-2015 15:14:42] NOTICE: [pool www] child 9217 exited with code 0 after 47619.884065 seconds from start
+[27-May-2015 15:14:42] NOTICE: [pool www] child 5621 started
+[27-May-2015 15:14:43] NOTICE: [pool www] child 9561 exited with code 0 after 47620.024499 seconds from start
+
+原因就是没有pm.start_servers这个参数没有按照下面的这个公式来:
+
+pm.start_servers= min_spare_servers + (max_spare_servers - min_spare_servers) / 2
+
+一般min_spare_servers设置为20
+
+max_spare_servers是根据服务器本身的内存来计算的，标准算法就是内存大小除以30M
+
+当然，有的php程序可能占用比较小，不到30M，这就看情况来计算了。
+
+我设置的是这样的
+
+过滤注释部分:
+
+cat /usr/local/php/etc/php-fpm.conf | grep -v "^;" | grep -v "^$"
