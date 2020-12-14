@@ -1462,12 +1462,13 @@ server
     {
         listen 80;
         #listen [::]:80;
-        server_name k82.org www.k82.org;
-        index index.html index.htm index.php;
-        root  /home/WebSite/K82ORG;
 
         # 强制http 301跳转
         return 301 https://$host$request_uri;
+
+        server_name k82.org www.k82.org;
+        index index.html index.htm index.php;
+        root  /home/WebSite/K82ORG;
 
         # redirect – 返回临时重定向的HTTP状态302
         # permanent – 返回永久重定向的HTTP状态301
@@ -1539,8 +1540,8 @@ server
         ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4';
         # ssl_ciphers "EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5";
 
-        # 定义session缓存大小
-        ssl_session_cache builtin:1000 shared:SSL:10m;
+        # 定义session缓存大小 10m 大约 40000 个 sessions
+        ssl_session_cache builtin:1000 shared:SSL:10m; 
 
         # 定义session过期时间
         ssl_session_timeout 5m;
@@ -1572,19 +1573,14 @@ server
         ssl_trusted_certificate /usr/local/nginx/conf/ssl/k82.org/k82.org/fullchain.pem;
 
         # 当客户端访问时 NginX 将去指定的证书中查找 OCSP 服务的地址，获得响应内容后通过证书链下发给客户端
+
         # 启用OCSP stapling
         ssl_stapling on;
-
-        # 利用 NginX 的 ssl_stapling_file 指令直接将 OCSP 响应存成文件
-
-        # openssl ocsp -noverify -issuer /usr/local/nginx/conf/ssl/k82.org/ca.cer -cert /usr/local/nginx/conf/ssl/k82.org/k82.org.cer -url http://ocsp.int-x3.letsencrypt.org/ -header "HOST" "ocsp.int-x3.letsencrypt.org" -text -respout /usr/local/nginx/conf/ssl/k82.org/stapling_file.ocsp
-
-        ssl_stapling_file /usr/local/nginx/conf/ssl/k82.org/stapling_file.ocsp; 
-
         # 启用OCSP响应验证，OCSP信息响应适用的证书
         ssl_stapling_verify on;
-        #若 ssl_certificate 指令指定了完整的证书链，则 ssl_trusted_certificate 可省略。
-        ssl_trusted_certificate /usr/local/nginx/conf/ssl/k82.org/k82.org/fullchain.pem;
+        # 利用 NginX 的 ssl_stapling_file 指令直接将 OCSP 响应存成文件
+        # openssl ocsp -noverify -issuer /usr/local/nginx/conf/ssl/k82.org/ca.cer -cert /usr/local/nginx/conf/ssl/k82.org/k82.org.cer -url http://ocsp.int-x3.letsencrypt.org/ -header "HOST" "ocsp.int-x3.letsencrypt.org" -text -respout /usr/local/nginx/conf/ssl/k82.org/stapling_file.ocsp
+        ssl_stapling_file /usr/local/nginx/conf/ssl/k82.org/stapling_file.ocsp; 
 
         # 有双向验证的需求，可以开启Nginx的客户端身份验证。Nginx将只接受包含有效客户端证书的请求
         # 要求客户端身份验证
@@ -1606,21 +1602,20 @@ server
         add_header X-Xss-Protection "1; mode=block" always;
         add_header X-Content-Type-Options "nosniff" always;
 
-
         # 只允许同源下的资源
         #  add_header Content-Security-Policy "default-src 'self';";
         #  add_header Content-Security-Policy "default-src https: data: 'unsafe-inline' 'unsafe-eval'" always;
 
         # HSTS (ngx_http_headers_module is required) (15768000 seconds = 6 months)
-        # add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload" always;
-
-        location / {
-            try_files $uri $uri/ /index.php;
-        }
+        add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload" always;
 
         location ~* /(app|system)/.*\.(php|php5|pl|py|jsp|sh|cgi|html|json)$
         {
             deny all;
+        }
+
+        location / {
+            try_files $uri $uri/ /index.php;
         }
 
         include none.conf;
@@ -1685,6 +1680,8 @@ https://securityheaders.com/
 
 https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html
 
+SSL配置推荐
+https://ssl-config.mozilla.org/
 ----------------------------------------------------------------------
 
 php Cookie会话安全
