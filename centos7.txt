@@ -1579,7 +1579,15 @@ server
         # 启用OCSP响应验证，OCSP信息响应适用的证书
         ssl_stapling_verify on;
         # 利用 NginX 的 ssl_stapling_file 指令直接将 OCSP 响应存成文件
-        # openssl ocsp -noverify -issuer /usr/local/nginx/conf/ssl/k82.org/ca.cer -cert /usr/local/nginx/conf/ssl/k82.org/k82.org.cer -url http://ocsp.int-x3.letsencrypt.org/ -header "HOST" "ocsp.int-x3.letsencrypt.org" -text -respout /usr/local/nginx/conf/ssl/k82.org/stapling_file.ocsp
+
+        # openssl x509 -in  /usr/local/nginx/conf/ssl/k82.org/fullchain.pem -noout -text 
+        # 可以看到证书包含了 SAN 扩展，该扩展的值就是 *.k82.org
+        # Authority Information Access: 
+        # OCSP - URI:http://ocsp.int-x3.letsencrypt.org
+        # CA Issuers - URI:http://cert.int-x3.letsencrypt.org/
+
+        # OpenSSL 1.1.X 以上需要 "HOST"="r3.o.lencr.org" 否则 "HOST" "r3.o.lencr.org"  
+        # openssl ocsp -no_nonce -respout /usr/local/nginx/conf/ssl/k82.org/stapling_file.ocsp -issuer /usr/local/nginx/conf/ssl/k82.org/ca.cer -cert /usr/local/nginx/conf/ssl/k82.org/k82.org.cer -url http://r3.o.lencr.org/ -header "HOST" "r3.o.lencr.org" -verify_other /usr/local/nginx/conf/ssl/k82.org/fullchain.cer
         ssl_stapling_file /usr/local/nginx/conf/ssl/k82.org/stapling_file.ocsp; 
 
         # 有双向验证的需求，可以开启Nginx的客户端身份验证。Nginx将只接受包含有效客户端证书的请求
