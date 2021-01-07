@@ -1526,15 +1526,14 @@ server
         # 开启 ssl 
         ssl on;
 
-        # 由服务器选择适配算法而不是客户端
-        ssl_prefer_server_ciphers on;
+        # 由服务器选择适配算法而不是客户端 如果ssl协议只支持tlsv1.2 tlsv1.3新协议，设置为 off （nginx默认为off）
+        ssl_prefer_server_ciphers off;
 
         # 支持的加密协议
         ssl_protocols TLSv1.2 TLSv1.3;
-        # ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 
         # 声明在ECDH秘钥交换中要使用的curve的名字
-        ssl_ecdh_curve X25519:prime256v1:secp384r1;
+        ssl_ecdh_curve secp384r1;
 
         # 支持的加密套件
         ssl_ciphers 'TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4';
