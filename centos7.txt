@@ -1548,7 +1548,7 @@ server
         # 会话恢复减少了TLS握手的开销注意集群情况下key值保持一致。
         ssl_session_tickets on;
         # 在file必须含有80或48个字节的随机数据
-        # openssl rand -out ticket.key 80
+        # openssl rand -out /usr/local/nginx/conf/ssl/ticket.key 80
         ssl_session_ticket_key /usr/local/nginx/conf/ssl/ticket.key;
 
         # https证书公钥
