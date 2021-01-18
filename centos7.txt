@@ -1503,7 +1503,7 @@ server
             access_log  off;
         }
 
-        location ~ .*\.(js|css)?$
+        location ~ .*\.(js|css|eot|ttf|woff|woff2)?$
         {
             expires      12h;
             access_log  off;
@@ -1656,7 +1656,7 @@ server
             access_log  off;
         }
 
-        location ~ .*\.(js|css|eot|ttf|woff)?$
+        location ~ .*\.(js|css|eot|ttf|woff|woff2)?$
         {
             expires      12h;
             access_log  off;
@@ -1731,3 +1731,5 @@ setcookie($name, $value, $arr_cookie_options);
 ----------------------------------------------------------------------
 
 chrome://net-internals/#hsts
+
+https://validator.w3.org/
