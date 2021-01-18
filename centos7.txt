@@ -1729,3 +1729,5 @@ $arr_cookie_options = array (
 
 setcookie($name, $value, $arr_cookie_options);
 ----------------------------------------------------------------------
+
+chrome://net-internals/#hsts
